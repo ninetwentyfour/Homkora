@@ -1,0 +1,46 @@
+.stopwatch {
+	background: none repeat scroll 0 0 #000000;
+	border: 2px solid #444444;
+	padding: 15px;
+	width: 210px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:15px;
+	-moz-box-shadow:0 1px 7px #111111;
+	-webkit-box-shadow:0 1px 7px #111111;
+	margin:auto;
+}
+
+.stopwatch .display {
+	width:160px;
+	padding:20px;
+	margin-bottom:10px;
+	border:5px solid #444;
+	color:#444;
+	font-size:18pt;
+	font-weight:bold;
+	text-align:center;
+	font-family:verdana;
+	background:#fff;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+
+.stopwatch .start, .stopwatch .stop, .stopwatch .reset {
+	background:#444;
+	font-family:verdana;
+	font-size:12pt;
+	padding:5px 10px;
+	color:#fff;
+	border:none;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	text-align:center;
+	width:100px;
+}
+
+.stopwatch .start, .stopwatch .stop {
+	margin-right:10px;
+}
