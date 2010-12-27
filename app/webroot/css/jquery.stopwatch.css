@@ -1,8 +1,8 @@
 .stopwatch {
-	background: none repeat scroll 0 0 #000000;
-	border: 2px solid #444444;
+	background:url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	border: 1px solid #444;
 	padding: 15px;
-	width: 210px;
+	width: 420px;
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:15px;
@@ -12,16 +12,16 @@
 }
 
 .stopwatch .display {
-	width:160px;
+	width:378px;
 	padding:20px;
 	margin-bottom:10px;
-	border:5px solid #444;
-	color:#444;
-	font-size:18pt;
+	border:1px solid #444;
+	color:#5bf3f9;
+	font-size:38pt;
 	font-weight:bold;
 	text-align:center;
 	font-family:verdana;
-	background:#fff;
+	background:#000;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
@@ -33,12 +33,17 @@
 	font-size:12pt;
 	padding:5px 10px;
 	color:#fff;
-	border:none;
+	border:1px solid #444;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
 	text-align:center;
-	width:100px;
+	width:205px;
+	margin-right:0px;
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+	box-shadow:none !important;
+	background:url("../img/bg.png") repeat scroll 0 0 #222222;
 }
 
 .stopwatch .start, .stopwatch .stop {

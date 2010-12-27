@@ -1,2 +1,5 @@
 2010-12-26 16:38:02 Error: Testing LogError() basic function
 2010-12-26 16:38:02 Error: Testing with multi-line string
+2010-12-26 18:32:11 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'user'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2010-12-26 18:32:11 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2010-12-26 18:32:11 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]

@@ -1,16 +1,17 @@
+<div id="clock1"></div>
 <div class="timers form">
-
-<form name="approveVideo" onsubmit="return(checkForm(this));" id="approveVideo" action="add" method="post" enctype="multipart/form-data">
+<?php echo $this->Form->create('Timer',array('onsubmit'=>'return(checkForm(this));'));?>
+<!--<form name="approveVideo" onsubmit="return(checkForm(this));" id="approveVideo" action="add" method="post" enctype="multipart/form-data">-->
 	<fieldset>
- 		<legend><?php __('Add Timer'); ?></legend>
+ 		
 	<?php
 		echo $this->Form->input('project_id');
 		echo $this->Form->input('title');
 		echo $this->Form->input('time', array('value' => '' , 'type' => 'hidden'));
-		echo $this->Form->input('description');
+		echo $this->Form->input('description',array('type'=>'text'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
+<?php echo $this->Form->end(__('Save Timer', true));?>
 </div>
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>

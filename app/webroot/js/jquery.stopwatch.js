@@ -8,7 +8,7 @@
 		// This is bit messy, but IE is a crybaby and must be coddled. 
 		clock.html('<div id="display" class="display"><span class="hr">00</span>:<span class="min">00</span>:<span class="sec">00</span></div>');
 		clock.append('<input type="button" class="start" value="Start" />');
-		clock.append('<input type="button" class="stop" value="Stop" />');
+		clock.append('<input type="button" class="stop" value="Pause" />');
 		clock.append('<input type="button" class="reset" value="Reset" />');
 		
 		// We have to do some searching, so we'll do it here, so we only have to do it once.

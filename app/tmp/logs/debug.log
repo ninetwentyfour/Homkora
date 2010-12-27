@@ -3,3 +3,4 @@
 2010-12-26 18:01:58 Notice: Notice (8): Undefined variable: javascript in [/var/www/cake/app/views/layouts/default.ctp, line 25]
 2010-12-26 18:01:58 Notice: Notice (8): Undefined variable: javascript in [/var/www/cake/app/views/layouts/default.ctp, line 25]
 2010-12-26 18:01:58 Notice: Notice (8): Undefined variable: javascript in [/var/www/cake/app/views/layouts/default.ctp, line 25]
+2010-12-26 18:33:35 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/cake/cake/libs/cake_session.php, line 587]
