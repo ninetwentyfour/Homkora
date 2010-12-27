@@ -118,7 +118,7 @@ a:hover{
     width:960px;
 	padding-top: 50px;
     margin:auto;
-font-size:16px;
+font-size:14px;
 }
 
 header{
@@ -235,6 +235,7 @@ border-width:1px;
 color:#FFFFFF;
 font-size:19px;
 padding:5px 15px;
+margin-left:339px;
 }
 .submit input:hover{
 	-moz-box-shadow:0 3px 10px #111111;
@@ -360,7 +361,7 @@ border-color:#222;
 border-style:solid;
 border-width:1px;
 color:#FFFFFF;
-font-size:19px;
+font-size:16px;
 padding:5px 15px;
 margin-right:10px;
 }
