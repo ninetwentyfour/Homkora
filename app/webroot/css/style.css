@@ -130,6 +130,18 @@ header{
 	background-color:#000;
 	padding-left:10px;
 }
+#topPush{
+	height:100%;
+}
+footer{
+    padding-top:10px;
+	height:30px;
+    color:#E54964 !important;
+    font-size:20px;
+	border-top:1px solid #444;
+	background-color:#000;
+	padding-left:10px;
+}
 h1 a{
 	 color:#E54964 !important;
 }

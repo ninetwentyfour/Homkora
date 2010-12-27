@@ -32,6 +32,11 @@
 			<div style="clear:both;"></div>
 		</div>
 	</div>
+	<div style="clear:both;"></div>
+	<div id="topPush"></div>
+	<footer>
+		Footer info
+	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<?php echo $this->Html->script('jquery.stopwatch'); ?>
 	<script type="text/javascript">
