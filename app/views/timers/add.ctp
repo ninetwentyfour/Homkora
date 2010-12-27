@@ -1,11 +1,12 @@
 <div class="timers form">
-<?php echo $this->Form->create('Timer');?>
+
+<form name="approveVideo" onsubmit="return(checkForm(this));" id="approveVideo" action="add" method="post" enctype="multipart/form-data">
 	<fieldset>
  		<legend><?php __('Add Timer'); ?></legend>
 	<?php
 		echo $this->Form->input('project_id');
 		echo $this->Form->input('title');
-		echo $this->Form->input('time');
+		echo $this->Form->input('time', array('value' => '' , 'type' => 'hidden'));
 		echo $this->Form->input('description');
 	?>
 	</fieldset>

@@ -1,2 +1,5 @@
 2010-12-26 13:54:36 Notice: Notice (1024): Please change the value of 'Security.salt' in app/config/core.php to a salt value specific to your application in [/var/www/cake/cake/libs/debugger.php, line 684]
 2010-12-26 13:54:36 Notice: Notice (1024): Please change the value of 'Security.cipherSeed' in app/config/core.php to a numeric (digits only) seed value specific to your application in [/var/www/cake/cake/libs/debugger.php, line 688]
+2010-12-26 18:01:58 Notice: Notice (8): Undefined variable: javascript in [/var/www/cake/app/views/layouts/default.ctp, line 25]
+2010-12-26 18:01:58 Notice: Notice (8): Undefined variable: javascript in [/var/www/cake/app/views/layouts/default.ctp, line 25]
+2010-12-26 18:01:58 Notice: Notice (8): Undefined variable: javascript in [/var/www/cake/app/views/layouts/default.ctp, line 25]

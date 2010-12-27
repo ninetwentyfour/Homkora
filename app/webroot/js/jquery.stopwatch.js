@@ -6,7 +6,7 @@
 		clock.addClass('stopwatch');
 		
 		// This is bit messy, but IE is a crybaby and must be coddled. 
-		clock.html('<div class="display"><span class="hr">00</span>:<span class="min">00</span>:<span class="sec">00</span></div>');
+		clock.html('<div id="display" class="display"><span class="hr">00</span>:<span class="min">00</span>:<span class="sec">00</span></div>');
 		clock.append('<input type="button" class="start" value="Start" />');
 		clock.append('<input type="button" class="stop" value="Stop" />');
 		clock.append('<input type="button" class="reset" value="Reset" />');
