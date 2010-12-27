@@ -103,6 +103,9 @@ font-family:'Helvetica', sans-serif;
 h1,h2{
     text-shadow:0 2px 1px #111111;
 }
+h2{
+    margin-bottom:10px;
+}
 a{
     color:#999999;
     text-decoration:none;
@@ -343,23 +346,24 @@ color:#141414;
 }
 td{
 	padding:10px;
-	border-left: 1px solid #444;
+	/*border-left: 1px solid #444;*/
 
 }
 tr{
-	border:1px solid #444;
+	/*border:1px solid #444;*/
 }
 .altrow{
 	background:url("../img/dark-bg.png") repeat scroll 0 0 #111;
 }
 thead{
 	background-color:#fafafa;
-	border:1px solid #444;
+	/*border:1px solid #444;*/
 }
 th{
 	padding:10px;
-	border-left: 1px solid #444;
+	/*border-left: 1px solid #444;*/
 	color:#999;
+	text-align: left;
 	
 }
 tr td {
@@ -425,4 +429,8 @@ border-style:solid;
 .related{
     float:left;
     margin-top:30px;
+}
+#flashMessage{
+    float:left;
+    width:100%;
 }

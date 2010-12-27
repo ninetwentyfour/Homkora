@@ -1,4 +1,5 @@
 <?php echo $html->link('Add Timer',array('controller'=>'timers', 'action'=>'add'),array('class'=>'button'));?>
+<br /><br />
 <div class="timers index">
 	<h2><?php __('Timers');?></h2>
 	<table cellpadding="0" cellspacing="0">

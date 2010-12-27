@@ -2,6 +2,11 @@
 class TimersController extends AppController {
 
 	var $name = 'Timers';
+	
+	function beforeFilter() {
+	    parent::beforeFilter(); 
+	    $this->Auth->allowedActions = array('*');
+	}
 
 	function index() {
 		$this->Timer->recursive = 0;

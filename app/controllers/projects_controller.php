@@ -5,16 +5,14 @@ class ProjectsController extends AppController {
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('index', 'view');
+	    $this->Auth->allowedActions = array('index', 'view','add','addTime');
 	}
 	
 	
 	function index() {
 		$this->Project->recursive = 0;
 		$this->set('projects', $this->paginate());
-		//foreach ($projects as $project){
-		//	$this->addTime($project['Project']['id']);	
-		//}
+
 	}
 
 	function view($id = null) {

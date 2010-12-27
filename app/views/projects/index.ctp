@@ -1,3 +1,5 @@
+<?php echo $this->Html->link(__('New Project', true), array('action' => 'add'),array('class'=>'button')); ?>
+<br /><br />
 <div class="projects index">
 	<h2><?php __('Projects');?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -53,9 +55,7 @@
 </div>
 <div class="bottomLinks">
 	<h3><?php __('Actions'); ?></h3><br />
-	<?php echo $this->Html->link(__('New Project', true), array('action' => 'add'),array('class'=>'button')); ?>
-	<?php echo $this->Html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index'),array('class'=>'button')); ?> 
-	<?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add'),array('class'=>'button')); ?> 
+
 	<?php echo $this->Html->link(__('List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('class'=>'button')); ?> 
 	<?php echo $this->Html->link(__('New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('class'=>'button')); ?> 
 </div>

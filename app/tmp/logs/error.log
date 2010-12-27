@@ -709,3 +709,19 @@ Aco: controllers/Users/build_acl in [/var/www/cake/cake/libs/controller/componen
 2010-12-27 14:59:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 85]
 2010-12-27 15:00:04 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
 2010-12-27 15:00:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 86]
+2010-12-27 16:10:12 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+        )
+
+)
+
+Aco: controllers/Users/publicAdd in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2010-12-27 16:11:08 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry 'testUser1' for key 'username'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]

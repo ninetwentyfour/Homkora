@@ -1210,3 +1210,4 @@
 2010-12-27 14:59:06 Notice: Notice (8): Undefined variable: data in [/var/www/cake/app/controllers/projects_controller.php, line 135]
 2010-12-27 15:00:04 Notice: Notice (8): Undefined index: Project in [/var/www/cake/app/controllers/projects_controller.php, line 81]
 2010-12-27 15:00:04 Notice: Notice (8): Undefined variable: data in [/var/www/cake/app/controllers/projects_controller.php, line 136]
+2010-12-27 16:22:31 Notice: Notice (8): Undefined variable: entity in [/var/www/cake/app/app_model.php, line 9]
