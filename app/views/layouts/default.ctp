@@ -34,7 +34,7 @@
 		<div style="clear:both;"></div>
 	</div>
 	<footer>
-		Footer info
+		Created by <a href="http://www.travisberry.com">Travis Berry</a>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<?php echo $this->Html->script('jquery.stopwatch'); ?>

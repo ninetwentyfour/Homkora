@@ -15,7 +15,7 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Save Timer', true,array('class'=>'button')));?>
 </div>
-<div class="bottonLinks">
+<div class="bottomLinks">
 	<h3><?php __('Actions'); ?></h3><br />
 	
 

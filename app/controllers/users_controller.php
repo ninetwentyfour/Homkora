@@ -5,7 +5,7 @@ class UsersController extends AppController {
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    //$this->Auth->allow(array('*'));
+	    $this->Auth->allow(array('*'));
 	}
 	
 	function login() {
