@@ -1,7 +1,8 @@
+<?php echo $html->link('Add Timer',array('controller'=>'timers', 'action'=>'add'),array('class'=>'button'));?>
 <div class="timers index">
 	<h2><?php __('Timers');?></h2>
 	<table cellpadding="0" cellspacing="0">
-	<tr>
+	<tr class="altrow">
 			
 			<th><?php echo $this->Paginator->sort('project_id');?></th>
 			<th><?php echo $this->Paginator->sort('title');?></th>
@@ -19,7 +20,7 @@
 			$class = ' class="altrow"';
 		}
 	?>
-	<tr<?php echo $class;?>>
+	<tr<?php echo $cycle->cycle('', ' class="altrow"');?>>
 		
 		<td>
 			<?php echo $this->Html->link($timer['Project']['title'], array('controller' => 'projects', 'action' => 'view', $timer['Project']['id'])); ?>
@@ -50,12 +51,10 @@
  |
 		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Timer', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Projects', true), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project', true), array('controller' => 'projects', 'action' => 'add')); ?> </li>
+</div><br />
+<div class="bottomLinks">
+	<h3>Actions</h3><br />
+	<?php echo $this->Html->link(__('List Projects', true), array('controller' => 'projects', 'action' => 'index'),array('class'=>'button')); ?> 
+	<?php echo $this->Html->link(__('New Project', true), array('controller' => 'projects', 'action' => 'add'),array('class'=>'button')); ?> 
 	</ul>
 </div>

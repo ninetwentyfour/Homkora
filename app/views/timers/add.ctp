@@ -6,19 +6,21 @@
  		
 	<?php
 		echo $this->Form->input('project_id');
+		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('title');
 		echo $this->Form->input('time', array('value' => '' , 'type' => 'hidden'));
+		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('description',array('type'=>'text'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Save Timer', true));?>
+<?php echo $this->Form->end(__('Save Timer', true,array('class'=>'button')));?>
 </div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
+<div class="bottonLinks">
+	<h3><?php __('Actions'); ?></h3><br />
+	
 
-		<li><?php echo $this->Html->link(__('List Timers', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Projects', true), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project', true), array('controller' => 'projects', 'action' => 'add')); ?> </li>
-	</ul>
+	<?php echo $this->Html->link(__('List Timers', true), array('action' => 'index'),array('class'=>'button'));?>
+	<?php echo $this->Html->link(__('List Projects', true), array('controller' => 'projects', 'action' => 'index'),array('class'=>'button')); ?> 
+	<?php echo $this->Html->link(__('New Project', true), array('controller' => 'projects', 'action' => 'add'),array('class'=>'button')); ?> 
+	
 </div>
