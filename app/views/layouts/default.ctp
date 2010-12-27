@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<h1>Oulomos</h1>
+		<h1>Homkora</h1>
 		<nav>
 			<ul>
 				<li><?php echo $html->link('Users',array('controller'=>'users', 'action'=>'index'));?></li>
@@ -31,9 +31,8 @@
 			?>
 			<div style="clear:both;"></div>
 		</div>
+		<div style="clear:both;"></div>
 	</div>
-	<div style="clear:both;"></div>
-	<div id="topPush"></div>
 	<footer>
 		Footer info
 	</footer>

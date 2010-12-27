@@ -119,6 +119,9 @@ a:hover{
 	padding-top: 50px;
     margin:auto;
 font-size:14px;
+
+
+
 }
 
 header{
@@ -131,16 +134,21 @@ header{
 	padding-left:10px;
 }
 #topPush{
-	height:100%;
+	 display: block;
+    min-height: 100%;
+    
 }
 footer{
     padding-top:10px;
 	height:30px;
-    color:#E54964 !important;
-    font-size:20px;
+    font-size:12px;
 	border-top:1px solid #444;
 	background-color:#000;
 	padding-left:10px;
+	position:fixed;
+	bottom:0;
+	width:100%;
+	
 }
 h1 a{
 	 color:#E54964 !important;
@@ -154,6 +162,8 @@ label{
     width:960px;
 
     min-height:500px;
+    
+
 }
 
 
