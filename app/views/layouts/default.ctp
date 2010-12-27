@@ -2,13 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Stopwatch</title>
+	<title>Oulomos | Time Tracking Made Simple</title>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/jquery.stopwatch.css" />
 	<?php echo $html->css('style'); ?>
 	<?php echo $html->css('jquery.stopwatch'); ?>
 </head>
 <body>
+	<header>
+		<h1>Oulomos</h1>
+	</header>
   	<div id="container">
 		<div id="content">
 			<?php 

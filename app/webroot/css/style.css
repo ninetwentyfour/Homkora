@@ -118,14 +118,17 @@ a:hover{
     width:960px;
 	padding-top: 50px;
     margin:auto;
+font-size:16px;
 }
 
-#header{
-    float:left;
+header{
     padding-top:10px;
+	height:30px;
     color:#E54964 !important;
     font-size:20px;
-    width:100%;
+	border-bottom:1px solid #444;
+	background-color:#000;
+	padding-left:10px;
 }
 h1 a{
 	 color:#E54964 !important;
@@ -273,8 +276,8 @@ input.validation-passed, textarea.validation-passed {
 	font-weight: bold;
 }
 .actions{
-	float:left;
-	width:100%;
+
+	width:135px;
 }
 .forms{
 	float:left;
@@ -306,6 +309,7 @@ thead{
 th{
 	padding:10px;
 	border-left: 1px solid #666;
+	color:#999;
 	
 }
 tr td {

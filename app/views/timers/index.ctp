@@ -2,7 +2,7 @@
 	<h2><?php __('Timers');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+			
 			<th><?php echo $this->Paginator->sort('project_id');?></th>
 			<th><?php echo $this->Paginator->sort('title');?></th>
 			<th><?php echo $this->Paginator->sort('time');?></th>
@@ -20,7 +20,7 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $timer['Timer']['id']; ?>&nbsp;</td>
+		
 		<td>
 			<?php echo $this->Html->link($timer['Project']['title'], array('controller' => 'projects', 'action' => 'view', $timer['Project']['id'])); ?>
 		</td>
@@ -30,8 +30,8 @@
 		<td><?php echo $timer['Timer']['created']; ?>&nbsp;</td>
 		<td><?php echo $timer['Timer']['modified']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $timer['Timer']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $timer['Timer']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $timer['Timer']['id'])); ?> | 
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $timer['Timer']['id'])); ?> | 
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $timer['Timer']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $timer['Timer']['id'])); ?>
 		</td>
 	</tr>
