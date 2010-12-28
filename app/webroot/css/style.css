@@ -275,7 +275,8 @@ border-width:1px;
 color:#FFFFFF;
 font-size:19px;
 padding:5px 15px;
-margin-left:339px;
+margin-top:10px;
+
 }
 .submit input:hover{
 	-moz-box-shadow:0 3px 10px #111111;
@@ -333,9 +334,15 @@ input.validation-passed, textarea.validation-passed {
 	float:left;
 	width:100%;
 }
-
+.timer-button{
+	margin-left:339px;
+}
 
 .input{
+	/*float:left;*/
+	margin-top:10px;
+}
+.timer-form div{
 	float:left;
 }
 table{
@@ -343,6 +350,13 @@ color:#141414;
 	margin-bottom:10px;
 	width:100%
 	
+}
+dt{
+	font-size:16px;
+	padding:5px 5px 5px 5px;
+}
+dd{
+	padding:0px 5px 5px 5px;
 }
 td{
 	padding:10px;
@@ -425,14 +439,17 @@ border-style:solid;
 }
 .bottomLinks {
     float:left;
+width:100%;
 }
 .related{
     float:left;
     margin-top:30px;
+width:100%;
 }
 #flashMessage{
     float:left;
     width:100%;
+margin-bottom:15px;
 }
 #home-page-blurb{
 	background:url("../img/dark-bg.png") repeat scroll 0 0 #111;

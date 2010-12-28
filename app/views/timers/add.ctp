@@ -1,5 +1,5 @@
 <div id="clock1"></div>
-<div class="timers form">
+<div class="timers form timer-form">
 <?php echo $this->Form->create('Timer',array('onsubmit'=>'return(checkForm(this));'));?>
 <!--<form name="approveVideo" onsubmit="return(checkForm(this));" id="approveVideo" action="add" method="post" enctype="multipart/form-data">-->
 	<fieldset>
@@ -14,7 +14,7 @@
 		echo $this->Form->input('description',array('type'=>'text'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Save Timer', true,array('class'=>'button')));?>
+<?php echo $this->Form->end(__('Save Timer', true,array('class'=>'button timer-button')));?>
 </div>
 <div class="bottomLinks">
 	<h3><?php __('Actions'); ?></h3><br />

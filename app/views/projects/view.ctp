@@ -1,16 +1,6 @@
 <div class="projects view">
 <h2><?php  __('Project');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $project['Project']['id']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('User'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($project['User']['id'], array('controller' => 'users', 'action' => 'view', $project['User']['id'])); ?>
-			&nbsp;
-		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $project['Project']['title']; ?>
@@ -66,13 +56,11 @@
 	<?php if (!empty($project['Timer'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Project Id'); ?></th>
+
 		<th><?php __('Title'); ?></th>
 		<th><?php __('Time'); ?></th>
 		<th><?php __('Description'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
+
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -84,13 +72,9 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $timer['id'];?></td>
-			<td><?php echo $timer['project_id'];?></td>
 			<td><?php echo $timer['title'];?></td>
 			<td><?php echo $timer['time'];?></td>
 			<td><?php echo $timer['description'];?></td>
-			<td><?php echo $timer['created'];?></td>
-			<td><?php echo $timer['modified'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'timers', 'action' => 'view', $timer['id'])); ?> | 
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'timers', 'action' => 'edit', $timer['id'])); ?> | 
