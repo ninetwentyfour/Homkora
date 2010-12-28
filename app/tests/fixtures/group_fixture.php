@@ -15,7 +15,7 @@ class GroupFixture extends CakeTestFixture {
 	var $records = array(
 		array(
 			'id' => 1,
-			'name' => 'Lorem ipsum dolor sit amet',
+			'name' => 'TestGroup',
 			'created' => '2010-12-26 17:08:34',
 			'modified' => '2010-12-26 17:08:34'
 		),

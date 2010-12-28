@@ -1,9 +1,9 @@
-<?php echo $this->Html->link(__('New Project', true), array('action' => 'add'),array('class'=>'button')); ?>
+<?php echo $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'));?>
 <br /><br />
 <div class="projects index">
 	<h2><?php __('Projects');?></h2>
 	<table cellpadding="0" cellspacing="0">
-	<tr>
+	<tr class="altrow">
 			<?php
 			if(isset($_SESSION['Auth']['User'])){
 				if($_SESSION['Auth']['User']['group_id']=='1'){
@@ -27,7 +27,7 @@
 			$class = ' class="altrow"';
 		}
 	?>
-	<tr<?php echo $class;?>>
+	<tr<?php echo $cycle->cycle('', ' class="altrow"');?>>
 		<?php
 		if(isset($_SESSION['Auth']['User'])){
 			if($_SESSION['Auth']['User']['group_id']=='1'){
@@ -42,9 +42,9 @@
 		<td><?php echo $project['Project']['description']; ?>&nbsp;</td>
 		<td><?php echo $project['Project']['total_time']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $project['Project']['id'])); ?> | 
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $project['Project']['id'])); ?> | 
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $project['Project']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $project['Project']['id'])); ?>
+			<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['id']),array( 'escape' => false,'class'=>'view-link' )); ?>
+			<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['id']),array( 'escape' => false,'class'=>'edit-link' )); ?>
+			<?php echo $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('Are you sure you want to delete # %s?', true), $project['Project']['id'] )); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -57,15 +57,15 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
-	 | 	<?php echo $this->Paginator->numbers();?>
- |
-		<?php echo $this->Paginator->next(__('next', true) . ' >', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->prev($html->image('icon_arrow_left.png', array('alt' => 'Previous','title'=>'Previous')) . __('', true), array(), null, array('escape' => false,'class'=>'disabled'));?>
+	  	<?php echo $this->Paginator->numbers();?>
+ 
+		<?php echo $this->Paginator->next(__('', true) . $html->image('icon_arrow_right.png', array('alt' => 'Next','title'=>'Next')), array(), null, array('escape' => false,'class' => 'disabled'));?>
 	</div>
 </div>
 <div class="bottomLinks">
 	<h3><?php __('Actions'); ?></h3><br />
 
-	<?php echo $this->Html->link(__('List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('class'=>'button')); ?> 
-	<?php echo $this->Html->link(__('New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('class'=>'button')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'List','title'=>'List')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
 </div>

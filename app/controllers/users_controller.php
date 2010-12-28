@@ -50,12 +50,21 @@ class UsersController extends AppController {
 	}
 	function publicAdd() {
 		if (!empty($this->data)) {
-			$this->User->create();
-			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('You can now login', true));
-				$this->redirect(array('action' => 'login'));
-			} else {
+			//check user name against db
+			$userExists = $this->User->findByUsername($this->data['User']['username']);
+			if($userExists['User']['username']==$this->data['User']['username']){
+				//if found and matches - dont save and alert user
 				$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
+			}else{
+				//no user found - save it
+				$this->User->create();
+				if ($this->User->save($this->data)) {
+					$this->Session->setFlash(__('You can now login', true));
+					$this->redirect(array('action' => 'login'));
+				} else {
+					//general problem saving to db
+					$this->Session->setFlash(__('There was a problem saving the user. Please, try again.', true));
+				}
 			}
 		}
 		$groups = $this->User->Group->find('list');

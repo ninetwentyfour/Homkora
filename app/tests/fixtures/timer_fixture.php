@@ -5,6 +5,7 @@ class TimerFixture extends CakeTestFixture {
 
 	var $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
+		'user_id' => array('type' => 'integer', 'null' => false, 'default' => NULL),
 		'project_id' => array('type' => 'integer', 'null' => false, 'default' => NULL),
 		'title' => array('type' => 'string', 'null' => false, 'default' => NULL),
 		'time' => array('type' => 'string', 'null' => false, 'default' => NULL),
@@ -19,9 +20,10 @@ class TimerFixture extends CakeTestFixture {
 		array(
 			'id' => 1,
 			'project_id' => 1,
-			'title' => 'Lorem ipsum dolor sit amet',
-			'time' => 'Lorem ipsum dolor sit amet',
-			'description' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'user_id' => 1,
+			'title' => 'TestTimer',
+			'time' => '00:07:13',
+			'description' => 'TestDescription',
 			'created' => '2010-12-26 17:08:34',
 			'modified' => '2010-12-26 17:08:34'
 		),

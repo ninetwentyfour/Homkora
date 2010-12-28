@@ -15,7 +15,7 @@
 	<h3><?php __('Actions'); ?></h3><br />
 
 
-	<?php echo $this->Html->link(__('List Projects', true), array('action' => 'index'),array('class'=>'button'));?>
-	<?php echo $this->Html->link(__('List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('class'=>'button')); ?> 
-	<?php echo $this->Html->link(__('New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('class'=>'button')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Projects', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_timer.png', array('alt' => 'View','title'=>'View')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
 </div>

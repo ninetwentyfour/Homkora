@@ -11,15 +11,11 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
+<div class="bottomLinks">
+	<h3><?php __('Actions'); ?></h3><br />
 
-		<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Project.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Project.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Projects', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Timers', true), array('controller' => 'timers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Timer', true), array('controller' => 'timers', 'action' => 'add')); ?> </li>
-	</ul>
+
+		
+		<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'Back', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+
 </div>

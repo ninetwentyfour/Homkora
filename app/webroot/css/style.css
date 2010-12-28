@@ -357,6 +357,7 @@ dt{
 }
 dd{
 	padding:0px 5px 5px 5px;
+	color:#999;
 }
 td{
 	padding:10px;
@@ -381,7 +382,7 @@ th{
 	
 }
 tr td {
-		
+		vertical-align: middle;
 		color:#eee;
 	
 	}
@@ -443,7 +444,7 @@ width:100%;
 }
 .related{
     float:left;
-    margin-top:30px;
+    margin-top:60px;
 width:100%;
 }
 #flashMessage{
@@ -473,26 +474,47 @@ margin-bottom:15px;
 	opacity: 0.6;
 }
 .view-link{
-	background-image:url("../img/icon_magnify_glass.png");
+
 	background-repeat:no-repeat;
 	height:30px;
 	width:30px;
 	display:block;
 	float:left;
-	margin-right:5px;
+	margin-right:10px;
 }
 .edit-link{
-	background-image:url("../img/icon_pencil.png");
+
 	height:30px;
 	width:30px;
 	display:block;
 	float:left;
-	margin-right:5px;
+	margin-right:10px;
 }
 .delete-link{
-	background-image:url("../img/icon_delete.png");
+
 	height:30px;
 	width:30px;
 	display:block;
 	float:left;
+}
+.counter-text{
+    font-size:10px;
+    color:#999;
+}
+.button img
+{
+vertical-align:text-bottom;
+}
+.addTimerIndex{
+    padding-top:15px;
+}
+.view-link img{
+
+vertical-align:middle;
+}
+.edit-link img{
+vertical-align:middle;
+}
+.delete-link img{
+vertical-align:middle;
 }

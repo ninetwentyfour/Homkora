@@ -25,8 +25,8 @@ margin-left:353px;
 	<h3><?php __('Actions'); ?></h3><br />
 	
 
-	<?php echo $this->Html->link(__('List Timers', true), array('action' => 'index'),array('class'=>'button'));?>
-	<?php echo $this->Html->link(__('List Projects', true), array('controller' => 'projects', 'action' => 'index'),array('class'=>'button')); ?> 
-	<?php echo $this->Html->link(__('New Project', true), array('controller' => 'projects', 'action' => 'add'),array('class'=>'button')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Timers', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Projects', true), array('controller' => 'projects', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+	<?php echo $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('controller'=>'projects','action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'));?>
 	
 </div>

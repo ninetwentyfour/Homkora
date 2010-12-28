@@ -10,8 +10,9 @@ class ProjectsController extends AppController {
 	
 	
 	function index() {
-		$this->Project->recursive = 0;
+		$projects = $this->Project->recursive = 0;
 		$this->set('projects', $this->paginate());
+		return $projects;
 
 	}
 
@@ -29,6 +30,8 @@ class ProjectsController extends AppController {
 			if ($this->Project->save($this->data)) {
 				$this->Session->setFlash(__('The project has been saved', true));
 				$this->redirect(array('action' => 'index'));
+				$saved = 'true';
+				return $saved;
 			} else {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.', true));
 			}

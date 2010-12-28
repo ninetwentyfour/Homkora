@@ -7,6 +7,7 @@ class ProjectFixture extends CakeTestFixture {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 		'user_id' => array('type' => 'integer', 'null' => false, 'default' => NULL),
 		'title' => array('type' => 'string', 'null' => false, 'default' => NULL),
+		'total_time' => array('type' => 'string', 'null' => false, 'default' => '00:00:00'),
 		'description' => array('type' => 'text', 'null' => true, 'default' => NULL),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
@@ -18,9 +19,10 @@ class ProjectFixture extends CakeTestFixture {
 		array(
 			'id' => 1,
 			'user_id' => 1,
-			'title' => 'Lorem ipsum dolor sit amet',
-			'description' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'title' => 'TestProject',
+			'description' => 'TestDescription',
 			'created' => '2010-12-26 17:08:34',
+			'total_time' => '00:07:13',
 			'modified' => '2010-12-26 17:08:34'
 		),
 	);
