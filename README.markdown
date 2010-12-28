@@ -22,6 +22,10 @@ Change database.php config file like [so][6].
 Todo:
 ======================== 
 
+Only show user projects and timers in add timer drop downs - only shows user data everywhere else
+
+Make timers editable starting with saved time
+
 Pretty much everything at this point.
 
 

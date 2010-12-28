@@ -9,8 +9,6 @@
 			<th><?php echo $this->Paginator->sort('title');?></th>
 			<th><?php echo $this->Paginator->sort('time');?></th>
 			<th><?php echo $this->Paginator->sort('description');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -29,8 +27,6 @@
 		<td><?php echo $timer['Timer']['title']; ?>&nbsp;</td>
 		<td><?php echo $timer['Timer']['time']; ?>&nbsp;</td>
 		<td><?php echo $timer['Timer']['description']; ?>&nbsp;</td>
-		<td><?php echo $timer['Timer']['created']; ?>&nbsp;</td>
-		<td><?php echo $timer['Timer']['modified']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $timer['Timer']['id'])); ?> | 
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $timer['Timer']['id'])); ?> | 

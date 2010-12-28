@@ -10,14 +10,12 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
+<br />
+<div class="bottomLinks">
+	<h3><?php __('Actions'); ?></h3><br />
 
-		<li><?php echo $this->Html->link(__('List Projects', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Timers', true), array('controller' => 'timers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Timer', true), array('controller' => 'timers', 'action' => 'add')); ?> </li>
-	</ul>
+
+	<?php echo $this->Html->link(__('List Projects', true), array('action' => 'index'),array('class'=>'button'));?>
+	<?php echo $this->Html->link(__('List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('class'=>'button')); ?> 
+	<?php echo $this->Html->link(__('New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('class'=>'button')); ?> 
 </div>
