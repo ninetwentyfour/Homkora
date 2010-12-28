@@ -472,3 +472,27 @@ margin-bottom:15px;
 	-khtml-opacity: 0.6;
 	opacity: 0.6;
 }
+.view-link{
+	background-image:url("../img/icon_magnify_glass.png");
+	background-repeat:no-repeat;
+	height:30px;
+	width:30px;
+	display:block;
+	float:left;
+	margin-right:5px;
+}
+.edit-link{
+	background-image:url("../img/icon_pencil.png");
+	height:30px;
+	width:30px;
+	display:block;
+	float:left;
+	margin-right:5px;
+}
+.delete-link{
+	background-image:url("../img/icon_delete.png");
+	height:30px;
+	width:30px;
+	display:block;
+	float:left;
+}

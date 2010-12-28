@@ -28,9 +28,9 @@
 		<td><?php echo $timer['Timer']['time']; ?>&nbsp;</td>
 		<td><?php echo $timer['Timer']['description']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $timer['Timer']['id'])); ?> | 
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $timer['Timer']['id'])); ?> | 
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $timer['Timer']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $timer['Timer']['id'])); ?>
+			<?php echo $this->Html->link(__('', true), array('action' => 'view', $timer['Timer']['id']),array('class'=>'view-link')); ?>
+			<?php echo $this->Html->link(__('', true), array('action' => 'edit', $timer['Timer']['id']),array('class'=>'edit-link')); ?>
+			<?php echo $this->Html->link(__('', true), array('action' => 'delete', $timer['Timer']['id']),array('class'=>'delete-link'), sprintf(__('Are you sure you want to delete # %s?', true), $timer['Timer']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
