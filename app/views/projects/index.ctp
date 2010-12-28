@@ -51,9 +51,9 @@
 	</table>
 	<p>
 	<?php
-	echo $this->Paginator->counter(array(
+	echo '<span class="counter-text">'.$this->Paginator->counter(array(
 	'format' => __('Page %page% of %pages%, showing %current% projects out of %count% total.', true)
-	));
+	)).'</span>';
 	?>	</p>
 
 	<div class="paging">
