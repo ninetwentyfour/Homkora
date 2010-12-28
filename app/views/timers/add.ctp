@@ -1,4 +1,9 @@
 <div id="clock1"></div>
+<style>
+.submit input {
+margin-left:353px;	
+}
+</style>
 <div class="timers form timer-form">
 <?php echo $this->Form->create('Timer',array('onsubmit'=>'return(checkForm(this));'));?>
 <!--<form name="approveVideo" onsubmit="return(checkForm(this));" id="approveVideo" action="add" method="post" enctype="multipart/form-data">-->
@@ -14,7 +19,7 @@
 		echo $this->Form->input('description',array('type'=>'text'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Save Timer', true,array('class'=>'button timer-button')));?>
+<?php echo $this->Form->end(__('Save Timer', true));?>
 </div>
 <div class="bottomLinks">
 	<h3><?php __('Actions'); ?></h3><br />
