@@ -56,11 +56,24 @@
 			}
 		}
 	</script>
+	
 	<script type="text/javascript">
 		//create the clock
 		$(function() {
 			$('#clock1').stopwatch();
 		});
+	</script>
+	<script>
+		//var w = $('div.timereditbullshit').text();
+		//if (w){
+		//		//document.getElementById("TimerTime").value = o;
+		//		//return true; //returns true if all validation passes
+		//		$('div.hr').html('01');
+		//		alert(w);
+		//	}else{
+		//		alert('Please Add Feedback before requesting a revision');
+		//		//return false;
+		//	}
 	</script>
 </body>
 </html>

@@ -31,7 +31,7 @@ class TimersController extends AppController {
 				$this->Session->setFlash(__('The timer could not be saved. Please, try again.', true));
 			}
 		}
-		$projects = $this->Timer->Project->find('list');
+		$projects = $this->Timer->Project->find('list', array('conditions' => array('Project.user_id' => $_SESSION['Auth']['User']['id'])));
 		$this->set(compact('projects'));
 	}
 
@@ -51,7 +51,7 @@ class TimersController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Timer->read(null, $id);
 		}
-		$projects = $this->Timer->Project->find('list');
+		$projects = $this->Timer->Project->find('list', array('conditions' => array('Project.user_id' => $_SESSION['Auth']['User']['id'])));
 		$this->set(compact('projects'));
 	}
 

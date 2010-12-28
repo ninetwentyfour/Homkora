@@ -5,7 +5,7 @@
 		
 		clock.addClass('stopwatch');
 		
-		// This is bit messy, but IE is a crybaby and must be coddled. 
+		// This is bit messy, but IE is a crybaby and must be coddled.
 		clock.html('<div id="display" class="display"><span class="hr">00</span>:<span class="min">00</span>:<span class="sec">00</span></div>');
 		clock.append('<input type="button" class="start" value="Start" />');
 		clock.append('<input type="button" class="stop" value="Pause" />');
@@ -43,6 +43,20 @@
 			stop.hide();
 			start.show();
 		});
+		var hourEdit = $('div.hour-edit').text();
+		var minEdit = $('div.min-edit').text();
+		var secEdit = $('div.sec-edit').text();
+		if (hourEdit){
+				//document.getElementById("TimerTime").value = o;
+				//return true; //returns true if all validation passes
+				h.html(hourEdit);
+				m.html(minEdit);
+				s.html(secEdit);
+				//alert(w);
+			}else{
+				//alert('Please Add Feedback before requesting a revision');
+				//return false;
+			}
 		
 		function do_time() {
 			// parseInt() doesn't work here...

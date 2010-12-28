@@ -518,3 +518,12 @@ vertical-align:middle;
 .delete-link img{
 vertical-align:middle;
 }
+.hour-edit{
+    display:none;
+}
+.min-edit{
+    display:none;
+}
+.sec-edit{
+    display:none;
+}
