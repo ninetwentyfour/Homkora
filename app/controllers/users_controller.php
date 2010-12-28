@@ -53,7 +53,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->data)) {
 				$this->Session->setFlash(__('You can now login', true));
-				$this->redirect(array('action' => 'publicAdd'));
+				$this->redirect(array('action' => 'login'));
 			} else {
 				$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
 			}
