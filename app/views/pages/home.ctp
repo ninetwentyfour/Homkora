@@ -3,7 +3,7 @@
 <h1 style="font-size:50px;margin-top:10px;margin-bottom:10px;">Homkora</h1>
 Homkora is a time tracking web app that aims to be simple. (Plus it's dark!)
 <br /><br />
-Beta coming soon.
+Beta access coming soon.
 </div>
 <div id="home-pic" style="float:right;width:500px;">
 	<img src="img/homecap.jpg" />
