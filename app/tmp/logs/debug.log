@@ -1263,3 +1263,7 @@
 2010-12-28 15:14:44 Notice: Notice (8): Undefined offset:  1 in [/home/ninetwentyfour/homkora.com/app/views/timers/edit.ctp, line 10]
 2010-12-28 15:14:44 Notice: Notice (8): Undefined offset:  2 in [/home/ninetwentyfour/homkora.com/app/views/timers/edit.ctp, line 11]
 2010-12-28 15:17:43 Notice: Notice (8): Undefined index:  Auth in [/home/ninetwentyfour/homkora.com/app/views/projects/add.ctp, line 6]
+2010-12-28 15:33:22 Notice: Notice (8): Undefined offset:  1 in [/home/ninetwentyfour/homkora.com/app/views/timers/edit.ctp, line 10]
+2010-12-28 15:33:22 Notice: Notice (8): Undefined offset:  2 in [/home/ninetwentyfour/homkora.com/app/views/timers/edit.ctp, line 11]
+2010-12-28 15:33:23 Notice: Notice (8): Undefined offset:  1 in [/home/ninetwentyfour/homkora.com/app/views/timers/edit.ctp, line 10]
+2010-12-28 15:33:23 Notice: Notice (8): Undefined offset:  2 in [/home/ninetwentyfour/homkora.com/app/views/timers/edit.ctp, line 11]

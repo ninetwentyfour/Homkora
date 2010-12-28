@@ -13,6 +13,7 @@
 		<h1><a href="http://homkora.com">Homkora</a></h1>
 		<nav>
 			<?php
+			// show different nav bars to different people
 			if(isset($_SESSION['Auth']['User'])){
 				if($_SESSION['Auth']['User']['group_id']=='1'){
 					echo $this->element('navigation');	
@@ -62,18 +63,6 @@
 		$(function() {
 			$('#clock1').stopwatch();
 		});
-	</script>
-	<script>
-		//var w = $('div.timereditbullshit').text();
-		//if (w){
-		//		//document.getElementById("TimerTime").value = o;
-		//		//return true; //returns true if all validation passes
-		//		$('div.hr').html('01');
-		//		alert(w);
-		//	}else{
-		//		alert('Please Add Feedback before requesting a revision');
-		//		//return false;
-		//	}
 	</script>
 </body>
 </html>

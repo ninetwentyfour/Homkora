@@ -43,6 +43,7 @@
 			stop.hide();
 			start.show();
 		});
+		//I added this block to set the time saved time for editiing a timers
 		var hourEdit = $('div.hour-edit').text();
 		var minEdit = $('div.min-edit').text();
 		var secEdit = $('div.sec-edit').text();

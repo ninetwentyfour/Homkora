@@ -4,12 +4,13 @@
 margin-left:353px;	
 }
 </style>
-		<?php
+	<?php
+		//this takes the saved time and explodes the value. write hour min sec to hidden divs for the timer jquery to find 
 		$pieces = explode(":", $this->Form->value('Timer.time'));
 		echo '<div class="hour-edit">'.$pieces[0].'</div>';
 		echo '<div class="min-edit">'.$pieces[1].'</div>';
 		echo '<div class="sec-edit">'.$pieces[2].'</div>';
-		?>
+	?>
 <div class="timers form timer-form">
 <?php echo $this->Form->create('Timer',array('onsubmit'=>'return(checkForm(this));'));?>
 	<fieldset>
@@ -19,7 +20,6 @@ margin-left:353px;
 		echo $this->Form->input('project_id');
 		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('title');
-		//echo $this->Form->input('time');
 		echo $this->Form->input('time', array('type' => 'hidden'));
 		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('description',array('type'=>'text'));
