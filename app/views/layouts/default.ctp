@@ -12,15 +12,18 @@
 	<header>
 		<h1>Homkora</h1>
 		<nav>
-			<ul>
-				<li><?php echo $html->link('Users',array('controller'=>'users', 'action'=>'index'));?></li>
-				<li><?php echo $html->link('Projects',array('controller'=>'projects', 'action'=>'index'));?></li>
-				<li><?php echo $html->link('Timers',array('controller'=>'timers', 'action'=>'index'));?></li>
-				<li><?php echo $html->link('Groups',array('controller'=>'groups', 'action'=>'index'));?></li>
-				<li><?php echo $html->link('Login',array('controller'=>'users', 'action'=>'login'));?></li>
-				<li><?php echo $html->link('Logout',array('controller'=>'users', 'action'=>'logout'));?></li>
-			</ul>
-		</nav,>
+			<?php
+			if(isset($_SESSION['Auth']['User'])){
+				if($_SESSION['Auth']['User']['group_id']=='1'){
+					echo $this->element('navigation');	
+				}else{
+					echo $this->element('navigation_no_user');	
+				}
+			}else{
+				echo $this->element('navigation_no_user');
+			}
+			?>
+		</nav>
 	</header>
   	<div id="container">
 		<div id="content">
