@@ -10,14 +10,14 @@
 </head>
 <body>
 	<header>
-		<h1>Homkora</h1>
+		<h1><a href="http://homkora.com">Homkora</a></h1>
 		<nav>
 			<?php
 			if(isset($_SESSION['Auth']['User'])){
 				if($_SESSION['Auth']['User']['group_id']=='1'){
 					echo $this->element('navigation');	
 				}else{
-					echo $this->element('navigation_no_user');	
+					echo $this->element('navigation_user');	
 				}
 			}else{
 				echo $this->element('navigation_no_user');
@@ -36,7 +36,7 @@
 		</div>
 		<div style="clear:both;"></div>
 	</div>
-	<footer>
+	<footer class="transparent_class">
 		Created by <a href="http://www.travisberry.com">Travis Berry</a>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>

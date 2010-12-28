@@ -122,7 +122,7 @@ a:hover{
 	padding-top: 50px;
     margin:auto;
 font-size:14px;
-
+padding-bottom:60px;
 
 
 }
@@ -448,4 +448,10 @@ border-style:solid;
 }
 #home-pic{
 	border: 1px solid #444;
+}
+.transparent_class {
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
 }
