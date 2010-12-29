@@ -30,7 +30,7 @@ FAQ About Privacy Contact and Instruction pages
 
 Add page for users to modify password and account details
 
-Add email to User table - DONE
+<del>Add email to User table</del>
 
 Confirm user account with email
 
