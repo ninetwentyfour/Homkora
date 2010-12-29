@@ -26,6 +26,18 @@ Only show user projects and timers in add timer drop downs - only shows user dat
 
 Make timers editable starting with saved time - DONE
 
+FAQ About Privacy Contact and Instruction pages
+
+Add email to User table
+
+Confirm user account with email
+
+Generate graphs of time records
+
+Premium accounts
+
+Export data as a csv
+
 Pretty much everything at this point.
 
 
