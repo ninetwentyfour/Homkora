@@ -1,6 +1,7 @@
 <?php
 class Widget extends AppModel {
 	var $name = 'Widget';
+var $actsAs = array("Logable");
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(

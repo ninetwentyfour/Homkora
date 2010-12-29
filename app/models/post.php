@@ -1,6 +1,7 @@
 <?php
 class Post extends AppModel {
 	var $name = 'Post';
+	var $actsAs = array("Logable");
 	var $validate = array(
 		'user_id' => array(
 			'numeric' => array(

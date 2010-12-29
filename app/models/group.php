@@ -30,7 +30,7 @@ class Group extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-	var $actsAs = array('Acl' => array('type' => 'requester'));
+	var $actsAs = array('Acl' => array('type' => 'requester'),"Logable");
 
 	function parentNode() {
 	    return null;
