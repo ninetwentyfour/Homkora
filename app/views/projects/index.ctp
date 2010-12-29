@@ -67,5 +67,6 @@
 	<h3><?php __('Actions'); ?></h3><br />
 
 	<?php echo $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'List','title'=>'List')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
-	<?php echo $this->Html->link(__($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?> 
+	<?php echo $this->Html->link(__($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?>
+	<?php echo $html->link($html->image('icon_download.png').'Export Projects to CSV', array('controller'=>'projects','action'=>'exportcsvProjects'),array( 'escape' => false,'class'=>'button addTimerIndex' )); ?>
 </div>

@@ -2,6 +2,7 @@
 class ProjectsController extends AppController {
 
 	var $name = 'Projects';
+	var $components = array('Random');
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
@@ -141,6 +142,67 @@ class ProjectsController extends AppController {
 		}
 		$this->redirect(array('action' => 'view',$this->data['Project']['id']));
 
+	}
+	
+	function exportcsvProjects(){
+	    $value = $this->Project->find('all', array('fields' => array('title','description','created','modified', 'total_time'),'conditions' => array('Project.user_id = '.$_SESSION['Auth']['User']['id'])));
+	    $randStrg = $this->Random->randomString();
+	    $file =  WWW_ROOT . '/csv_export/All_Projects_Export_'.$randStrg.'.csv';
+	    for ($i = 0; $i < count($value); $i++) {
+		$tempStr = $value[$i]['Project']['title'] . ',' . $value[$i]['Project']['description'] .',' . $value[$i]['Project']['total_time'] . ',' .$value[$i]['Project']['created'] .',' .$value[$i]['Project']['modified'] ;
+		$finalStrArr[$i] = $tempStr;
+		//counts through the array and creates an array for each order with comma serperated order information
+	    }
+	    $fp = fopen($file, 'w') or die("can't open file");//create the csv file and tell it we are writing to it
+	    foreach ($finalStrArr as $line) {
+		fputcsv($fp, split(',', $line));//foreach array split csv and put in csv file
+	    }
+	    fclose($fp);
+	    if (file_exists($file)) {//prompts for .csv download. After download deletes the file.
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename='.basename($file));
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($file));
+		ob_clean();
+		flush();
+		readfile($file);
+		unlink($file);
+		exit;
+	    }
+	}
+	function exportcsvTimers($id = null){
+	    $value = $this->Project->Timer->find('all', array('fields' => array('title','description','created','modified', 'time'),'conditions' => array('Timer.project_id = '.$id)));
+	    $randStrg = $this->Random->randomString();
+	    $file =  WWW_ROOT . '/csv_export/Timers_For_Project_'.$id.'_'.$randStrg.'.csv';
+	    for ($i = 0; $i < count($value); $i++) {
+		$tempStr = $value[$i]['Timer']['title'] . ',' . $value[$i]['Timer']['description'] .',' . $value[$i]['Timer']['time'] . ',' .$value[$i]['Timer']['created'] .',' .$value[$i]['Timer']['modified'] ;
+		$finalStrArr[$i] = $tempStr;
+		//counts through the array and creates an array for each order with comma serperated order information
+	    }
+	    $fp = fopen($file, 'w') or die("can't open file");//create the csv file and tell it we are writing to it
+	    foreach ($finalStrArr as $line) {
+		fputcsv($fp, split(',', $line));//foreach array split csv and put in csv file
+	    }
+	    fclose($fp);
+	    if (file_exists($file)) {//prompts for .csv download. After download deletes the file.
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename='.basename($file));
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($file));
+		ob_clean();
+		flush();
+		readfile($file);
+		unlink($file);
+		exit;
+	    }
 	}
 }
 ?>

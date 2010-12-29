@@ -38,6 +38,8 @@ Generate graphs of time records
 
 Premium accounts
 
+Improved event logging
+
 Export data as a csv
 
 Pretty much everything at this point.

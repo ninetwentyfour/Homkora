@@ -82,6 +82,8 @@
 		</tr>
 	<?php endforeach; ?>
 	</table>
+	<br />
+	<?php echo $html->link($html->image('icon_download.png').'Export Timers to CSV', array('controller'=>'projects','action'=>'exportcsvTimers',$project['Project']['id']),array( 'escape' => false,'class'=>'button addTimerIndex' )); ?>
 <?php endif; ?>
 
 	

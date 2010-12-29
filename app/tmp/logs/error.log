@@ -734,3 +734,45 @@ Aco: controllers/Users/publicAdd in [/var/www/cake/cake/libs/controller/componen
 2010-12-28 11:24:48 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'User.user_name' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
 2010-12-28 11:25:41 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry 'usertest' for key 'username'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
 2010-12-28 11:27:42 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry 'usertest' for key 'username'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 10:34:22 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+        )
+
+)
+
+Aco: controllers/Projects/exportcsv in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 273]
+2010-12-29 10:59:22 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+        )
+
+)
+
+Aco: controllers/Projects/exportcsvTimers in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 273]
+2010-12-29 10:59:44 Warning: Warning (2): Invalid argument supplied for foreach() in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 187]
+2010-12-29 11:00:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 187]
+2010-12-29 11:01:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 187]
+2010-12-29 11:11:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 162]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 163]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 164]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 165]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 166]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 167]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 168]
+2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 169]
