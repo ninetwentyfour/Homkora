@@ -38,7 +38,7 @@ Generate graphs of time records
 
 Premium accounts
 
-Improved event logging
+<del>Improved event logging</del>
 
 Export data as a csv
 
