@@ -22,13 +22,15 @@ Change database.php config file like [so][6].
 Todo:
 ======================== 
 
-Only show user projects and timers in add timer drop downs - only shows user data everywhere else - DONE
+<del>Only show user projects and timers in add timer drop downs - only shows user data everywhere else</del>
 
-Make timers editable starting with saved time - DONE
+<del>Make timers editable starting with saved time</del>
 
 FAQ About Privacy Contact and Instruction pages
 
-Add email to User table
+Add page for users to modify password and account details
+
+Add email to User table - DONE
 
 Confirm user account with email
 
