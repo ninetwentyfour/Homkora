@@ -32,7 +32,7 @@ Add page for users to modify password and account details
 
 <del>Add email to User table</del>
 
-Confirm user account with email
+<del>Confirm user account with email</del>
 
 Generate graphs of time records
 
@@ -40,9 +40,9 @@ Premium accounts
 
 <del>Improved event logging</del>
 
-Export data as a csv
+<del>Export data as a csv</del>
 
-Pretty much everything at this point.
+<del>Pretty much everything at this point.</del>
 
 
 Disclaimer:
