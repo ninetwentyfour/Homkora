@@ -4,7 +4,7 @@
 #
 # Host: mysql.travisberry.com (MySQL 5.1.39-log)
 # Database: homkora
-# Generation Time: 2010-12-29 13:06:22 -0700
+# Generation Time: 2010-12-29 15:41:36 -0700
 # ************************************************************
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -31,13 +31,13 @@ CREATE TABLE `acos` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `acos` WRITE;
 /*!40000 ALTER TABLE `acos` DISABLE KEYS */;
 INSERT INTO `acos` (`id`,`parent_id`,`model`,`foreign_key`,`alias`,`lft`,`rght`)
 VALUES
-	(1,NULL,NULL,NULL,'controllers',1,102),
+	(1,NULL,NULL,NULL,'controllers',1,104),
 	(2,1,NULL,NULL,'Pages',2,15),
 	(3,2,NULL,NULL,'display',3,4),
 	(4,2,NULL,NULL,'add',5,6),
@@ -45,7 +45,7 @@ VALUES
 	(6,2,NULL,NULL,'index',9,10),
 	(7,2,NULL,NULL,'view',11,12),
 	(8,2,NULL,NULL,'delete',13,14),
-	(9,1,NULL,NULL,'Users',16,33),
+	(9,1,NULL,NULL,'Users',16,35),
 	(10,9,NULL,NULL,'login',17,18),
 	(11,9,NULL,NULL,'logout',19,20),
 	(12,9,NULL,NULL,'index',21,22),
@@ -53,41 +53,42 @@ VALUES
 	(14,9,NULL,NULL,'add',25,26),
 	(15,9,NULL,NULL,'edit',27,28),
 	(16,9,NULL,NULL,'delete',29,30),
-	(17,1,NULL,NULL,'Projects',34,53),
-	(18,17,NULL,NULL,'index',35,36),
-	(19,17,NULL,NULL,'view',37,38),
-	(20,17,NULL,NULL,'add',39,40),
-	(21,17,NULL,NULL,'edit',41,42),
-	(22,17,NULL,NULL,'delete',43,44),
-	(23,1,NULL,NULL,'Timers',54,65),
-	(24,23,NULL,NULL,'index',55,56),
-	(25,23,NULL,NULL,'view',57,58),
-	(26,23,NULL,NULL,'add',59,60),
-	(27,23,NULL,NULL,'edit',61,62),
-	(28,23,NULL,NULL,'delete',63,64),
-	(29,1,NULL,NULL,'Widgets',66,77),
-	(30,29,NULL,NULL,'index',67,68),
-	(31,29,NULL,NULL,'view',69,70),
-	(32,29,NULL,NULL,'add',71,72),
-	(33,29,NULL,NULL,'edit',73,74),
-	(34,29,NULL,NULL,'delete',75,76),
-	(35,1,NULL,NULL,'Groups',78,89),
-	(36,35,NULL,NULL,'index',79,80),
-	(37,35,NULL,NULL,'view',81,82),
-	(38,35,NULL,NULL,'add',83,84),
-	(39,35,NULL,NULL,'edit',85,86),
-	(40,35,NULL,NULL,'delete',87,88),
-	(41,1,NULL,NULL,'Posts',90,101),
-	(42,41,NULL,NULL,'index',91,92),
-	(43,41,NULL,NULL,'view',93,94),
-	(44,41,NULL,NULL,'add',95,96),
-	(45,41,NULL,NULL,'edit',97,98),
-	(46,41,NULL,NULL,'delete',99,100),
-	(47,17,NULL,NULL,'addTime',45,46),
+	(17,1,NULL,NULL,'Projects',36,55),
+	(18,17,NULL,NULL,'index',37,38),
+	(19,17,NULL,NULL,'view',39,40),
+	(20,17,NULL,NULL,'add',41,42),
+	(21,17,NULL,NULL,'edit',43,44),
+	(22,17,NULL,NULL,'delete',45,46),
+	(23,1,NULL,NULL,'Timers',56,67),
+	(24,23,NULL,NULL,'index',57,58),
+	(25,23,NULL,NULL,'view',59,60),
+	(26,23,NULL,NULL,'add',61,62),
+	(27,23,NULL,NULL,'edit',63,64),
+	(28,23,NULL,NULL,'delete',65,66),
+	(29,1,NULL,NULL,'Widgets',68,79),
+	(30,29,NULL,NULL,'index',69,70),
+	(31,29,NULL,NULL,'view',71,72),
+	(32,29,NULL,NULL,'add',73,74),
+	(33,29,NULL,NULL,'edit',75,76),
+	(34,29,NULL,NULL,'delete',77,78),
+	(35,1,NULL,NULL,'Groups',80,91),
+	(36,35,NULL,NULL,'index',81,82),
+	(37,35,NULL,NULL,'view',83,84),
+	(38,35,NULL,NULL,'add',85,86),
+	(39,35,NULL,NULL,'edit',87,88),
+	(40,35,NULL,NULL,'delete',89,90),
+	(41,1,NULL,NULL,'Posts',92,103),
+	(42,41,NULL,NULL,'index',93,94),
+	(43,41,NULL,NULL,'view',95,96),
+	(44,41,NULL,NULL,'add',97,98),
+	(45,41,NULL,NULL,'edit',99,100),
+	(46,41,NULL,NULL,'delete',101,102),
+	(47,17,NULL,NULL,'addTime',47,48),
 	(48,9,NULL,NULL,'publicAdd',31,32),
-	(49,17,NULL,NULL,'exportcsv',47,48),
-	(50,17,NULL,NULL,'exportcsvProjects',49,50),
-	(51,17,NULL,NULL,'exportcsvTimers',51,52);
+	(49,17,NULL,NULL,'exportcsv',49,50),
+	(50,17,NULL,NULL,'exportcsvProjects',51,52),
+	(51,17,NULL,NULL,'exportcsvTimers',53,54),
+	(52,9,NULL,NULL,'activate',33,34);
 
 /*!40000 ALTER TABLE `acos` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -107,7 +108,7 @@ CREATE TABLE `aros` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `aros` WRITE;
 /*!40000 ALTER TABLE `aros` DISABLE KEYS */;
@@ -115,14 +116,24 @@ INSERT INTO `aros` (`id`,`parent_id`,`model`,`foreign_key`,`alias`,`lft`,`rght`)
 VALUES
 	(1,NULL,'Group',1,NULL,1,4),
 	(2,NULL,'Group',2,NULL,5,8),
-	(3,NULL,'Group',3,NULL,9,20),
+	(3,NULL,'Group',3,NULL,9,40),
 	(4,1,'User',1,NULL,2,3),
 	(5,2,'User',2,NULL,6,7),
 	(6,3,'User',3,NULL,10,11),
 	(7,3,'User',4,NULL,12,13),
 	(8,3,'User',5,NULL,14,15),
 	(9,3,'User',6,NULL,16,17),
-	(10,3,'User',7,NULL,18,19);
+	(10,3,'User',7,NULL,18,19),
+	(11,3,'User',8,NULL,20,21),
+	(12,3,'User',9,NULL,22,23),
+	(13,3,'User',10,NULL,24,25),
+	(14,3,'User',11,NULL,26,27),
+	(15,3,'User',12,NULL,28,29),
+	(16,3,'User',13,NULL,30,31),
+	(17,3,'User',14,NULL,32,33),
+	(18,3,'User',15,NULL,34,35),
+	(19,3,'User',16,NULL,36,37),
+	(20,3,'User',17,NULL,38,39);
 
 /*!40000 ALTER TABLE `aros` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -204,7 +215,7 @@ CREATE TABLE `logs` (
   `description` varchar(5000) DEFAULT NULL,
   `change` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `logs` WRITE;
 /*!40000 ALTER TABLE `logs` DISABLE KEYS */;
@@ -212,7 +223,21 @@ INSERT INTO `logs` (`id`,`title`,`created`,`modified`,`user_id`,`action`,`model`
 VALUES
 	(1,'Log Test Project','2010-12-29 11:49:35','2010-12-29 11:49:35',NULL,'add','Project','Project \"Log Test Project\" (102) added by System.','total_time () => (00:00:00), user_id () => (1), title () => (Log Test Project), description () => (test), created () => (2010-12-29 11:49:35)'),
 	(2,'LogTest 2','2010-12-29 11:51:19','2010-12-29 11:51:19',1,'add','Project','Project \"LogTest 2\" (103) added by User \"1\" (1).','total_time () => (00:00:00), user_id () => (1), title () => (LogTest 2), description () => (Test), created () => (2010-12-29 11:51:19)'),
-	(3,'log test','2010-12-29 12:06:04','2010-12-29 12:06:04',1,'add','Timer','Timer \"log test\" (14) added by User \"1\" (1).','project_id () => (1), title () => (log test), time () => (00:00:06), user_id () => (1), description () => (log test), created () => (2010-12-29 12:06:04)');
+	(3,'log test','2010-12-29 12:06:04','2010-12-29 12:06:04',1,'add','Timer','Timer \"log test\" (14) added by User \"1\" (1).','project_id () => (1), title () => (log test), time () => (00:00:06), user_id () => (1), description () => (log test), created () => (2010-12-29 12:06:04)'),
+	(4,'User (8)','2010-12-29 13:47:14','2010-12-29 13:47:14',1,'add','User','User (8) added by User \"1\" (1).','active () => (0), email () => (test@gmail.com), username () => (testuser), password () => (fdda8c1a9101ebfa6139f89ff92484a90811076f), group_id () => (3), created () => (2010-12-29 13:47:14)'),
+	(5,'User (9)','2010-12-29 14:11:07','2010-12-29 14:11:07',NULL,'add','User','User (9) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test3), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:11:07)'),
+	(6,'User (10)','2010-12-29 14:12:41','2010-12-29 14:12:41',NULL,'add','User','User (10) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test4), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:12:41)'),
+	(7,'User (11)','2010-12-29 14:23:09','2010-12-29 14:23:09',NULL,'add','User','User (11) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test5), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:23:09)'),
+	(8,'User (12)','2010-12-29 14:26:04','2010-12-29 14:26:04',NULL,'add','User','User (12) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test6), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:26:04)'),
+	(9,'User (13)','2010-12-29 14:29:21','2010-12-29 14:29:21',NULL,'add','User','User (13) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test5), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:29:21)'),
+	(10,'User (14)','2010-12-29 14:30:15','2010-12-29 14:30:15',NULL,'add','User','User (14) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test6), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:30:15)'),
+	(11,'User (14)','2010-12-29 14:30:33','2010-12-29 14:30:33',NULL,'edit','User','User (14) updated by System.','active (0) => (1)'),
+	(12,'User (15)','2010-12-29 14:31:32','2010-12-29 14:31:32',NULL,'add','User','User (15) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test7), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:31:32)'),
+	(13,'User (15)','2010-12-29 14:32:24','2010-12-29 14:32:24',15,'edit','User','User (15) updated by User \"15\" (15).','active (0) => (1)'),
+	(14,'User (16)','2010-12-29 14:37:47','2010-12-29 14:37:47',NULL,'add','User','User (16) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test8), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:37:47)'),
+	(15,'User (16)','2010-12-29 14:37:57','2010-12-29 14:37:57',NULL,'edit','User','User (16) updated by System.','active (0) => (1)'),
+	(16,'User (17)','2010-12-29 14:38:33','2010-12-29 14:38:33',NULL,'add','User','User (17) added by System.','active () => (0), email () => (tberry@biemedia.com), username () => (test9), password () => (94761cde188ee84b7112b36df5e768b791e422f1), group_id () => (3), created () => (2010-12-29 14:38:33)'),
+	(17,'User (17)','2010-12-29 14:38:48','2010-12-29 14:38:48',17,'edit','User','User (17) updated by User \"17\" (17).','active (0) => (1)');
 
 /*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -320,22 +345,31 @@ CREATE TABLE `users` (
   `group_id` int(11) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  `email_address` varchar(500) DEFAULT NULL,
+  `email` varchar(500) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`,`username`,`password`,`group_id`,`created`,`modified`,`email_address`)
+INSERT INTO `users` (`id`,`username`,`password`,`group_id`,`created`,`modified`,`email`,`active`)
 VALUES
-	(1,'Travis Berry','a24810a24c3f23d3546aaa678ad0d9ee52ad0241',1,'2010-12-26 17:29:53','2010-12-26 17:29:53',NULL),
-	(2,'test1','94761cde188ee84b7112b36df5e768b791e422f1',2,'2010-12-26 17:30:06','2010-12-26 17:30:06',NULL),
-	(3,'test2','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-26 17:30:14','2010-12-26 17:30:14',NULL),
-	(4,'testUser1','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-27 16:10:42','2010-12-27 16:10:42',NULL),
-	(5,'usertest','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-27 19:21:42','2010-12-27 19:21:42',NULL),
-	(6,'newuser2','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-27 19:23:21','2010-12-27 19:23:21',NULL),
-	(7,'usertest345345','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-28 11:30:09','2010-12-28 11:30:09',NULL);
+	(1,'Travis Berry','a24810a24c3f23d3546aaa678ad0d9ee52ad0241',1,'2010-12-26 17:29:53','2010-12-26 17:29:53','contact@travisberry.com',1),
+	(2,'test1','94761cde188ee84b7112b36df5e768b791e422f1',2,'2010-12-26 17:30:06','2010-12-26 17:30:06',NULL,1),
+	(3,'test2','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-26 17:30:14','2010-12-26 17:30:14',NULL,1),
+	(4,'testUser1','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-27 16:10:42','2010-12-27 16:10:42',NULL,1),
+	(5,'usertest','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-27 19:21:42','2010-12-27 19:21:42',NULL,1),
+	(6,'newuser2','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-27 19:23:21','2010-12-27 19:23:21',NULL,1),
+	(7,'usertest345345','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-28 11:30:09','2010-12-28 11:30:09',NULL,1),
+	(8,'testuser','fdda8c1a9101ebfa6139f89ff92484a90811076f',3,'2010-12-29 13:47:14','2010-12-29 13:47:14','test@gmail.com',0),
+	(9,'test3','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:11:07','2010-12-29 14:11:07','tberry@biemedia.com',0),
+	(10,'test4','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:12:41','2010-12-29 14:12:41','tberry@biemedia.com',0),
+	(14,'test6','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:30:15','2010-12-29 14:30:33','tberry@biemedia.com',1),
+	(13,'test5','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:29:21','2010-12-29 14:29:21','tberry@biemedia.com',0),
+	(15,'test7','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:31:32','2010-12-29 14:32:24','tberry@biemedia.com',1),
+	(16,'test8','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:37:47','2010-12-29 14:37:57','tberry@biemedia.com',1),
+	(17,'test9','94761cde188ee84b7112b36df5e768b791e422f1',3,'2010-12-29 14:38:33','2010-12-29 14:38:48','tberry@biemedia.com',1);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

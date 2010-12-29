@@ -4,15 +4,35 @@ class UsersController extends AppController {
 	var $name = 'Users';
 	
 	function beforeFilter() {
-	    parent::beforeFilter(); 
+	    parent::beforeFilter();
+	    $this->Auth->autoRedirect = false;
 	    $this->Auth->allow(array('*'));
 	}
 	
 	function login() {
-		if ($this->Session->read('Auth.User')) {
-			$this->Session->setFlash('You are logged in!');
-			$this->redirect('/', null, false);
-		}
+		//if ($this->Session->read('Auth.User')) {
+		//	$this->Session->setFlash('You are logged in!');
+		//	$this->redirect('/', null, false);
+		//}
+		
+		if ($this->data) {
+                        // Use the AuthComponent’s login action
+                        if ($this->Auth->login($this->data)) {
+                                // Retrieve user data
+                                $results = $this->User->find('first', array('conditions' => array('User.username' => $this->data['User']['username'])));
+                                // Check to see if the User’s account isn’t active
+                                if ($results['User']['active'] == 0) {
+					// Uh Oh!
+					$this->Session->setFlash('Your account has not been activated yet!');
+					//$this->Auth->logout();
+					$this->redirect('/users/login');
+				}
+                                // Cool, user is active, redirect post login
+                                else {
+                                        $this->redirect('/projects/index');
+                                }
+                        }
+                }
 	}
 
 	function logout() {
@@ -59,7 +79,8 @@ class UsersController extends AppController {
 				//no user found - save it
 				$this->User->create();
 				if ($this->User->save($this->data)) {
-					$this->Session->setFlash(__('You can now login', true));
+					$this->__sendActivationEmail($this->User->id);
+					$this->Session->setFlash(__('Check your email for account verification.', true));
 					$this->redirect(array('action' => 'login'));
 				} else {
 					//general problem saving to db
@@ -296,6 +317,52 @@ class UsersController extends AppController {
 			}
 			return $arr;
 		}
+		
+	/**
+         * Send out an activation email to the user.id specified by $user_id
+         *  @param Int $user_id User to send activation email to
+         *  @return Boolean indicates success
+        */
+        function __sendActivationEmail($user_id) {
+                $user = $this->User->find(array('User.id' => $user_id), array('User.email', 'User.username'), null, false);
+                if (empty($user)) {
+			echo 'WOAH';
+                        debug(__METHOD__." failed to retrieve User data for user.id: {$user_id}");
+                        return false;
+                }
+
+                // Set data for the "view" of the Email
+                $this->set('activate_url', 'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash());
+                $this->set('username', $this->data['User']['username']);
+               
+                $this->Email->to = $user['User']['email'];
+                $this->Email->subject = env('SERVER_NAME') . ' – Please confirm your email address';
+                $this->Email->from = 'noreply@' . env('SERVER_NAME');
+                $this->Email->template = 'user_confirm';
+                $this->Email->sendAs = 'text';   // you probably want to use both :)   
+                return $this->Email->send();
+        }
+	
+	/**
+	* Activates a user account from an incoming link
+	*
+	*  @param Int $user_id User.id to activate
+	*  @param String $in_hash Incoming Activation Hash from the email
+	*/
+	function activate($user_id = null, $in_hash = null) {
+	        $this->User->id = $user_id;
+	        if ($this->User->exists() && ($in_hash == $this->User->getActivationHash()))
+	        {
+	                // Update the active flag in the database
+	                $this->User->saveField('active', 1);
+               
+	                // Let the user know they can now log in!
+	                $this->Session->setFlash('Your account has been activated, please log in below');
+	                $this->redirect('login');
+	        }
+       
+	        // Activation failed, render ‘/views/user/activate.ctp’ which should tell the user.
+	}
 		
 
 		

@@ -88,6 +88,7 @@ class User extends AppModel {
 	);
 	
 	var $actsAs = array('Acl' => array('type' => 'requester'),"Logable");
+	
 	function parentNode() {
 	    if (!$this->id && empty($this->data)) {
 	        return null;
@@ -103,9 +104,18 @@ class User extends AppModel {
 	        return array('Group' => array('id' => $groupId));
 	    }
 	}
+	
 	function bindNode($user) {
 	    return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
 	}
+	
+	function getActivationHash()
+        {
+                if (!isset($this->id)) {
+                        return false;
+                }
+                return substr(Security::hash(Configure::read('Security.salt') . $this->field('created') . date('Ymd')), 0, 8);
+        }
 	
 
 }

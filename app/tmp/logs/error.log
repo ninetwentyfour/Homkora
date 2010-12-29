@@ -776,3 +776,37 @@ Aco: controllers/Projects/exportcsvTimers in [/home/ninetwentyfour/homkora.com/c
 2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 167]
 2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 168]
 2010-12-29 11:11:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/app/controllers/projects_controller.php, line 169]
+2010-12-29 14:06:37 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:07:12 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:07:37 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:08:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:08:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:09:50 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:10:31 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:11:08 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ninetwentyfour/homkora.com/cake/libs/debugger.php:673) in [/home/ninetwentyfour/homkora.com/cake/libs/controller/controller.php, line 746]
+2010-12-29 14:14:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test4' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:14:58 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test4' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:15:08 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 10
+            [username] => test4
+            [group_id] => 3
+            [created] => 2010-12-29 14:12:41
+            [modified] => 2010-12-29 14:12:41
+            [email] => tberry@biemedia.com
+            [active] => 0
+        )
+
+)
+
+Aco: controllers/Users/activate in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 273]
+2010-12-29 14:15:34 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Berry' at line 1</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:30:44 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test6' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:31:42 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:32:12 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:32:31 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:33:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 14:34:51 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
