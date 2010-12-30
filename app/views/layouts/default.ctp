@@ -38,7 +38,7 @@
 		<div style="clear:both;"></div>
 	</div>
 	<footer class="transparent_class">
-		Created by <a href="http://www.travisberry.com">Travis Berry</a>
+		Created by <a href="http://www.travisberry.com">Travis Berry</a><a href="#" class="button"></a>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<?php echo $this->Html->script('jquery.stopwatch'); ?>
@@ -64,5 +64,6 @@
 			$('#clock1').stopwatch();
 		});
 	</script>
+	
 </body>
 </html>
