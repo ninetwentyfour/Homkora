@@ -1289,3 +1289,5 @@
 2010-12-29 14:16:11 Notice: Notice (8): Undefined variable: id in [/home/ninetwentyfour/homkora.com/app/controllers/users_controller.php, line 354]
 2010-12-29 14:23:09 Notice: Notice (8): Undefined index:  id in [/home/ninetwentyfour/homkora.com/app/controllers/users_controller.php, line 336]
 2010-12-29 14:26:04 Notice: Notice (8): Undefined index:  id in [/home/ninetwentyfour/homkora.com/app/controllers/users_controller.php, line 337]
+2010-12-29 19:35:41 Notice: Notice (8): Undefined variable: cakeDebug in [/home/ninetwentyfour/homkora.com/app/plugins/acl/views/layouts/default.ctp, line 67]
+2010-12-29 19:49:15 Notice: Notice (8): Undefined property: AclController::$User in [/home/ninetwentyfour/homkora.com/app/app_controller.php, line 24]

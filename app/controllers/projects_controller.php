@@ -42,6 +42,7 @@ class ProjectsController extends AppController {
 	}
 
 	function edit($id = null) {
+		$this->Acl->allow('user', 'edit');
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));

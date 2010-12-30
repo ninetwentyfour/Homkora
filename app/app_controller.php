@@ -2,6 +2,7 @@
 class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle');
+	var $uses = array('User');
 
     function beforeFilter() {
         //Configure AuthComponent
@@ -18,5 +19,13 @@ class AppController extends Controller {
 	    }
 	}
     }
+	function entityName(){
+		$user = $this->Auth->user();
+		if($user!=null){
+			$actual_user = $this->User->findByEmail($user['User']['email']);
+			// debug($actual_user);
+			return $actual_user['Group']['name'];
+		}
+	}
 }
 ?>

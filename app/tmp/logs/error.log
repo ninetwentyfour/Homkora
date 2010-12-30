@@ -810,3 +810,50 @@ Aco: controllers/Users/activate in [/home/ninetwentyfour/homkora.com/cake/libs/c
 2010-12-29 14:32:31 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
 2010-12-29 14:33:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
 2010-12-29 14:34:51 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'test7' in 'where clause'</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:34:58 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 18
+            [username] => travtest
+            [group_id] => 3
+            [created] => 2010-12-29 19:09:57
+            [modified] => 2010-12-29 19:10:42
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Acl/Acl/admin_index in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 273]
+2010-12-29 19:51:29 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:51:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:52:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:52:20 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:52:22 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:52:25 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:52:29 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:53:33 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:53:46 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:53:58 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:54:00 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'aro_id' cannot be null</span> in [/home/ninetwentyfour/homkora.com/cake/libs/model/datasources/dbo_source.php, line 684]
+2010-12-29 19:56:17 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:56:18 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:56:18 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:56:46 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:56:46 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:56:46 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:56:59 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:57:00 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:57:00 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:59:59 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:59:59 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 19:59:59 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:13 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:14 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:14 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:19 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
