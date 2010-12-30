@@ -6,7 +6,7 @@ class ProjectsController extends AppController {
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('index', 'view','add','addTime');
+	    $this->Auth->allowedActions = array('index', 'view','add','edit','addTime');
 	}
 	
 	

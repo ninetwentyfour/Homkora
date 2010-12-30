@@ -358,7 +358,7 @@ class DbAcl extends AclBase {
 		$save = array();
 
 		if ($perms == false) {
-			trigger_error(__('DbAcl::allow() - Invalid node', true), E_USER_WARNING);
+			//trigger_error(__('DbAcl::allow() - Invalid node', true), E_USER_WARNING);
 			return false;
 		}
 		if (isset($perms[0])) {
