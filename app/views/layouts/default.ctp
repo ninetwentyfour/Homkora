@@ -36,7 +36,11 @@
 		<div style="clear:both;"></div>
 	</div>
 	<footer class="transparent_class">
-		<a href="http://homkora.com/pages/faq">FAQ</a> | Created by <a href="http://www.travisberry.com">Travis Berry</a>
+		<a href="http://homkora.com/pages/about">About</a> | 
+		<a href="http://homkora.com/pages/contact">Contact</a> | 
+		<a href="http://homkora.com/pages/privacy">Privacy</a> | 
+		<a href="http://homkora.com/pages/faq">FAQ</a> | 
+		Created by <a href="http://www.travisberry.com">Travis Berry</a>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
