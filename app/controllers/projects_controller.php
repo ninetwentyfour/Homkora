@@ -13,6 +13,14 @@ class ProjectsController extends AppController {
 	
 	function index() {
 		//$this->layout = 'projects';
+		//$projects = $this->Project->recursive = 0;
+		$projects = $this->Project->find('all');
+		foreach($projects as $project){
+			//print_r($project);
+			$data = array('id'=>$project['Project']['id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
+			//print_r($data);
+			$this->addTime2($data);
+		}
 		$projects = $this->Project->recursive = 0;
 		$this->set('projects', $this->paginate());
 		return $projects;
@@ -236,6 +244,83 @@ class ProjectsController extends AppController {
 		unlink($file);
 		exit;
 	    }
+	}
+	
+	function addTime2($data){
+
+		
+		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id = '.$data['id'])));
+		$things[0] = '';
+		$things[1] = '';
+		$things[2] = '';
+		foreach($timers as $timer){
+			if(!empty($timer)){
+				$pieces = explode(":", $timer['Timer']['time']);
+				$things[0] .= $pieces[0].',';
+				$things[1] .= $pieces[1].',';
+				$things[2] .= $pieces[2].',';
+			}
+		}
+		$seconds = explode(",", $things[2]);
+		$secondsTotal = array_sum($seconds);
+		if($secondsTotal>=60){
+			//get the whole number to carry over ie 1, 2, 3, etc
+			$carry = $secondsTotal / 60;
+			list($whole, $decimal) = split('[/.-]', $carry);
+			$wholeMin = $whole * 60;
+			//subtract the extra seconds from the seconds total, ie subtract 60 if total is 64, so you leave 4 sec in sec total
+			$secondsTotal = $secondsTotal - $wholeMin;
+			//get the total minutes
+			$minutes = explode(",", $things[1]);
+			$minutesTotal = array_sum($minutes);
+			//add however many minutes
+			$minutesTotal = $minutesTotal + $whole;
+		}else{
+			$minutes = explode(",", $things[1]);
+			$minutesTotal = array_sum($minutes);
+		}
+		if($minutesTotal>=60){
+			//get the whole number to carry over ie 1, 2, 3, etc
+			$carry = $minutesTotal / 60;
+			list($whole, $decimal) = split('[/.-]', $carry);
+			//subtract the extra minutes from the minutes total, ie subtract 60 if total is 64, so you leave 4 min in min total
+			$wholeHour = $whole * 60;
+			$minutesTotal = $minutesTotal - $wholeHour;
+			//get the total hours
+			$hours = explode(",", $things[0]);
+			$hoursTotal = array_sum($hours);
+			//add however many hours
+			$hoursTotal = $hoursTotal + $whole;
+		}else{
+			$hours = explode(",", $things[0]);
+			$hoursTotal = array_sum($hours);
+		}
+
+		$hoursTotal = str_pad($hoursTotal, 2, "0", STR_PAD_LEFT);
+		$minutesTotal = str_pad($minutesTotal, 2, "0", STR_PAD_LEFT);
+		$secondsTotal = str_pad($secondsTotal, 2, "0", STR_PAD_LEFT);
+		$timeString = "$hoursTotal:$minutesTotal:$secondsTotal";
+
+		$final = (string)$timeString;
+
+		$this->data['Project']['id'] = $data['id'];
+		$this->data['Project']['user_id'] = $data['user_id'];
+		$this->data['Project']['title'] = $data['title'];
+		$this->data['Project']['description'] = $data['description'];
+		$this->data['Project']['total_time'] = utf8_encode($final);
+
+		
+		if ($this->Project->save($this->data)) {
+			//$this->Session->setFlash(__('Total time for the project has been updated.', true));
+
+		}else{
+			//$response['data'] = 'There was a problem.';
+		}
+		//$this->redirect(array('action' => 'view',$this->data['Project']['id']));
+		
+
+		
+
 	}
 }
 ?>
