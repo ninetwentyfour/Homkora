@@ -527,3 +527,6 @@ vertical-align:middle;
 .sec-edit{
     display:none;
 }
+.responseBox{
+	margin-bottom:15px;
+}

@@ -86,7 +86,10 @@
 					alert('An unexpected error has occurred!');
 				}
 			});
-
+			setTimeout(function() {
+				$(".responseBox").slideUp();
+			}, 5000);
+			
 			return false;
 		}
 	</script>
