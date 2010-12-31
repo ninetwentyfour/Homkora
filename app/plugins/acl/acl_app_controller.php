@@ -9,8 +9,8 @@ class AclAppController extends AppController {
 		if($entity_name == 'Admin'){
 			$this->Auth->allow(array( '*'));
 		} else {
-			$this->Session->setFlash('Come on. You shouldn\'t be trying to go there.');
-			$this->redirect('/');
+			$this->Session->setFlash('Come on. You shouldn\'t be trying to go there. You aren\'t an admin.');
+			$this->redirect('/projects/index');
 		}				
 	}
 	
