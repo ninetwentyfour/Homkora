@@ -8,7 +8,7 @@
 	<?php echo $html->css('style'); ?>
 	<?php echo $html->css('jquery.stopwatch'); ?>
 </head>
-<body onLoad="login()">
+<body onLoad="addTime()">
 	<header>
 		<h1><a href="http://homkora.com">Homkora</a></h1>
 		<nav>
@@ -42,7 +42,7 @@
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<script type="text/javascript">
-		function login() {
+		function addTime() {
 			var data = $("#UserAddForm").serialize();
 
 			/* Or no serialization (Read #2 below)

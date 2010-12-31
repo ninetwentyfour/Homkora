@@ -39,7 +39,7 @@
 				echo $form->input( 'user_id', array('value' => $project['User']['id'] , 'type' => 'hidden') );
 				
 			?>
-			<input type="submit" class="button" name="mailtoadvertiser" value="Update Timer Total" class="vista green" onclick="login();" />
+			<input type="submit" class="button" name="mailtoadvertiser" value="Update Timer Total" class="vista green" onclick="addTime();" />
 		</form>
 </div>
 <div class="bottomLinks">
