@@ -24,6 +24,11 @@ class ProjectsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('project', $this->Project->read(null, $id));
+		$userProject = $this->Project->read(null, $id);
+		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid project', true));
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 
 	function add() {
@@ -56,6 +61,11 @@ class ProjectsController extends AppController {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.', true));
 			}
 		}
+		$userProject = $this->Project->read(null, $id);
+		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid project', true));
+			$this->redirect(array('action' => 'index'));
+		}
 		if (empty($this->data)) {
 			$this->data = $this->Project->read(null, $id);
 		}
@@ -67,6 +77,11 @@ class ProjectsController extends AppController {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for project', true));
 			$this->redirect(array('action'=>'index'));
+		}
+		$userProject = $this->Project->read(null, $id);
+		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid project', true));
+			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Project->delete($id)) {
 			$this->Session->setFlash(__('Project deleted', true));

@@ -20,6 +20,11 @@ class TimersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('timer', $this->Timer->read(null, $id));
+		$userTimer = $this->Timer->read(null, $id);
+		if($userTimer['Timer']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid timer', true));
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 
 	function add() {
@@ -52,6 +57,11 @@ class TimersController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Timer->read(null, $id);
 		}
+		$userTimer = $this->Timer->read(null, $id);
+		if($userTimer['Timer']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid timer', true));
+			$this->redirect(array('action' => 'index'));
+		}
 		$projects = $this->Timer->Project->find('list', array('conditions' => array('Project.user_id' => $_SESSION['Auth']['User']['id'])));
 		$this->set(compact('projects'));
 	}
@@ -60,6 +70,11 @@ class TimersController extends AppController {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for timer', true));
 			$this->redirect(array('action'=>'index'));
+		}
+		$userTimer = $this->Timer->read(null, $id);
+		if($userTimer['Timer']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid timer', true));
+			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Timer->delete($id)) {
 			$this->Session->setFlash(__('Timer deleted', true));
