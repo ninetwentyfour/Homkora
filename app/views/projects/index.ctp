@@ -57,10 +57,10 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev($html->image('icon_arrow_left.png', array('alt' => 'Previous','title'=>'Previous')) . __('', true), array(), null, array('escape' => false,'class'=>'disabled'));?>
-	  	<?php echo $this->Paginator->numbers();?>
+		<?php echo $this->Paginator->prev($html->image('icon_arrow_left.png', array('alt' => 'Previous','title'=>'Previous')) . __('', true), array('escape' => false), null, array('escape' => false,'class'=>'disabled'));?>
+	  	
  
-		<?php echo $this->Paginator->next(__('', true) . $html->image('icon_arrow_right.png', array('alt' => 'Next','title'=>'Next')), array(), null, array('escape' => false,'class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('', true) . $html->image('icon_arrow_right.png', array('alt' => 'Next','title'=>'Next')), array('escape' => false), null, array('escape' => false,'class' => 'disabled'));?>
 	</div>
 </div>
 <div class="bottomLinks">

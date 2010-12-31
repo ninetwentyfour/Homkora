@@ -3,6 +3,7 @@ class ProjectsController extends AppController {
 
 	var $name = 'Projects';
 	var $components = array('Random');
+	var $paginate = array('limit' => 10);
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
