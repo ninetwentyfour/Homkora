@@ -42,7 +42,7 @@ Add page for users to modify password and account details
 
 Delete timers associated with projects on project delete
 
-Add checks and redirect/show message on user attempt to edit/view other user data
+<del>Add checks and redirect/show message on user attempt to edit/view other user data</del>
 
 <del>Add email to User table</del>
 
