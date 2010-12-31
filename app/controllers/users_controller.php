@@ -6,7 +6,7 @@ class UsersController extends AppController {
 	function beforeFilter() {
 	    parent::beforeFilter();
 	    $this->Auth->autoRedirect = false;
-	    $this->Auth->allow(array('*'));
+	    //$this->Auth->allow(array('*'));
 	}
 	
 	function login() {
@@ -362,27 +362,6 @@ class UsersController extends AppController {
 	        }
        
 	        // Activation failed, render Ô/views/user/activate.ctpÕ which should tell the user.
-	}
-	function initDB() {
-	 $group =& $this->User->Group;
-	//Allow admins to everything
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 1), 'controllers');
-
-	 //allow managers to posts and widgets
-	 $this->Acl->deny(array( 'model' => 'Group', 'foreign_key' => 2), 'controllers');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 2), 'controllers/Posts');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 2), 'controllers/Widgets');
-	$this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 2), 'controllers/Projects');
-	$this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 2), 'controllers/Timers');
-
-	//allow users to only add and edit on posts and widgets
-	 $this->Acl->deny(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers/Posts/add');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers/Posts/edit');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers/Widgets/add');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers/Widgets/edit');
-	 $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers/Timers');
-	$this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 3), 'controllers/Projects');
 	}
 
 		
