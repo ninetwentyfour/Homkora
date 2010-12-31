@@ -17,7 +17,7 @@
 			<th><?php echo $this->Paginator->sort('title');?></th>
 			<th><?php echo $this->Paginator->sort('description');?></th>
 			<th><?php echo $this->Paginator->sort('total_time');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th class="actions">View | Edit | Delete</th>
 		</tr>
 		<?php
 			$i = 0;
