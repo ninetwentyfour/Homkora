@@ -44,7 +44,7 @@
 			<td class="actions">
 				<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['id']),array( 'escape' => false,'class'=>'view-link' )); ?>
 				<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['id']),array( 'escape' => false,'class'=>'edit-link' )); ?>
-				<?php echo $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('Are you sure you want to delete # %s?', true), $project['Project']['id'] )); ?>
+				<?php echo $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['id'] )); ?>
 			</td>
 		</tr>
 		<?php endforeach; ?>

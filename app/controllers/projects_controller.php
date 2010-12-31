@@ -94,6 +94,9 @@ class ProjectsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Project->delete($id)) {
+			foreach($userProject['Timer'] as $timer){
+				$this->Project->Timer->delete($id);
+			}
 			$this->Session->setFlash(__('Project deleted', true));
 			$this->redirect(array('action'=>'index'));
 		}
