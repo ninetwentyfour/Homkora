@@ -42,7 +42,7 @@ Add page for users to modify password and account details
 
 <del>Delete timers associated with projects on project delete</del>
 
-Form validation - custom error messages
+<del>Form validation - custom error messages</del>
 
 <del>Add checks and redirect/show message on user attempt to edit/view other user data</del>
 
