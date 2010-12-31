@@ -2,6 +2,7 @@
 class TimersController extends AppController {
 
 	var $name = 'Timers';
+	var $paginate = array('limit' => 10);
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
