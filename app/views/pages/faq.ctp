@@ -34,6 +34,6 @@ send an email to contact@travisberry.com and I will send you my address so you c
 
 <h1>What is your privacy policy?</h1>
 
-<p>Well this is the internet. If there's something you REALLY don't want to be public at some point, you shouldn't put it here.
+<p>Well this is teh internetz. If there's something you REALLY don't want to be public at some point, you shouldn't put it here.
 That said, Homkora will never sell or do anything bad with your data. Like all sites we may get hacked and lose it. (cough - gawker - cough) 
 I will try to prevent that from happening though, but you never know.</p>
