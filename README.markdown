@@ -40,7 +40,7 @@ FAQ About Privacy Contact and Instruction pages
 
 Add page for users to modify password and account details
 
-Delete timers associated with projects on project delete
+<del>Delete timers associated with projects on project delete</del>
 
 Form validation - custom error messages
 
