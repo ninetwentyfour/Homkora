@@ -530,3 +530,26 @@ vertical-align:middle;
 .responseBox{
 	margin-bottom:15px;
 }
+.project-view{
+	background:url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	border: 1px solid #444;
+	padding: 15px;
+	width: 300px;
+	font-size:30px;
+	color:#999;
+	float:left;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:15px;
+	-moz-box-shadow:0 1px 7px #111111;
+	-webkit-box-shadow:0 1px 7px #111111;
+	margin:20px;
+}
+.project-view h2{
+	font-size:35px;
+	color:#eee;
+}
+#project-view-break{
+	width:100%;
+	float:left;
+}

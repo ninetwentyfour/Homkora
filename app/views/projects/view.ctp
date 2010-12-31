@@ -1,34 +1,34 @@
 <div id="responseSuccess" class="responseBox" style="display: none"></div>
 <ul id="responseError" class="responseBox" style="display: none"></ul>
 <div class="projects view">
-<h2><?php  __('Project');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $project['Project']['title']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Description'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $project['Project']['description']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Total Time'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<div id="totalTime"><?php echo $project['Project']['total_time']; ?></div>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $project['Project']['created']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $project['Project']['modified']; ?>
-			&nbsp;
-		</dd>
-	</dl>
+	<div class="project-view">
+		<h2><?php __('Total Time'); ?></h2>
+		<div id="totalTime"><?php echo $project['Project']['total_time']; ?></div>
+	</div>
+	
+	<div id="project-view-break"></div>
+	
+	<div class="project-view">
+		<h2><?php __('Title'); ?></h2>
+		<?php echo $project['Project']['title']; ?>
+	</div>
+			
+	<div class="project-view">
+		<h2><?php __('Description'); ?></h2>
+		<?php echo $project['Project']['description']; ?>
+	</div>
+	
+
+	<div class="project-view">
+		<h2><?php __('Created'); ?></h2>
+		<?php echo $project['Project']['created']; ?>
+	</div>
+
+
+	<div class="project-view">
+		<h2><?php __('Modified'); ?></h2>
+		<?php echo $project['Project']['modified']; ?>
+	</div>
 </div>
 <div class="timers form">
 <form action="<?php echo $html->url('/projects/addTime'); ?>" method="post" onsubmit="return false;" id="UserAddForm" enctype="multipart/form-data">
