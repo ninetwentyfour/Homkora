@@ -1,32 +1,30 @@
 <div class="timers view">
-<h2><?php  __('Timer');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $timer['Timer']['title']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Time'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $timer['Timer']['time']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Description'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $timer['Timer']['description']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $timer['Timer']['created']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $timer['Timer']['modified']; ?>
-			&nbsp;
-		</dd>
-	</dl>
+	<div class="project-view">
+		<h2><?php __('Time'); ?></h2>
+		<?php echo $timer['Timer']['time']; ?>
+	</div>
+	
+	<div id="project-view-break"></div>
+	
+	<div class="project-view">
+		<h2><?php __('Title'); ?></h2>
+		<?php echo $timer['Timer']['title']; ?>
+	</div>
+
+	<div class="project-view">
+		<h2><?php __('Description'); ?></h2>
+		<?php echo $timer['Timer']['description']; ?>
+	</div>
+
+	<div class="project-view">
+		<h2><?php __('Created'); ?></h2>
+		<?php echo $timer['Timer']['created']; ?>
+	</div>
+
+	<div class="project-view">
+		<h2><?php __('Modified'); ?></h2>
+		<?php echo $timer['Timer']['modified']; ?>
+	</div>
 </div>
 <br /><br />
 <div class="bottomLinks">
