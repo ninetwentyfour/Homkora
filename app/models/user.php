@@ -87,7 +87,7 @@ class User extends AppModel {
 		)
 	);
 	
-	var $actsAs = array('Acl' => array('type' => 'requester'),"Logable");
+	var $actsAs = array('Acl' => array('type' => 'requester'));
 	
 	function parentNode() {
 	    if (!$this->id && empty($this->data)) {
