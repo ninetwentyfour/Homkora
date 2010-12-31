@@ -3,8 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Time Tracking Made Simple | Homkora</title>
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/jquery.stopwatch.css" />
 	<?php echo $html->css('style'); ?>
 	<?php echo $html->css('jquery.stopwatch'); ?>
 </head>
@@ -45,44 +43,31 @@
 		function addTime() {
 			var data = $("#UserAddForm").serialize();
 
-			/* Or no serialization (Read #2 below)
-			var username = $("#UserUsername").val();
-			var password = $("#UserPassword").val();
-			var data = "username="+ username +"&password="+ password;
-			*/
-
 			$.ajax({
 				type: "post",		// Request method: post, get
 				url: "/projects/addTime/",	// URL to request
 				data: data,		// Form variables
 				dataType: "json",	// Expected response type
 				success: function(response, status) {
-					// Will continue in part 3
 					// Response was a success
-								if (response.success === true) {
-									
-										$("#responseSuccess").html(response.data).slideDown();
-										$('#totalTime').html(response.time);
-									
+					if (response.success === true) {
+						$("#responseSuccess").html(response.data).slideDown();
+						$('#totalTime').html(response.time);
+						// Response contains errors
+					}else{
+						var errors = new Array;
 
-								// Response contains errors
-								} else {
-									var errors = new Array;
-
-									if (typeof(response.data) == ("object" || "array")) {
-										$.each(response.data, function(key, value) {
-											var text = (isNaN(key)) ? key +": "+ value : value;
-
-											errors[errors.length] = "<li>"+ text +"</li>";
-										});
-									} else {
-										errors[errors.length] = "<li>"+ response.data +"</li>";
-									}
-
-									errors = errors.join("\n");
-									$("#responseError").html(errors).slideDown();
-								}
-					
+						if (typeof(response.data) == ("object" || "array")) {
+							$.each(response.data, function(key, value) {
+								var text = (isNaN(key)) ? key +": "+ value : value;
+								errors[errors.length] = "<li>"+ text +"</li>";
+							});
+						}else{
+							errors[errors.length] = "<li>"+ response.data +"</li>";
+						}
+						errors = errors.join("\n");
+						$("#responseError").html(errors).slideDown();
+					}
 				},
 				error: function(response, status) {
 					alert('An unexpected error has occurred!');

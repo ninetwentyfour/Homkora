@@ -3,8 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Time Tracking Made Simple | Homkora</title>
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/jquery.stopwatch.css" />
 	<?php echo $html->css('style'); ?>
 	<?php echo $html->css('jquery.stopwatch'); ?>
 </head>
@@ -57,7 +55,6 @@
 			}
 		}
 	</script>
-	
 	<script type="text/javascript">
 		//create the clock
 		$(function() {
