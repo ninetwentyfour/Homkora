@@ -12,6 +12,7 @@ class ProjectsController extends AppController {
 	
 	
 	function index() {
+		//$this->layout = 'projects';
 		$projects = $this->Project->recursive = 0;
 		$this->set('projects', $this->paginate());
 		return $projects;
@@ -19,6 +20,7 @@ class ProjectsController extends AppController {
 	}
 
 	function view($id = null) {
+		$this->layout = 'projects';
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
@@ -92,7 +94,11 @@ class ProjectsController extends AppController {
 	}
 	
 	function addTime(){
-
+		$this->layout = 'ajax'; // Or $this->RequestHandler->ajaxLayout, Only use for HTML
+		$this->autoLayout = false;
+		$this->autoRender = false;
+		$response = array('success' => false);
+		
 		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id = '.$this->data['id'])));
 		$things[0] = '';
 		$things[1] = '';
@@ -155,9 +161,19 @@ class ProjectsController extends AppController {
 
 		
 		if ($this->Project->save($this->data)) {
-				$this->Session->setFlash(__('Total time for the project has been updated.', true));
+			//$this->Session->setFlash(__('Total time for the project has been updated.', true));
+			$response['success'] = true;
+			$response['data'] = 'Total time for the project has been updated.';
+			$response['time'] = $final;
+		}else{
+			$response['data'] = 'There was a problem.';
 		}
-		$this->redirect(array('action' => 'view',$this->data['Project']['id']));
+		//$this->redirect(array('action' => 'view',$this->data['Project']['id']));
+		
+		$this->header('Content-Type: application/json');
+		echo json_encode($response);
+		return;
+		
 
 	}
 	

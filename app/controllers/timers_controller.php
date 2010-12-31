@@ -10,11 +10,13 @@ class TimersController extends AppController {
 	}
 
 	function index() {
+		$this->layout = 'timers';
 		$this->Timer->recursive = 0;
 		$this->set('timers', $this->paginate());
 	}
 
 	function view($id = null) {
+		$this->layout = 'timers';
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid timer', true));
 			$this->redirect(array('action' => 'index'));
@@ -28,6 +30,7 @@ class TimersController extends AppController {
 	}
 
 	function add() {
+		$this->layout = 'timers';
 		if (!empty($this->data)) {
 			$this->Timer->create();
 			if ($this->Timer->save($this->data)) {
@@ -42,6 +45,7 @@ class TimersController extends AppController {
 	}
 
 	function edit($id = null) {
+		$this->layout = 'timers';
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid timer', true));
 			$this->redirect(array('action' => 'index'));

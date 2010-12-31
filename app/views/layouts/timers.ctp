@@ -41,7 +41,28 @@
 		<a href="http://homkora.com/pages/faq">FAQ</a> | Created by <a href="http://www.travisberry.com">Travis Berry</a>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-
+	<?php echo $this->Html->script('jquery.stopwatch'); ?>
+	<script type="text/javascript">
+		//write the timer to the time input in add timer on form submit
+		function checkForm(frm) {
+			frm.submit.disabled=true;
+			var o = $('div.display').text();
+			//alert(o);
+			if (o){
+				document.getElementById("TimerTime").value = o;
+				return true; //returns true if all validation passes
+			}else{
+				alert('Please Add Feedback before requesting a revision');
+				return false;
+			}
+		}
+	</script>
+	
+	<script type="text/javascript">
+		//create the clock
+		$(function() {
+			$('#clock1').stopwatch();
+		});
+	</script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+<div id="responseSuccess" class="responseBox" style="display: none"></div>
+<ul id="responseError" class="responseBox" style="display: none"></ul>
 <div class="projects view">
 <h2><?php  __('Project');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
@@ -13,7 +15,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Total Time'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $project['Project']['total_time']; ?>
+			<div id="totalTime"><?php echo $project['Project']['total_time']; ?></div>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
@@ -29,7 +31,7 @@
 	</dl>
 </div>
 <div class="timers form">
-<form action="<?php echo $html->url('/projects/addTime'); ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo $html->url('/projects/addTime'); ?>" method="post" onsubmit="return false;" id="UserAddForm" enctype="multipart/form-data">
 			<?php 
 				echo $form->input( 'id', array('value' => $project['Project']['id'] , 'type' => 'hidden') );
 				echo $form->input( 'title', array('value' => $project['Project']['title'] , 'type' => 'hidden') );
@@ -37,7 +39,7 @@
 				echo $form->input( 'user_id', array('value' => $project['User']['id'] , 'type' => 'hidden') );
 				
 			?>
-			<input type="submit" class="button" name="mailtoadvertiser" value="Update Timer Total" class="vista green" onclick="showz('LoadingDiv');" />
+			<input type="submit" class="button" name="mailtoadvertiser" value="Update Timer Total" class="vista green" onclick="login();" />
 		</form>
 </div>
 <div class="bottomLinks">
