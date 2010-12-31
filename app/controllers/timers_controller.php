@@ -37,7 +37,7 @@ class TimersController extends AppController {
 				$this->Session->setFlash(__('The timer has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The timer could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The timer could not be saved.', true));
 			}
 		}
 		$projects = $this->Timer->Project->find('list', array('conditions' => array('Project.user_id' => $_SESSION['Auth']['User']['id'])));
@@ -55,7 +55,7 @@ class TimersController extends AppController {
 				$this->Session->setFlash(__('The timer has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The timer could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The timer could not be saved.', true));
 			}
 		}
 		if (empty($this->data)) {
