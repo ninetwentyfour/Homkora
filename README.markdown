@@ -8,6 +8,10 @@ Do what you want with this code. Would like it if you kept the link to my site a
 
 [CakePHP][3] Licensed under [The MIT License][4]
 
+Awesome Icons from [http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/][7]
+
+Fantastic stopwatch jquery plugin was made by kellishaver [https://github.com/kellishaver/stopwatch][8]
+
  
 Download:
 =========
@@ -18,6 +22,12 @@ Install:
 Follow the instruction for setting up a new CakPHP install [here][5].
 
 Change database.php config file like [so][6].
+
+Do lots of other things I'm too lazy to type at the moment.
+
+????
+
+Profit
 
 Todo:
 ======================== 
@@ -57,3 +67,5 @@ I'm in no way responsible for anything you do with this. If this breaks anything
   [4]: http://www.opensource.org/licenses/mit-license.php
   [5]: http://book.cakephp.org/view/914/Production
   [6]: http://book.cakephp.org/view/922/Database-Configuration
+  [7]: http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/
+  [8]: https://github.com/kellishaver/stopwatch
