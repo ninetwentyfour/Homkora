@@ -170,9 +170,11 @@ class ProjectsController extends AppController {
 		
 		if ($this->Project->save($this->data)) {
 			//$this->Session->setFlash(__('Total time for the project has been updated.', true));
+			
 			$response['success'] = true;
 			$response['data'] = 'Total time for the project has been updated.';
 			$response['time'] = $final;
+			
 		}else{
 			$response['data'] = 'There was a problem.';
 		}

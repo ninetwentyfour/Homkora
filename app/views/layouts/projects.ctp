@@ -60,8 +60,10 @@
 					// Will continue in part 3
 					// Response was a success
 								if (response.success === true) {
-									$("#responseSuccess").html(response.data).slideDown();
-									$('#totalTime').html(response.time);
+									
+										$("#responseSuccess").html(response.data).slideDown();
+										$('#totalTime').html(response.time);
+									
 
 								// Response contains errors
 								} else {
