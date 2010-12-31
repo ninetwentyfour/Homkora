@@ -22,8 +22,8 @@ class AppController extends Controller {
 	function entityName(){
 		$user = $this->Auth->user();
 		if($user!=null){
-			$actual_user = $this->User->findByEmail($user['User']['email']);
-			// debug($actual_user);
+			$actual_user = $this->User->findByUsername($user['User']['username']);
+			debug($actual_user['Group']['name']);
 			return $actual_user['Group']['name'];
 		}
 	}

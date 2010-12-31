@@ -4,7 +4,7 @@
  		<legend><?php __('Edit Project'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('user_id');
+		echo $this->Form->input('user_id', array('type' => 'hidden'));
 		echo $this->Form->input('title');
 		echo $this->Form->input('description');
 	?>

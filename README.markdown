@@ -30,6 +30,8 @@ FAQ About Privacy Contact and Instruction pages
 
 Add page for users to modify password and account details
 
+Add checks and redirect/show message on user attempt to edit/view other user data.
+
 <del>Add email to User table</del>
 
 <del>Confirm user account with email</del>

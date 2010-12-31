@@ -5,10 +5,11 @@ class AclAppController extends AppController {
 	
 	function beforeFilter() {
 		$entity_name = parent::entityName();
+		print_r($entity_name);
 		if($entity_name == 'Admin'){
 			$this->Auth->allow(array( '*'));
 		} else {
-			$this->Session->setFlash('The URL you\'ve followed requires biemedia admin permissions.');
+			$this->Session->setFlash('Come on. You shouldn\'t be trying to go there.');
 			$this->redirect('/');
 		}				
 	}
