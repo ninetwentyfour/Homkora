@@ -25,6 +25,9 @@
 		</nav>
 	</header>
   	<div id="container">
+		<noscript>
+			Homkora must have javascript enabled.
+		</noscript>
 		<div id="content">
 			<?php 
 				echo $this->Session->flash();

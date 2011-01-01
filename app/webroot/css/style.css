@@ -559,3 +559,10 @@ vertical-align:middle;
 	padding:5px;
 	float:none !important;
 }
+noscript {
+    border: 1px solid red;
+    padding: 10px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    display: block;
+}
