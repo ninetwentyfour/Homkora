@@ -12,7 +12,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'email' => 'email',
+		'email'=>array('rule'=>'email', 'message' => 'This doesn\'t look like an email'),
 		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
