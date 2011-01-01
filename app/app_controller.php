@@ -2,7 +2,7 @@
 class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle');
-	var $uses = array('User');
+	//var $uses = array('User');
 
     function beforeFilter() {
         //Configure AuthComponent
@@ -33,6 +33,8 @@ class AppController extends Controller {
 
 	//this gets the group of the current user to check in admin/acl to see if they have permission
 	function entityName(){
+		//the loadModel way 
+		$this->loadModel('User'); 
 		$user = $this->Auth->user();
 		if($user!=null){
 			$actual_user = $this->User->findByUsername($user['User']['username']);
