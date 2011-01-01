@@ -53,7 +53,7 @@
 
 			$.ajax({
 				type: "post",		// Request method: post, get
-				url: "/projects/addTime/",	// URL to request
+				url: "/projects/addTime",	// URL to request
 				data: data,		// Form variables
 				dataType: "json",	// Expected response type
 				success: function(response, status) {
