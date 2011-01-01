@@ -1,0 +1,60 @@
+# Sequel Pro dump
+# Version 2492
+# http://code.google.com/p/sequel-pro
+#
+# Host: 127.0.0.1 (MySQL 5.1.49-1ubuntu8.1)
+# Database: oulomos
+# Generation Time: 2010-12-30 16:47:30 -0700
+# ************************************************************
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table aros
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `aros`;
+
+CREATE TABLE `aros` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(10) DEFAULT NULL,
+  `model` varchar(255) DEFAULT NULL,
+  `foreign_key` int(10) DEFAULT NULL,
+  `alias` varchar(255) DEFAULT NULL,
+  `lft` int(10) DEFAULT NULL,
+  `rght` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+LOCK TABLES `aros` WRITE;
+/*!40000 ALTER TABLE `aros` DISABLE KEYS */;
+INSERT INTO `aros` (`id`,`parent_id`,`model`,`foreign_key`,`alias`,`lft`,`rght`)
+VALUES
+	(1,NULL,'Group',1,NULL,1,4),
+	(2,NULL,'Group',2,NULL,5,8),
+	(3,NULL,'Group',3,NULL,9,12),
+	(4,1,'User',1,NULL,2,3),
+	(5,2,'User',2,NULL,6,7),
+	(6,3,'User',3,NULL,10,11);
+
+/*!40000 ALTER TABLE `aros` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
