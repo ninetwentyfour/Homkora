@@ -40,7 +40,7 @@ Todo:
 
 Add page for users to modify password and account details
 
-Delete timers associated with projects on project delete
+<del>Delete timers associated with projects on project delete</del>
 
 <del>Form validation - custom error messages</del>
 
