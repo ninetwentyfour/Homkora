@@ -1,3 +1,6 @@
+<?php
+	App::import('Sanitize');
+?>
 <div class="users index">
 	<h2><?php __('Users');?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -20,8 +23,8 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['username']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['password']; ?>&nbsp;</td>
+		<td><?php echo Sanitize::html($user['User']['username']); ?>&nbsp;</td>
+		<td><?php echo Sanitize::html($user['User']['password']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
 		</td>

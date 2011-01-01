@@ -1,3 +1,6 @@
+<?php
+	App::import('Sanitize');
+?>
 <div class="users view">
 <h2><?php  __('User');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
@@ -8,12 +11,12 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Username'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $user['User']['username']; ?>
+			<?php echo Sanitize::html($user['User']['username']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Password'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $user['User']['password']; ?>
+			<?php echo Sanitize::html($user['User']['password']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Group'); ?></dt>
@@ -72,8 +75,8 @@
 		<tr<?php echo $class;?>>
 			<td><?php echo $post['id'];?></td>
 			<td><?php echo $post['user_id'];?></td>
-			<td><?php echo $post['title'];?></td>
-			<td><?php echo $post['body'];?></td>
+			<td><?php echo Sanitize::html($post['title']);?></td>
+			<td><?php echo Sanitize::html($post['body']);?></td>
 			<td><?php echo $post['created'];?></td>
 			<td><?php echo $post['modified'];?></td>
 			<td class="actions">
@@ -116,8 +119,8 @@
 		<tr<?php echo $class;?>>
 			<td><?php echo $project['id'];?></td>
 			<td><?php echo $project['user_id'];?></td>
-			<td><?php echo $project['title'];?></td>
-			<td><?php echo $project['description'];?></td>
+			<td><?php echo Sanitize::html($project['title']);?></td>
+			<td><?php echo Sanitize::html($project['description']);?></td>
 			<td><?php echo $project['created'];?></td>
 			<td><?php echo $project['modified'];?></td>
 			<td class="actions">
