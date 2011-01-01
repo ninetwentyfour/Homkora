@@ -12,20 +12,27 @@ class AppController extends Controller {
         $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
         $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
         $this->Auth->loginRedirect = array('controller' => 'projects', 'action' => 'index');
+
 		//logable
 		if(isset($this->Session)){
 	    	if (sizeof($this->uses) && $this->{$this->modelClass}->Behaviors->attached('Logable')) {
 				$this->{$this->modelClass}->setUserData($this->Session->read('Auth'));
 	    	}
 		}
+		
 		//security compnent
 		if ($this->action == 'addTime') {
-		$this->Security->validatePost = false;
+			// don't check this form. this is ajax on project view
+			$this->Security->validatePost = false;
 		}
 		//$this->Security->requirePost('delete', 'add','edit');
 		$this->Security->blackHoleCallback='invalidSecurity';
-		$this->Security->requireAuth('delete', 'add','edit');
+		//must ignore the time field in edit and add timers. these are hidden and supposed to change
+		$this->Security->disabledFields = array('time'); 
+		$this->Security->requireAuth('delete', 'add','edit','publicAdd');
     }
+
+	//this gets the group of the current user to check in admin/acl to see if they have permission
 	function entityName(){
 		$user = $this->Auth->user();
 		if($user!=null){
@@ -35,9 +42,10 @@ class AppController extends Controller {
 		}
 	}
 	
+	//if security is invalid do this 
 	function invalidSecurity(){
 		$this->Session->setFlash(__('There was a security problem with your request. Please try again.', true));
-		$this->redirect(array('controller'=>'projects','action' => 'index'));
+		$this->redirect('/');
 	}
 }
 ?>
