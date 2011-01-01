@@ -1,33 +1,36 @@
+<?php
+	App::import('Sanitize');
+?>
 <div id="responseSuccess" class="responseBox" style="display: none"></div>
 <ul id="responseError" class="responseBox" style="display: none"></ul>
 <div class="projects view">
 	<div class="project-view">
 		<h2><?php __('Total Time'); ?></h2>
-		<div id="totalTime"><?php echo $project['Project']['total_time']; ?></div>
+		<div id="totalTime"><?php echo Sanitize::html($project['Project']['total_time']); ?></div>
 	</div>
 	
 	<div id="project-view-break"></div>
 	
 	<div class="project-view">
 		<h2><?php __('Title'); ?></h2>
-		<?php echo $project['Project']['title']; ?>
+		<?php echo Sanitize::html($project['Project']['title']); ?>
 	</div>
 			
 	<div class="project-view">
 		<h2><?php __('Description'); ?></h2>
-		<?php echo $project['Project']['description']; ?>
+		<?php echo Sanitize::html($project['Project']['description']); ?>
 	</div>
 	
 
 	<div class="project-view">
 		<h2><?php __('Created'); ?></h2>
-		<?php echo $project['Project']['created']; ?>
+		<?php echo Sanitize::html($project['Project']['created']); ?>
 	</div>
 
 
 	<div class="project-view">
 		<h2><?php __('Modified'); ?></h2>
-		<?php echo $project['Project']['modified']; ?>
+		<?php echo Sanitize::html($project['Project']['modified']); ?>
 	</div>
 </div>
 <div class="timers form">
@@ -73,9 +76,9 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $timer['title'];?></td>
-			<td><?php echo $timer['time'];?></td>
-			<td><?php echo $timer['description'];?></td>
+			<td><?php echo Sanitize::html($timer['title']);?></td>
+			<td><?php echo Sanitize::html($timer['time']);?></td>
+			<td><?php echo Sanitize::html($timer['description']);?></td>
 			<td class="actions">
 				<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('controller' => 'timers', 'action' => 'view', $timer['id']),array( 'escape' => false,'class'=>'view-link' )); ?>
 				<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('controller' => 'timers', 'action' => 'edit', $timer['id']),array( 'escape' => false,'class'=>'edit-link' )); ?>

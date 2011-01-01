@@ -1,29 +1,32 @@
+<?php
+	App::import('Sanitize');
+?>
 <div class="timers view">
 	<div class="project-view">
 		<h2><?php __('Time'); ?></h2>
-		<?php echo $timer['Timer']['time']; ?>
+		<?php echo Sanitize::html($timer['Timer']['time']); ?>
 	</div>
 	
 	<div id="project-view-break"></div>
 	
 	<div class="project-view">
 		<h2><?php __('Title'); ?></h2>
-		<?php echo $timer['Timer']['title']; ?>
+		<?php echo Sanitize::html($timer['Timer']['title']); ?>
 	</div>
 
 	<div class="project-view">
 		<h2><?php __('Description'); ?></h2>
-		<?php echo $timer['Timer']['description']; ?>
+		<?php echo Sanitize::html($timer['Timer']['description']); ?>
 	</div>
 
 	<div class="project-view">
 		<h2><?php __('Created'); ?></h2>
-		<?php echo $timer['Timer']['created']; ?>
+		<?php echo Sanitize::html($timer['Timer']['created']); ?>
 	</div>
 
 	<div class="project-view">
 		<h2><?php __('Modified'); ?></h2>
-		<?php echo $timer['Timer']['modified']; ?>
+		<?php echo Sanitize::html($timer['Timer']['modified']); ?>
 	</div>
 </div>
 <br /><br />

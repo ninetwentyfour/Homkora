@@ -1,3 +1,6 @@
+<?php
+	App::import('Sanitize');
+?>
 <?php echo $html->link($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer',array('controller'=>'timers', 'action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'));?>
 <br /><br />
 <div class="timers index">
@@ -22,11 +25,11 @@
 	<tr<?php echo $cycle->cycle('', ' class="altrow"');?>>
 		
 		<td>
-			<?php echo $this->Html->link($timer['Project']['title'], array('controller' => 'projects', 'action' => 'view', $timer['Project']['id'])); ?>
+			<?php echo $this->Html->link(Sanitize::html($timer['Project']['title']), array('controller' => 'projects', 'action' => 'view', $timer['Project']['id'])); ?>
 		</td>
-		<td><?php echo $timer['Timer']['title']; ?>&nbsp;</td>
-		<td><?php echo $timer['Timer']['time']; ?>&nbsp;</td>
-		<td><?php echo $timer['Timer']['description']; ?>&nbsp;</td>
+		<td><?php echo Sanitize::html($timer['Timer']['title']); ?>&nbsp;</td>
+		<td><?php echo Sanitize::html($timer['Timer']['time']); ?>&nbsp;</td>
+		<td><?php echo Sanitize::html($timer['Timer']['description']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $timer['Timer']['id']),array( 'escape' => false,'class'=>'view-link' )); ?>
 			<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $timer['Timer']['id']),array( 'escape' => false,'class'=>'edit-link' )); ?>

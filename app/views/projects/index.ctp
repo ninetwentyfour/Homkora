@@ -1,3 +1,6 @@
+<?php
+	App::import('Sanitize');
+?>
 <?php echo $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'));?>
 <br /><br />
 <div class="projects index">
@@ -38,9 +41,9 @@
 					}
 				}
 			?>
-			<td><?php echo $project['Project']['title']; ?>&nbsp;</td>
-			<td><?php echo $project['Project']['description']; ?>&nbsp;</td>
-			<td><?php echo $project['Project']['total_time']; ?>&nbsp;</td>
+			<td><?php echo Sanitize::html($project['Project']['title']); ?>&nbsp;</td>
+			<td><?php echo Sanitize::html($project['Project']['description']); ?>&nbsp;</td>
+			<td><?php echo Sanitize::html($project['Project']['total_time']); ?>&nbsp;</td>
 			<td class="actions">
 				<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['id']),array( 'escape' => false,'class'=>'view-link' )); ?>
 				<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['id']),array( 'escape' => false,'class'=>'edit-link' )); ?>
