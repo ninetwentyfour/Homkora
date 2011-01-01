@@ -25,7 +25,7 @@ class UsersController extends AppController {
 					// Uh Oh!
 					$this->Session->setFlash('Your account has not been activated yet!');
 					//$this->Auth->logout();
-					$this->redirect('/users/login');
+					$this->redirect($this->Auth->logout());
 				}
                                 // Cool, user is active, redirect post login
                                 else {
