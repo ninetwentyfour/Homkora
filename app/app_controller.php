@@ -25,7 +25,6 @@ class AppController extends Controller {
 			// don't check this form. this is ajax on project view
 			$this->Security->validatePost = false;
 		}
-		//$this->Security->requirePost('delete', 'add','edit');
 		$this->Security->blackHoleCallback='invalidSecurity';
 		//must ignore the time field in edit and add timers. these are hidden and supposed to change
 		$this->Security->disabledFields = array('time'); 
