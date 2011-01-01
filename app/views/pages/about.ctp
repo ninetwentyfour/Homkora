@@ -17,7 +17,7 @@ width:500px;
 focuses on two things. Projects and timers. Projects organize your timers, and allow you to get a total
 of your time spent. Both timers and projects only require two things. A title and a description.</p>
 
-<p>So quit reading this horribly written about page and instead sign up for an account.
+<p>So quit reading this horribly written about page and instead <a href="http://homkora.com/users/publicAdd">sign up</a> for an account.
 
 I promise the app is better than this about page.
 </p>

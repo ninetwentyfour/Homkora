@@ -40,6 +40,7 @@
 		<a href="http://homkora.com/pages/contact">Contact</a> | 
 		<a href="http://homkora.com/pages/privacy">Privacy</a> | 
 		<a href="http://homkora.com/pages/faq">FAQ</a> | 
+		<a href="http://homkora.com/pages/help">Help</a> | 
 		Created by <a href="http://www.travisberry.com">Travis Berry</a>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
