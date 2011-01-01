@@ -36,7 +36,7 @@ Todo:
 
 <del>Make timers editable starting with saved time</del>
 
-FAQ About Privacy Contact and Instruction pages
+<del>FAQ About Privacy Contact and Instruction pages</del>
 
 Add page for users to modify password and account details
 
