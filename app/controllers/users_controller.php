@@ -84,7 +84,7 @@ class UsersController extends AppController {
 					if ($this->User->save($this->data)) {
 						$this->__sendActivationEmail($this->User->id);
 						$this->Session->setFlash(__('Check your email for account verification.', true));
-						$this->redirect(array('action' => 'login'));
+						$this->redirect('/login');
 					} else {
 						//general problem saving to db
 						$this->Session->setFlash(__('There was a problem saving the user. Please, try again.', true));
@@ -364,7 +364,7 @@ class UsersController extends AppController {
                
 	                // Let the user know they can now log in!
 	                $this->Session->setFlash('Your account has been activated, please log in below');
-	                $this->redirect('login');
+	                $this->redirect('/login');
 	        }
        
 	        // Activation failed, render ‘/views/user/activate.ctp’ which should tell the user.

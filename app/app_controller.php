@@ -10,7 +10,7 @@ class AppController extends Controller {
 		$this->Auth->allowedActions = array('display','activate','logout','publicAdd');
         $this->Auth->authorize = 'actions';
         $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
-        $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
+        $this->Auth->logoutRedirect = '/login';
         $this->Auth->loginRedirect = array('controller' => 'projects', 'action' => 'index');
 
 		//logable
