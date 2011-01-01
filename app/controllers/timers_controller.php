@@ -6,7 +6,7 @@ class TimersController extends AppController {
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('*');
+	    //$this->Auth->allowedActions = array('*');
 	}
 
 	function index() {
