@@ -20,7 +20,7 @@ class ProjectsController extends AppController {
 			$this->addTime2($data);
 		}
 		//now grab all the updated proejct data for display
-		$projects = $this->Project->recursive = 0;
+		$projects = $this->Project->find('all', array('fields' => array('title','description','total_time')));
 		$this->set('projects', $this->paginate());
 		return $projects;
 
