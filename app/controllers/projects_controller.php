@@ -12,15 +12,14 @@ class ProjectsController extends AppController {
 	
 	
 	function index() {
-		//$this->layout = 'projects';
-		//$projects = $this->Project->recursive = 0;
-		$projects = $this->Project->find('all');
+		//contain projects for performance
+		$projects = $this->Project->find('all', array('contain' => true));
 		foreach($projects as $project){
-			//print_r($project);
+			//update thr total time before the page loads.
 			$data = array('id'=>$project['Project']['id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
-			//print_r($data);
 			$this->addTime2($data);
 		}
+		//now grab all the updated proejct data for display
 		$projects = $this->Project->recursive = 0;
 		$this->set('projects', $this->paginate());
 		return $projects;
@@ -33,9 +32,10 @@ class ProjectsController extends AppController {
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set('project', $this->Project->read(null, $id));
-		$userProject = $this->Project->read(null, $id);
-		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		$project = $this->Project->read(null, $id);
+		$this->set('project', $project);
+		//check that project belongs to user or is an admin
+		if($project['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}
@@ -71,13 +71,13 @@ class ProjectsController extends AppController {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.', true));
 			}
 		}
-		$userProject = $this->Project->read(null, $id);
-		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid project', true));
-			$this->redirect(array('action' => 'index'));
-		}
 		if (empty($this->data)) {
 			$this->data = $this->Project->read(null, $id);
+			//check project belongs to user or is admin
+			if($this->data['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+				$this->Session->setFlash(__('Invalid project', true));
+				$this->redirect(array('action' => 'index'));
+			}
 		}
 		$users = $this->Project->User->find('list');
 		$this->set(compact('users'));
@@ -88,6 +88,7 @@ class ProjectsController extends AppController {
 			$this->Session->setFlash(__('Invalid id for project', true));
 			$this->redirect(array('action'=>'index'));
 		}
+		//check if project belongs to user or is admin
 		$userProject = $this->Project->read(null, $id);
 		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid project', true));
@@ -110,7 +111,7 @@ class ProjectsController extends AppController {
 		$this->autoRender = false;
 		$response = array('success' => false);
 		
-		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id = '.$this->data['id'])));
+		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id'=> $this->data['id'])));
 		$things[0] = '';
 		$things[1] = '';
 		$things[2] = '';
@@ -191,7 +192,7 @@ class ProjectsController extends AppController {
 	}
 	
 	function exportcsvProjects(){
-	    $value = $this->Project->find('all', array('fields' => array('title','description','created','modified', 'total_time'),'conditions' => array('Project.user_id = '.$_SESSION['Auth']['User']['id'])));
+	    $value = $this->Project->find('all', array('fields' => array('title','description','created','modified', 'total_time'), array('contain' => true),'conditions' => array('Project.user_id = '.$_SESSION['Auth']['User']['id'])));
 	    $randStrg = $this->Random->randomString();
 	    $file =  WWW_ROOT . '/csv_export/All_Projects_Export_'.$randStrg.'.csv';
 	    for ($i = 0; $i < count($value); $i++) {
@@ -221,7 +222,7 @@ class ProjectsController extends AppController {
 	    }
 	}
 	function exportcsvTimers($id = null){
-	    $value = $this->Project->Timer->find('all', array('fields' => array('title','description','created','modified', 'time'),'conditions' => array('Timer.project_id = '.$id)));
+	    $value = $this->Project->Timer->find('all', array('fields' => array('title','description','created','modified', 'time'), array('contain' => true),'conditions' => array('Timer.project_id = '.$id)));
 	    $randStrg = $this->Random->randomString();
 	    $file =  WWW_ROOT . '/csv_export/Timers_For_Project_'.$id.'_'.$randStrg.'.csv';
 	    for ($i = 0; $i < count($value); $i++) {
@@ -252,9 +253,7 @@ class ProjectsController extends AppController {
 	}
 	
 	function addTime2($data){
-
-		
-		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id = '.$data['id'])));
+		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id' => $data['id'])));
 		$things[0] = '';
 		$things[1] = '';
 		$things[2] = '';
@@ -321,11 +320,6 @@ class ProjectsController extends AppController {
 		}else{
 			//$response['data'] = 'There was a problem.';
 		}
-		//$this->redirect(array('action' => 'view',$this->data['Project']['id']));
-		
-
-		
-
 	}
 }
 ?>
