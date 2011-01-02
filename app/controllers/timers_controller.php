@@ -9,13 +9,21 @@ class TimersController extends AppController {
 	    parent::beforeFilter(); 
 	    //$this->Auth->allowedActions = array('*');
 	}
-
+	/**
+	* Get Timers For display in index
+	*
+	* @return $timers array for view
+	*/
 	function index() {
 		$this->layout = 'timers';
 		$this->Timer->recursive = 0;
 		$this->set('timers', $this->paginate());
 	}
-
+	/**
+	* Get single Timer For display in view
+	*
+	* @return $timer array for view
+	*/
 	function view($id = null) {
 		$this->layout = 'timers';
 		if (!$id) {
@@ -30,7 +38,11 @@ class TimersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 	}
-
+	/**
+	* Add a Timer
+	*
+	* @return set flash The timer has been saved
+	*/
 	function add() {
 		$this->layout = 'timers';
 		if (!empty($this->data)) {
@@ -45,7 +57,11 @@ class TimersController extends AppController {
 		$projects = $this->Timer->Project->find('list', array('conditions' => array('Project.user_id' => $_SESSION['Auth']['User']['id'])));
 		$this->set(compact('projects'));
 	}
-
+	/**
+	* Edit a Timer
+	*
+	* @return set flash The timer has been saved
+	*/
 	function edit($id = null) {
 		$this->layout = 'timers';
 		if (!$id && empty($this->data)) {
@@ -71,7 +87,11 @@ class TimersController extends AppController {
 		$projects = $this->Timer->Project->find('list', array('conditions' => array('Project.user_id' => $_SESSION['Auth']['User']['id'])));
 		$this->set(compact('projects'));
 	}
-
+	/**
+	* Delete a Timer
+	*
+	* @return set flash Timer deleted
+	*/
 	function delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for timer', true));
