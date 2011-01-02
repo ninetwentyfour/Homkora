@@ -2,6 +2,7 @@
 class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle');
+	var $persistModel = true;
 	//var $uses = array('User');
 
     function beforeFilter() {
