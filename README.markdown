@@ -42,6 +42,8 @@ Todo:
 
 Add page for users to modify password and account details
 
+Redirect with warning if new user creates timer with no projects first
+
 <del>Delete timers associated with projects on project delete</del>
 
 <del>Form validation - custom error messages</del>
