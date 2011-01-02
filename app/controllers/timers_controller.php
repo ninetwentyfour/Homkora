@@ -5,7 +5,7 @@ class TimersController extends AppController {
 	var $helpers = array('Cache');
 	var $paginate = array('limit' => 10);
 	var $cacheAction = array(
-		'index' => array('callbacks' => true, 'duration' => 120000)
+		'index' => array('callbacks' => true, 'duration' => 300000)
 	);
 	
 	
