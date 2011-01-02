@@ -42,46 +42,5 @@
 		<?php echo $this->element('footer'); ?>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<!--<script type="text/javascript">
-		function addTime() {
-			var data = $("#UserAddForm").serialize();
-
-			$.ajax({
-				type: "post",		// Request method: post, get
-				url: "/projects/addTime",	// URL to request
-				data: data,		// Form variables
-				dataType: "json",	// Expected response type
-				success: function(response, status) {
-					// Response was a success
-					if (response.success === true) {
-						$("#responseSuccess").html(response.data).slideDown();
-						$('#totalTime').html(response.time);
-						// Response contains errors
-					}else{
-						var errors = new Array;
-
-						if (typeof(response.data) == ("object" || "array")) {
-							$.each(response.data, function(key, value) {
-								var text = (isNaN(key)) ? key +": "+ value : value;
-								errors[errors.length] = "<li>"+ text +"</li>";
-							});
-						}else{
-							errors[errors.length] = "<li>"+ response.data +"</li>";
-						}
-						errors = errors.join("\n");
-						$("#responseError").html(errors).slideDown();
-					}
-				},
-				error: function(response, status) {
-					alert('An unexpected error has occurred!');
-				}
-			});
-			setTimeout(function() {
-				$(".responseBox").slideUp();
-			}, 5000);
-			
-			return false;
-		}
-	</script>-->
 </body>
 </html>
