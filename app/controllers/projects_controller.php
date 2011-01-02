@@ -10,7 +10,13 @@ class ProjectsController extends AppController {
 	    //$this->Auth->allowedActions = array('*');
 	}
 	
-	
+	/**
+	* Get projects for index view.
+	* 
+	* Pulls all projects - updates all projects total time - then fetches updated projects
+	*
+	* @return $projects array
+	*/
 	function index() {
 		//contain projects for performance
 		$projects = $this->Project->find('all', array('contain' => true));
@@ -25,7 +31,11 @@ class ProjectsController extends AppController {
 		return $projects;
 
 	}
-
+	/**
+	* Reads Single project for display in view
+	*
+	* @return $projects array for view
+	*/
 	function view($id = null) {
 		$this->layout = 'projects';
 		if (!$id) {
@@ -40,7 +50,11 @@ class ProjectsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 	}
-
+	/**
+	* Add new project
+	*
+	* @return $saved is for testing only - sets flash 'The project has been saved'
+	*/
 	function add() {
 		if (!empty($this->data)) {
 			$this->Project->create();
@@ -56,7 +70,11 @@ class ProjectsController extends AppController {
 		$users = $this->Project->User->find('list');
 		$this->set(compact('users'));
 	}
-
+	/**
+	* Edit project
+	*
+	* @return sets flash 'The project has been saved'
+	*/
 	function edit($id = null) {
 		$this->Acl->allow('user', 'edit');
 		if (!$id && empty($this->data)) {
@@ -82,7 +100,11 @@ class ProjectsController extends AppController {
 		$users = $this->Project->User->find('list');
 		$this->set(compact('users'));
 	}
-
+	/**
+	* Delete project
+	*
+	* @return sets flash 'Project deleted'
+	*/
 	function delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for project', true));
@@ -188,7 +210,17 @@ class ProjectsController extends AppController {
 		echo json_encode($response);
 		return;
 	}
-	
+	/**
+	* Export a CSV of Projects
+	*
+	* @param $value array All the projects that belong to the user
+	*
+	* @param $tempStr string Create a string of each CSV
+	* 
+	* @param $finalStrArr array Array of each $tempStr string
+	* 
+	* @return sends $finalStrArr to function exportcsv
+	*/
 	function exportcsvProjects(){
 	    $value = $this->Project->find('all', array('fields' => array('title','description','created','modified', 'total_time'), array('contain' => true),'conditions' => array('Project.user_id = '.$_SESSION['Auth']['User']['id'])));
 	    for ($i = 0; $i < count($value); $i++) {
@@ -197,8 +229,18 @@ class ProjectsController extends AppController {
 			//counts through the array and creates an array for each order with comma serperated order information
 	    }
 		$this->exportcsv($finalStrArr,'Projects');
-	    
 	}
+	/**
+	* Export a CSV of Timers that belong to a Project
+	*
+	* @param $value array All the timers that belong to project and the user
+	*
+	* @param $tempStr string Create a string of each CSV
+	* 
+	* @param $finalStrArr array Array of each $tempStr string
+	* 
+	* @return sends $finalStrArr to function exportcsv
+	*/
 	function exportcsvTimers($id = null){
 	    $value = $this->Project->Timer->find('all', array('fields' => array('title','description','created','modified', 'time'), array('contain' => true),'conditions' => array('Timer.project_id = '.$id)));
 	    for ($i = 0; $i < count($value); $i++) {
@@ -208,7 +250,17 @@ class ProjectsController extends AppController {
 	    }
 	    $this->exportcsv($finalStrArr,'Timers');
 	}
-	
+	/**
+	* Export a CSV
+	* 
+	* @param $finalStrArr array Array of csv items that comes into this function
+	* 
+	* @param $file string Path to save tmp file
+	* 
+	* @param $fp creates the actual csv file
+	* 
+	* @return sends $file as download
+	*/
 	function exportcsv($finalStrArr,$type){
 		$randStrg = $this->Random->randomString();
 	    $file =  WWW_ROOT . '/csv_export/Homkora_'.$type.'_Export_'.$randStrg.'.csv';
@@ -233,21 +285,38 @@ class ProjectsController extends AppController {
 			exit;
 	    }
 	}
-	
+	/**
+	* Add the total time for a Project
+	*
+	* @param $data array The Project information array
+	*
+	* @param $timers array All timers for a project
+	* 
+	* @param $pieces array Time digits split into separate arrays Hour Min Sec
+	* 
+	* @param $things array Create a CSV of each time type Hour Min Sec
+	* 
+	* @return sends $finalStrArr to function exportcsv
+	*/
 	function addTime2($data){
+		//get all the timers for a project
 		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id' => $data['id'])));
+		//define the $things array for later user. this prevents an error message
 		$things[0] = '';
 		$things[1] = '';
 		$things[2] = '';
 		foreach($timers as $timer){
 			if(!empty($timer)){
+				//explode the times into arrays for each type Hour Min Sec
 				$pieces = explode(":", $timer['Timer']['time']);
 				$things[0] .= $pieces[0].',';
 				$things[1] .= $pieces[1].',';
 				$things[2] .= $pieces[2].',';
 			}
 		}
+		//explode csv and create array of results
 		$seconds = explode(",", $things[2]);
+		//add all of the seconds in the array together
 		$secondsTotal = array_sum($seconds);
 		if($secondsTotal>=60){
 			//get the whole number to carry over ie 1, 2, 3, etc
@@ -262,7 +331,9 @@ class ProjectsController extends AppController {
 			//add however many minutes
 			$minutesTotal = $minutesTotal + $whole;
 		}else{
+			//if seconds under 60 explode csv and create array of results
 			$minutes = explode(",", $things[1]);
+			//add all of the minutes in array together
 			$minutesTotal = array_sum($minutes);
 		}
 		if($minutesTotal>=60){
@@ -278,29 +349,29 @@ class ProjectsController extends AppController {
 			//add however many hours
 			$hoursTotal = $hoursTotal + $whole;
 		}else{
+			//if minutes under 60 explode csv and create array of results
 			$hours = explode(",", $things[0]);
+			//add all of the hours in array together
 			$hoursTotal = array_sum($hours);
 		}
-
+		//pad all strings so they are in 00:00:00 format
 		$hoursTotal = str_pad($hoursTotal, 2, "0", STR_PAD_LEFT);
 		$minutesTotal = str_pad($minutesTotal, 2, "0", STR_PAD_LEFT);
 		$secondsTotal = str_pad($secondsTotal, 2, "0", STR_PAD_LEFT);
 		$timeString = "$hoursTotal:$minutesTotal:$secondsTotal";
-
+		//double check is string
 		$final = (string)$timeString;
-
+		//orgainze the data of the project for saving
 		$this->data['Project']['id'] = $data['id'];
 		$this->data['Project']['user_id'] = $data['user_id'];
 		$this->data['Project']['title'] = $data['title'];
 		$this->data['Project']['description'] = $data['description'];
 		$this->data['Project']['total_time'] = utf8_encode($final);
 
-		
 		if ($this->Project->save($this->data)) {
-			//$this->Session->setFlash(__('Total time for the project has been updated.', true));
-
+			//project is saved
 		}else{
-			//$response['data'] = 'There was a problem.';
+			//there is an error
 		}
 	}
 }
