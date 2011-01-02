@@ -6,13 +6,17 @@ Created By: [Travis Berry][2]
 
 Usage: 
 ===============
-Do what you want with this code. Would like it if you kept the link to my site at the bottom, but you don't have to. 
+The code specific to this app is released under an [unlicense][10]. I would like it if you kept the link to my site at the bottom, but you don't have to. 
 
 [CakePHP][3] Licensed under [The MIT License][4]
 
+LoggableBehavior by [alkemann][11]
+
+ACL plugin by [interlock][12]
+
 Awesome Icons from [http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/][7]
 
-Fantastic stopwatch jquery plugin was made by kellishaver [https://github.com/kellishaver/stopwatch][8]
+Fantastic stopwatch jquery plugin was made by [kellishaver][8]
 
  
 Download:
@@ -78,3 +82,6 @@ I'm in no way responsible for anything you do with this. If this breaks anything
   [7]: http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/
   [8]: https://github.com/kellishaver/stopwatch
   [9]: http://twitter.com/homkora
+  [10]: http://unlicense.org/
+  [11]: http://bakery.cakephp.org/articles/alkemann/2008/10/21/logablebehavior
+  [12]: https://github.com/interlock/acl_plugin
