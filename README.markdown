@@ -2,6 +2,8 @@ Homkora | Time Tracking Made Simple
 ========
 Created By: [Travis Berry][2]
 
+[http://twitter.com/homkora][9]
+
 Usage: 
 ===============
 Do what you want with this code. Would like it if you kept the link to my site at the bottom, but you don't have to. 
@@ -73,3 +75,4 @@ I'm in no way responsible for anything you do with this. If this breaks anything
   [6]: http://book.cakephp.org/view/922/Database-Configuration
   [7]: http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/
   [8]: https://github.com/kellishaver/stopwatch
+  [9]: http://twitter.com/homkora
