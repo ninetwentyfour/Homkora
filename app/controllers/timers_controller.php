@@ -2,11 +2,7 @@
 class TimersController extends AppController {
 
 	var $name = 'Timers';
-	var $helpers = array('Cache');
 	var $paginate = array('limit' => 10);
-	var $cacheAction = array(
-		'index' => array('callbacks' => true, 'duration' => 300000)
-	);
 	
 	
 	function beforeFilter() {

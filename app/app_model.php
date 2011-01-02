@@ -1,5 +1,6 @@
 <?php
 class AppModel extends Model {
+	var $cacheQueries = true;
     var $entity_id;//not sure what this does, was in example. doesn;t seem to do anything
     
     function beforeFind($queryData) { //this limits the amount of data returned to the user based on the entity
