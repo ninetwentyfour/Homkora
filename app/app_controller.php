@@ -1,9 +1,9 @@
 <?php
 class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security');
-    var $helpers = array('Html', 'Form', 'Session', 'Cycle');
+    var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
 	var $persistModel = true;
-	//var $uses = array('User');
+	var $cacheAction = array('view' => array('callbacks' => true, 'duration' => 60));
 
     function beforeFilter() {
         //Configure AuthComponent

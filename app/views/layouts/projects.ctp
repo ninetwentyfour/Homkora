@@ -42,7 +42,7 @@
 		<?php echo $this->element('footer'); ?>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		function addTime() {
 			var data = $("#UserAddForm").serialize();
 
@@ -82,6 +82,6 @@
 			
 			return false;
 		}
-	</script>
+	</script>-->
 </body>
 </html>
