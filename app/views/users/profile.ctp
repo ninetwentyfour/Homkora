@@ -4,7 +4,7 @@
 <div class="users view">
 <h2><?php  __('User');?></h2>
 	<div class="project-view">
-		<?php echo $gravatar; ?>
+		<?php echo $gravatar2; ?>
 		<h2><?php __('Username'); ?></h2>
 		<?php echo Sanitize::html($user['User']['username']); ?>
 	</div>

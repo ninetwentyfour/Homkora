@@ -32,6 +32,15 @@ class AppController extends Controller {
 		$this->Security->requireAuth('delete', 'add','edit','publicAdd');
     }
 
+	function beforeRender(){
+		if ($this->action == 'profile') {
+			$gravatar2 = $this->get_gravatar($_SESSION['Auth']['User']['email'],'80');
+			$this->set('gravatar2', $gravatar2);
+		}
+		$gravatar = $this->get_gravatar($_SESSION['Auth']['User']['email'],'20');
+		$this->set('gravatar', $gravatar);
+	}
+
 	//this gets the group of the current user to check in admin/acl to see if they have permission
 	function entityName(){
 		//the loadModel way 
@@ -72,7 +81,7 @@ class AppController extends Controller {
 				$url .= ' ' . $key . '="' . $val . '"';
 			$url .= ' />';
 		}
-		//$this->set('gravatar', $user);
+		
 		return $url;
 	}
 	

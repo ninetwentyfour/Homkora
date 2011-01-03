@@ -427,7 +427,7 @@ class UsersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('user', $this->User->read(null, $id));
-		$this->set('gravatar', $this->get_gravatar($_SESSION['Auth']['User']['email']));
+		
 		
 	}
 	
