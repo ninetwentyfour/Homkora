@@ -1,0 +1,29 @@
+<?php
+	App::import('Sanitize');
+?>
+<div class="users view">
+<h2><?php  __('User');?></h2>
+	<div class="project-view">
+		<?php echo $gravatar; ?>
+		<h2><?php __('Username'); ?></h2>
+		<?php echo Sanitize::html($user['User']['username']); ?>
+	</div>
+
+	<div id="project-view-break"></div>
+	
+	<div class="project-view">
+		<h2><?php __('Email'); ?></h2>
+		<?php echo Sanitize::html($user['User']['email']); ?>
+	</div>
+
+
+	<div class="project-view">
+		<h2><?php __('Created'); ?></h2>
+		<?php echo $user['User']['created']; ?>
+	</div>
+	<div class="bottomLinks">
+		<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['id']),array('escape' => false,'class'=>'button addTimerIndex'));?>
+	</div>
+</div>
+
+

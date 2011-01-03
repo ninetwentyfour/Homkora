@@ -44,7 +44,7 @@ Todo:
 
 <del>FAQ About Privacy Contact and Instruction pages</del>
 
-Add page for users to modify password and account details
+<del>Add page for users to modify password and account details</del>
 
 Redirect with warning if new user creates timer with no projects first
 

@@ -6,7 +6,7 @@ class UsersController extends AppController {
 	function beforeFilter() {
 	    parent::beforeFilter();
 	    $this->Auth->autoRedirect = false;
-	    //$this->Auth->allow(array('*'));
+	    $this->Auth->allow(array('userEdit','profile'));
 	}
 	
 	function login() {
@@ -369,8 +369,67 @@ class UsersController extends AppController {
        
 	        // Activation failed, render Ô/views/user/activate.ctpÕ which should tell the user.
 	}
+	
+	function userEdit($id = null) {
+		if (!$id && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array('action' => 'profile',$id));
+		}
+		$user = $this->User->read(null, $id);
+		if($user['User']['id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array('action' => 'profile',$id));
+		}
+		if (!empty($this->data)) {
+			//check for password update
+			if($this->data['User']['password_1']!=''){
+				//check the two password fields match
+				if($this->data['User']['password_1']==$this->data['User']['password_2']){
+					//hash the password
+					$password = $this->Auth->password($this->data['User']['password_1']);
+					//save the password field
+					$this->User->saveField('password', $password);
+				}else{
+					$this->Session->setFlash(__('Passwords Didn\'t Match. Try Again.', true));
+				}
+			}
+			//check user name against db
+			$userExists = $this->User->findByUsername($this->data['User']['username']);
+			$userExistsID = $this->User->findById($id);
+			//check that username isnt taken and isnt the old one
+			if($userExists['User']['username']==$this->data['User']['username'] && $userExistsID['User']['username']!=$this->data['User']['username']){
+				//if found and matches - dont save and alert user
+				$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
+			}else{
+				if ($this->User->save($this->data)) {
+					$this->Session->setFlash(__('The user has been saved', true));
+					$this->redirect(array('action' => 'profile',$id));
+				} else {
+					$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+				}
+			}
+		}
+		if (empty($this->data)) {
+			$this->data = $this->User->read(null, $id);
+		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
+	}
 
+	function profile($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		$user = $this->User->read(null, $id);
+		if($user['User']['id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->set('user', $this->User->read(null, $id));
+		$this->set('gravatar', $this->get_gravatar($_SESSION['Auth']['User']['email']));
 		
+	}
 	
 }
 ?>
