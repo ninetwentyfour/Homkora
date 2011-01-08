@@ -8,6 +8,11 @@ class TimersController extends AppController {
 	function beforeFilter() {
 	    parent::beforeFilter(); 
 	    //$this->Auth->allowedActions = array('*');
+		if ($this->RequestHandler->isXml()){
+			
+		}else{
+			$this->layout = 'timers';
+		}
 	}
 	/**
 	* Get Timers For display in index
@@ -15,8 +20,11 @@ class TimersController extends AppController {
 	* @return $timers array for view
 	*/
 	function index() {
-		$this->layout = 'timers';
-		$this->Timer->recursive = 0;
+		if ($this->RequestHandler->isXml()){
+			$timers = $this->Timer->recursive = -1;
+		}else{
+			$timers = $this->Timer->recursive = 0;
+		}
 		$this->set('timers', $this->paginate());
 	}
 	/**
@@ -25,12 +33,11 @@ class TimersController extends AppController {
 	* @return $timer array for view
 	*/
 	function view($id = null) {
-		$this->layout = 'timers';
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid timer', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$timer = $this->Timer->read(null, $id);
+		$timer = $this->Timer->read(array('id','time' ,'title','description','created','modified','user_id'), $id);
 		$this->set('timer', $timer);
 		//check timer belongs to user or admin
 		if($timer['Timer']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
@@ -44,7 +51,6 @@ class TimersController extends AppController {
 	* @return set flash The timer has been saved
 	*/
 	function add() {
-		$this->layout = 'timers';
 		if (!empty($this->data)) {
 			$this->Timer->create();
 			if ($this->Timer->save($this->data)) {
@@ -63,7 +69,6 @@ class TimersController extends AppController {
 	* @return set flash The timer has been saved
 	*/
 	function edit($id = null) {
-		$this->layout = 'timers';
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid timer', true));
 			$this->redirect(array('action' => 'index'));

@@ -40,3 +40,9 @@
 	Router::connect('/sign-up', array('controller' => 'users', 'action' => 'publicAdd'));
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/profile/*', array('controller' => 'users', 'action' => 'profile'));
+	
+	/**
+	* API
+	*/
+	Router::mapResources('projects','timers');
+	Router::parseExtensions('xml','json');

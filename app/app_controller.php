@@ -1,6 +1,6 @@
 <?php
 class AppController extends Controller {
-    var $components = array('Acl', 'Auth', 'Session','Email','Security');
+    var $components = array('Acl', 'Auth', 'Session','Email','Security','RequestHandler');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
 	var $persistModel = true;
 	var $cacheAction = array('view' => array('callbacks' => true, 'duration' => '1 hour'),'profile' => array('callbacks' => true, 'duration' => '2 hours'));
