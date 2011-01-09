@@ -8,6 +8,11 @@
 		<h2><?php __('Username'); ?></h2>
 		<?php echo Sanitize::html($user['User']['username']); ?>
 	</div>
+	
+	<div class="project-view">
+		<h2><?php __('API Key'); ?></h2>
+		<?php echo Sanitize::html($user['ApiKey'][0]['key']); ?>
+	</div>
 
 	<div id="project-view-break"></div>
 	

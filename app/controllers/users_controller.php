@@ -426,7 +426,8 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('Invalid user', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set('user', $this->User->read(null, $id));
+		//$user['User']['ApiKey'] = $this->User->ApiKey->read(null, $user['User']['id']);
+		$this->set('user', $user);
 		
 		
 	}
