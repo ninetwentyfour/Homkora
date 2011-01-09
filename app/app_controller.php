@@ -96,15 +96,17 @@ class AppController extends Controller {
 			$this->loadModel('ApiKey'); 
 			$tag = $this->params['url']['partner'];
 			$api = $this->ApiKey->findByKey($tag); // see if that key exists in the db
+			$this->loadModel('User'); 
+			$user = $this->User->findById($api['ApiKey']['user_id']);
 			if($api){
 	    		//write a user to the session for authentication
-	    		$this->Session->write('Auth.User.id', '29');
-	    		$this->Session->write('Auth.User.email', 'contact@travisberry.com');
-	    		$this->Session->write('Auth.User.username', 'travisberry');
-	    		$this->Session->write('Auth.User.group_id', '3');
-				$this->Session->write('Auth.User.active', '1');
-	    		$this->Session->write('Auth.User.created', '2011-01-01 20:09:12');
-	    		$this->Session->write('Auth.User.modified', '2011-01-01 20:09:21');
+	    		$this->Session->write('Auth.User.id', $user['User']['id']);
+	    		$this->Session->write('Auth.User.email', $user['User']['email']);
+	    		$this->Session->write('Auth.User.username', $user['User']['username']);
+	    		$this->Session->write('Auth.User.group_id', $user['User']['group_id']);
+				$this->Session->write('Auth.User.active', $user['User']['active']);
+	    		$this->Session->write('Auth.User.created', $user['User']['created']);
+	    		$this->Session->write('Auth.User.modified', $user['User']['modified']);
 			}
        	}
 	}

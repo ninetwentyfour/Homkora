@@ -57,6 +57,20 @@ class ProjectsController extends AppController {
 	* @return $saved is for testing only - sets flash 'The project has been saved'
 	*/
 	function add() {
+		if ($this->RequestHandler->isXml()){
+			//print_r($this->params);
+			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['id'];
+			$this->data['Project']['title'] = $this->params['url']['title'];
+			$this->data['Project']['description'] = $this->params['url']['description'];
+			$this->Project->create();
+			if($this->Project->save($this->data)){
+				$result = array('success'=>'1');
+			}else{
+				$result = array('success'=>'0');
+			}
+			$this->set(compact('result'));
+			return $result;
+		}
 		if (!empty($this->data)) {
 			$this->Project->create();
 			if ($this->Project->save($this->data)) {
@@ -80,10 +94,14 @@ class ProjectsController extends AppController {
 		$this->Acl->allow('user', 'edit');
 		if ($this->RequestHandler->isXml()){
 			//print_r($this->params);
-			$this->data['Project']['id'] = $this->params['url']['id'];
-			$this->data['Project']['user_id'] = $this->params['url']['user_id'];
-			$this->data['Project']['title'] = $this->params['url']['title'];
-			$this->data['Project']['description'] = $this->params['url']['description'];
+			$this->data['Project']['id'] = $id;
+			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['id'];
+			if(isset($this->params['url']['title'])){
+				$this->data['Project']['title'] = $this->params['url']['title'];
+			}
+			if(isset($this->params['url']['description'])){
+				$this->data['Project']['description'] = $this->params['url']['description'];
+			}
 			$this->Project->save($this->data);
 			$result = array('success'=>'1');
 			$this->set(compact('result'));
