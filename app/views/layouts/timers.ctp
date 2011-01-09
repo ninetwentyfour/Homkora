@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Time Tracking Made Simple | Homkora</title>
-	<?php echo $html->css('style'); ?>
+	<?php echo $html->css('sass-style'); ?>
 	<?php echo $html->css('jquery.stopwatch'); ?>
 </head>
 <body>

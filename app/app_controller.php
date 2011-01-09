@@ -4,7 +4,8 @@ class AppController extends Controller {
     var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
 	var $persistModel = true;
 	var $cacheAction = array('view' => array('callbacks' => true, 'duration' => '1 hour'),'profile' => array('callbacks' => true, 'duration' => '2 hours'));
-
+	var $view = 'Haml';
+	
     function beforeFilter() {
 		//check for api calls
 		$this->__checkAPI();
