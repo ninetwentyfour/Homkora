@@ -78,6 +78,17 @@ class ProjectsController extends AppController {
 	*/
 	function edit($id = null) {
 		$this->Acl->allow('user', 'edit');
+		if ($this->RequestHandler->isXml()){
+			//print_r($this->params);
+			$this->data['Project']['id'] = $this->params['url']['id'];
+			$this->data['Project']['user_id'] = $this->params['url']['user_id'];
+			$this->data['Project']['title'] = $this->params['url']['title'];
+			$this->data['Project']['description'] = $this->params['url']['description'];
+			$this->Project->save($this->data);
+			$result = array('success'=>'1');
+			$this->set(compact('result'));
+			return $result;
+		}
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));

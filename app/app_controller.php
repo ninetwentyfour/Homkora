@@ -6,6 +6,9 @@ class AppController extends Controller {
 	var $cacheAction = array('view' => array('callbacks' => true, 'duration' => '1 hour'),'profile' => array('callbacks' => true, 'duration' => '2 hours'));
 
     function beforeFilter() {
+		//check for api calls
+		$this->__checkAPI();
+		
         //Configure AuthComponent
 		$this->Auth->actionPath = 'controllers/';
 		$this->Auth->allowedActions = array('display','activate','logout','publicAdd');
@@ -37,8 +40,10 @@ class AppController extends Controller {
 			$gravatar2 = $this->get_gravatar($_SESSION['Auth']['User']['email'],'80');
 			$this->set('gravatar2', $gravatar2);
 		}
-		$gravatar = $this->get_gravatar($_SESSION['Auth']['User']['email'],'20');
-		$this->set('gravatar', $gravatar);
+		if(isset($_SESSION['Auth']['User'])){
+			$gravatar = $this->get_gravatar($_SESSION['Auth']['User']['email'],'20');
+			$this->set('gravatar', $gravatar);
+		}
 	}
 
 	//this gets the group of the current user to check in admin/acl to see if they have permission
@@ -83,6 +88,25 @@ class AppController extends Controller {
 		}
 		
 		return $url;
+	}
+	
+	//check for partner api key for api access
+	function __checkAPI(){
+		if(isset($this->params['url']['partner'])){ //if partner param for url is set
+			$this->loadModel('ApiKey'); 
+			$tag = $this->params['url']['partner'];
+			$api = $this->ApiKey->findByKey($tag); // see if that key exists in the db
+			if($api){
+	    		//write a user to the session for authentication
+	    		$this->Session->write('Auth.User.id', '29');
+	    		$this->Session->write('Auth.User.email', 'contact@travisberry.com');
+	    		$this->Session->write('Auth.User.username', 'travisberry');
+	    		$this->Session->write('Auth.User.group_id', '3');
+				$this->Session->write('Auth.User.active', '1');
+	    		$this->Session->write('Auth.User.created', '2011-01-01 20:09:12');
+	    		$this->Session->write('Auth.User.modified', '2011-01-01 20:09:21');
+			}
+       	}
 	}
 	
 }

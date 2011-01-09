@@ -44,5 +44,5 @@
 	/**
 	* API
 	*/
-	Router::mapResources('projects','timers');
-	Router::parseExtensions('xml','json');
+	Router::mapResources(array('projects','timers'));
+	Router::parseExtensions('xml');

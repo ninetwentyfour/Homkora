@@ -73,6 +73,19 @@ class User extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'ApiKey' => array(
+			'className' => 'ApiKey',
+			'foreignKey' => 'user_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'Timer' => array(
 			'className' => 'Timer',
 			'foreignKey' => 'user_id',
