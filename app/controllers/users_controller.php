@@ -2,11 +2,12 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
+	var $components = array('Random');
 	
 	function beforeFilter() {
 	    parent::beforeFilter();
 	    $this->Auth->autoRedirect = false;
-	    $this->Auth->allow(array('userEdit','profile'));
+	    $this->Auth->allow(array('userEdit','profile','build_acl'));
 	}
 	
 	function login() {
@@ -83,6 +84,7 @@ class UsersController extends AppController {
 					$this->User->create();
 					if ($this->User->save($this->data)) {
 						$this->__sendActivationEmail($this->User->id);
+						$this->__createApiKey($this->User->id);
 						$this->Session->setFlash(__('Check your email for account verification.', true));
 						$this->redirect('/login');
 					} else {
@@ -430,6 +432,17 @@ class UsersController extends AppController {
 		$this->set('user', $user);
 		
 		
+	}
+	
+	function __createApiKey($user_id){
+		$random = $this->Random->randomString();
+		$this->data = array('ApiKey'=>array('key'=>$random,'user_id'=>$user_id));
+		$this->User->ApiKey->create();
+		if ($this->User->ApiKey->save($this->data)){
+			return true;
+		}else{
+			echo 'oh shit';
+		}
 	}
 	
 }
