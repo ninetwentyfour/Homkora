@@ -31,7 +31,7 @@ abstract class _HamlMarkdownFilter extends HamlBaseFilter {
 	 * @var string Markdown class
 	 * Override this value if the class name is different in your environment
 	 */
-	protected $vendorClass = 'MarkdownExtra_Parser';
+	protected $vendorClass = 'Markdown_Parser';
 	
 	/**
 	 * Child classes must implement this method.
@@ -45,6 +45,6 @@ abstract class _HamlMarkdownFilter extends HamlBaseFilter {
 	 * @return string filtered text
 	 */
 	public function run($text) {
-		return '<?php	'.(!empty($this->vendorPath)?'require_once "'.$this->vendorPath.'";':'').'$markdown___=new '.$this->vendorClass.'();echo  $markdown___->safeTransform("'.preg_replace(HamlParser::MATCH_INTERPOLATION, '".\1."', $text).'");?>';
+		return '<?php	'.(!empty($this->vendorPath)?'require_once "'.$this->vendorPath.'";':'').'$markdown___=new '.$this->vendorClass.'();echo  $markdown___->transform("'.preg_replace(HamlParser::MATCH_INTERPOLATION, '".\1."', $text).'");?>';
 	}
 }

@@ -22,7 +22,7 @@
 define('VENDOR_PATH', APP.'vendors'.DS.'markdown'.DS.'markdown.php');
 
 // The base filter class
-App::import('Vendor', 'HamlMarkdownFilter', array('file'=>'phamlp'.DS.'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));
+App::import('Vendor', 'HamlMarkdownFilter', array('file'=>'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));
 
 /**
  * Markdown Filter for {@link http://haml-lang.com/ Haml} class.

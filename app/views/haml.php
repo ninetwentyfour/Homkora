@@ -158,7 +158,7 @@ class HamlView extends View {
 			}
 		} // foreach
 
-		App::import('Vendor', 'HamlParser', array('file'=>'phamlp'.DS.'haml'.DS.'HamlParser.php'));
+		App::import('Vendor', 'HamlParser', array('file'=>'haml'.DS.'HamlParser.php'));
 		$this->haml = new HamlParser($options);
 	}
 	

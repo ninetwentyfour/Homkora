@@ -36,6 +36,7 @@
 	Router::connect('/faq', array('controller' => 'pages', 'action' => 'display', 'faq'));
 	Router::connect('/help', array('controller' => 'pages', 'action' => 'display', 'help'));
 	Router::connect('/privacy', array('controller' => 'pages', 'action' => 'display', 'privacy'));
+	Router::connect('/api', array('controller' => 'pages', 'action' => 'display', 'api'));
 	
 	Router::connect('/sign-up', array('controller' => 'users', 'action' => 'publicAdd'));
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));

@@ -1,0 +1,55 @@
+!!!
+%html
+	%head
+		%meta{:charset => "utf-8"}
+		%title Time Tracking Made Simple | Homkora
+		= $html->css('sass-style');
+		= $html->css('jquery.stopwatch');
+	%body
+		%header
+			%h1
+				%a{:href => "http://homkora.com"} Homkora
+			%nav
+				:php
+					// show different nav bars to different people
+					if(isset($_SESSION['Auth']['User'])){
+						if($_SESSION['Auth']['User']['group_id']=='1'){
+							echo $this->element('navigation');	
+						}else{
+							echo $this->element('navigation_user');	
+						}
+					}else{
+						echo $this->element('navigation_no_user');
+					}
+		#container
+			%noscript
+				Homkora must have javascript enabled.
+			#content
+				= $this->Session->flash();
+				= $this->Session->flash("auth");
+				= $content_for_layout;
+				%div{:style => "clear:both;"}
+			%div{:style => "clear:both;"}
+		%footer.transparent_class
+			= $this->element('footer');
+		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
+		= $this->Html->script('jquery.stopwatch');
+		:javascript
+			//write the timer to the time input in add timer on form submit
+			function checkForm(frm) {
+				frm.submit.disabled=true;
+				var o = $('div.display').text();
+				//alert(o);
+				if (o){
+					document.getElementById("TimerTime").value = o;
+					return true; //returns true if all validation passes
+				}else{
+					alert('Please Add Feedback before requesting a revision');
+					return false;
+				}
+			}
+		:javascript
+			//create the clock
+			$(function() {
+				$('#clock1').stopwatch();
+			});

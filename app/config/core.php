@@ -305,5 +305,5 @@
 	
 	//haml and sass
 	Configure::write('Haml.format', 'html5');
-	Configure::write('Haml.filterDir', VIEWS.'Filters');
+	Configure::write('Haml.filterDir', VIEWS.'filters');
 	Configure::write('Asset.filter.css', 'sass.php');
