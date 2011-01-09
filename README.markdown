@@ -48,6 +48,10 @@ Todo:
 
 Redirect with warning if new user creates timer with no projects first
 
+Documentation for API
+
+Add users - Edit Users - Add Timers - Edit Timers - APIs
+
 <del>Delete timers associated with projects on project delete</del>
 
 <del>Form validation - custom error messages</del>
