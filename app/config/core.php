@@ -33,7 +33,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 2);
+	Configure::write('debug', 0);
 
 /**
  * CakePHP Log Level:
@@ -306,6 +306,5 @@
 	//haml and sass
 	Configure::write('Haml.format', 'html5');
 	Configure::write('Haml.filterDir', VIEWS.'filters');
-	Configure::write('Sass.style', 'expanded');
-	Configure::write('Sass.filename', 'test2.scss');
+	Configure::write('Sass.style', 'compressed');
 	Configure::write('Asset.filter.css', 'sass.php');

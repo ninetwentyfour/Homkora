@@ -329,8 +329,8 @@ class SassParser {
 			'load_paths' 		 => array(dirname(__FILE__) . DIRECTORY_SEPARATOR . self::TEMPLATE_LOCATION),
 			'line'					 => 1,
 			'line_numbers'	 => false,
-			'style' 				 => SassRenderer::STYLE_NESTED,
-			'syntax'				 => SassFile::SASS
+			'style' 				 => SassRenderer::STYLE_COMPRESSED,
+			'syntax'				 => SassFile::SCSS
 		);
 		
 		foreach (array_merge($defaultOptions, $options) as $name=>$value) {

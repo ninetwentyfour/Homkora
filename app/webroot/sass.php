@@ -87,9 +87,13 @@ if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 }
 
 header("Content-Type: text/css");
-header("Expires: " . gmdate("D, j M Y H:i:s", time() + DAY) . " GMT");
+//header("Expires: " . gmdate("D, j M Y H:i:s", time() + DAY) . " GMT");
 header("Cache-Control: cache"); // HTTP/1.1
 header("Pragma: cache");        // HTTP/1.0
+header("Expires: Mon, 26 Jul 2012 05:00:00 GMT");
+header("Accept-Ranges: bytes");
+header("Vary: Accept-Encoding");
+//header("Content-Encoding: gzip");
 
 if (preg_match('|\.\.|', $url) || !preg_match('|^ccss/(.+)$|i', $url, $regs)) {
 	die('Wrong file name.');
