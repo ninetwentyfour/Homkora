@@ -96,7 +96,7 @@ if (preg_match('|\.\.|', $url) || !preg_match('|^ccss/(.+)$|i', $url, $regs)) {
 }
 
 $cssFile = CSS . $regs[1];
-$sassFile = str_replace('.css', '.sass', $cssFile);
+$sassFile = str_replace('.css', '.scss', $cssFile);
 
 // Parse the Sass file if there is one
 if (file_exists($sassFile)) {
