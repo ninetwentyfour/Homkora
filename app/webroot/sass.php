@@ -86,14 +86,13 @@ if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 	exit('File Not Found');
 }
 
+ob_start ("ob_gzhandler");
 header("Content-Type: text/css");
-//header("Expires: " . gmdate("D, j M Y H:i:s", time() + DAY) . " GMT");
-header("Cache-Control: cache"); // HTTP/1.1
-header("Pragma: cache");        // HTTP/1.0
-header("Expires: Mon, 26 Jul 2012 05:00:00 GMT");
-header("Accept-Ranges: bytes");
-header("Vary: Accept-Encoding");
-//header("Content-Encoding: gzip");
+$seconds_to_cache = 31556926;
+$ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
+header("Expires: $ts");
+header("Pragma: cache");
+header("Cache-Control: maxage=$seconds_to_cache");
 
 if (preg_match('|\.\.|', $url) || !preg_match('|^ccss/(.+)$|i', $url, $regs)) {
 	die('Wrong file name.');
@@ -126,3 +125,4 @@ elseif (file_exists($cssFile)) {
 else {
 	die('/* No Sass or CSS file found. */');
 }
+ob_end_flush();

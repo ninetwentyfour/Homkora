@@ -1,0 +1,15 @@
+%div.projects.form
+	= $this->Form->create('Project')
+		%fieldset
+			%legend Add Project
+			= $this->Form->input('user_id', array('value' => $_SESSION['Auth']['User']['id'] , 'type' => 'hidden'))
+			= $this->Form->input('title')
+			= $this->Form->input('description')
+	= $this->Form->end(__('Submit', true))
+%br
+%div.bottomLinks
+	%h3 Actions
+	%br
+	= $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Projects', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('icon_timer.png', array('alt' => 'View','title'=>'View')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex'))

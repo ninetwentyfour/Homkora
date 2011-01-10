@@ -308,3 +308,4 @@
 	Configure::write('Haml.filterDir', VIEWS.'filters');
 	Configure::write('Sass.style', 'compressed');
 	Configure::write('Asset.filter.css', 'sass.php');
+	//Configure::write('Asset.filter.css', 'gzip.php');
