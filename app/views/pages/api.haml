@@ -9,11 +9,89 @@
 		line-height:1.6em;
 		width:500px;
 	}
-%h1 About Homkora
+%h1 Homkora API Documentation
 %p
 	:markdown
-		Textile
+		Projects
 		=======
 
-		Hello, *World*
-		[Travis Berry](http://travisberry.com)
+		*****
+
+		**Retrieve Projects:**
+
+		Required Params: partner
+
+				<?php
+
+					\$url = 'http://homkora.com/projects.xml?partner=APIKEYHERE';
+
+					\$xml = simplexml_load_file(\$url);
+
+					print_r(\$xml);
+
+				?>
+
+		Expected Result:
+
+		*****
+
+		**Add Projects:**
+
+		Required Params: partner - title - description
+
+				<?php
+
+					\$url = 'http://homkora.com/projects/add.xml?partner=APIKEYHERE&title=test&description=test';
+
+					\$xml = simplexml_load_file(\$url);
+
+					print_r(\$xml);
+
+				?>
+
+		Expected Result:
+
+		*****
+
+		**Edit Projects:**
+
+		Required Params: partner - title and/or description
+
+				<?php
+
+					\$url = 'http://homkora.com/projects/edit/PROJECTID.xml?partner=APIKEYHERE&title=test&description=test';
+
+					\$xml = simplexml_load_file(\$url);
+
+					print_r(\$xml);
+
+				?>
+
+		Expected Result:
+
+		*****
+
+		*****
+
+		Timers
+		=======
+
+		*****
+
+		**Retrieve Timer:**
+
+		Required Params: partner
+
+				<?php
+
+					\$url = 'http://homkora.com/timers.xml?partner=APIKEYHERE';
+
+					\$xml = simplexml_load_file(\$url);
+
+					print_r(\$xml);
+
+				?>
+
+		Expected Result:
+
+		*****
