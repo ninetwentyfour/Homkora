@@ -18,7 +18,7 @@ Awesome Icons from [http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/][7]
 
 Fantastic stopwatch jquery plugin was made by [kellishaver][8]
 
-PHamlp from [chris.l.yates][13]
+PHamlP from [chris.l.yates][13]
 
 PHP Markdown by [michel.fortin][14]
 
