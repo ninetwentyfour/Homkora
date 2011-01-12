@@ -18,6 +18,10 @@ Awesome Icons from [http://blog.twg.ca/2009/09/free-iphone-toolbar-icons/][7]
 
 Fantastic stopwatch jquery plugin was made by [kellishaver][8]
 
+PHamlp from [chris.l.yates][13]
+
+PHP Markdown by [michel.fortin][14]
+
  
 Download:
 =========
@@ -89,3 +93,5 @@ I'm in no way responsible for anything you do with this. If this breaks anything
   [10]: http://unlicense.org/
   [11]: http://bakery.cakephp.org/articles/alkemann/2008/10/21/logablebehavior
   [12]: https://github.com/interlock/acl_plugin
+  [13]: http://code.google.com/p/phamlp/
+  [14]: http://michelf.com/projects/php-markdown/
