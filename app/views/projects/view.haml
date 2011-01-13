@@ -1,0 +1,20 @@
+:php
+	App::import('Sanitize');
+%div.projects.view
+	%div.project-view
+		%h2 Total Time
+		#totalTime
+			= Sanitize::html($project['Project']['total_time'])
+	#project-view-break
+	%div.project-view
+		%h2 Title
+		= Sanitize::html($project['Project']['title'])
+	%div.project-view
+		%h2 Description
+		= Sanitize::html($project['Project']['description'])
+	%div.project-view
+		%h2 Created
+		= Sanitize::html($project['Project']['created'])
+	%div.project-view
+		%h2 Modified
+		= Sanitize::html($project['Project']['modified'])
