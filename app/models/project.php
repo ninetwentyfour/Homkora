@@ -3,6 +3,7 @@ class Project extends AppModel {
 	var $name = 'Project';
 	//var $actsAs = array('Logable');
 	var $primaryKey = '_id';
+	
 
 	    function schema() {
 	        $this->_schema = array(

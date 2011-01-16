@@ -1,4 +1,4 @@
-<!--cachetime:1295147260--><?php
+<!--cachetime:1295153502--><?php
 			App::import('Controller', 'Projects');
 			$controller =& new ProjectsController();
 				$controller->plugin = $this->plugin = '';
@@ -7,7 +7,7 @@
 				$controller->layout = $this->layout = 'default';
 				$controller->webroot = $this->webroot = '/';
 				$controller->here = $this->here = '/projects/view/4d322fb974d77ed07f371798';
-				$controller->params = $this->params = unserialize(stripslashes('a:10:{s:10:\"controller\";s:8:\"projects\";s:6:\"action\";s:4:\"view\";s:5:\"named\";a:0:{}s:4:\"pass\";a:1:{i:0;s:24:\"4d322fb974d77ed07f371798\";}s:6:\"plugin\";N;s:3:\"url\";a:2:{s:3:\"ext\";s:4:\"html\";s:3:\"url\";s:38:\"projects/view/4d322fb974d77ed07f371798\";}s:4:\"form\";a:0:{}s:6:\"_Token\";a:5:{s:3:\"key\";s:40:\"6ec363faa4a658e0ac1e03b2e485ff3586575c90\";s:7:\"expires\";i:1295149660;s:18:\"allowedControllers\";a:0:{}s:14:\"allowedActions\";a:0:{}s:14:\"disabledFields\";a:1:{i:0;s:4:\"time\";}}s:6:\"isAjax\";b:0;s:6:\"models\";a:1:{i:0;s:7:\"Project\";}}'));
+				$controller->params = $this->params = unserialize(stripslashes('a:10:{s:10:\"controller\";s:8:\"projects\";s:6:\"action\";s:4:\"view\";s:5:\"named\";a:0:{}s:4:\"pass\";a:1:{i:0;s:24:\"4d322fb974d77ed07f371798\";}s:6:\"plugin\";N;s:3:\"url\";a:2:{s:3:\"ext\";s:4:\"html\";s:3:\"url\";s:38:\"projects/view/4d322fb974d77ed07f371798\";}s:4:\"form\";a:0:{}s:6:\"_Token\";a:5:{s:3:\"key\";s:40:\"3f4e97a5afc6323374fb960e6b244abcfa144ac5\";s:7:\"expires\";i:1295155902;s:18:\"allowedControllers\";a:0:{}s:14:\"allowedActions\";a:0:{}s:14:\"disabledFields\";a:1:{i:0;s:4:\"time\";}}s:6:\"isAjax\";b:0;s:6:\"models\";a:1:{i:0;s:7:\"Project\";}}'));
 				$controller->action = $this->action = unserialize('s:4:"view";');
 				$controller->data = $this->data = unserialize(stripslashes('a:0:{}'));
 				$controller->theme = $this->theme = '';

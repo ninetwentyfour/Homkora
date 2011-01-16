@@ -74,14 +74,14 @@
 class DATABASE_CONFIG {
 
 	// var $default = array(
-	// 		'driver' => 'mysql',
-	// 		'persistent' => false,
-	// 		'host' => 'localhost',
-	// 		'login' => 'root',
-	// 		'password' => 'password',
-	// 		'database' => 'oulomos',
-	// 		'prefix' => '',
-	// 	);
+	// 				'driver' => 'mysql',
+	// 				'persistent' => false,
+	// 				'host' => 'localhost',
+	// 				'login' => 'root',
+	// 				'password' => '221westwood',
+	// 				'database' => 'oulomos',
+	// 				'prefix' => '',
+	// 			);
 	public $default = array(
 	        #
 			'datasource' => 'mongodb.mongodbSource',
