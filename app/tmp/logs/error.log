@@ -857,3 +857,201 @@ Aco: controllers/Acl/Acl/admin_index in [/home/ninetwentyfour/homkora.com/cake/l
 2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
 2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
 2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 15:40:22 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 15:40:22 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 15:41:30 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:08 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:10 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:11 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:11 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:52:13 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:52:14 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:54 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:55 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:56 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:56 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:02 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:03 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:04 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:05 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:05 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:29:37 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:29:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:29:37 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:29:37 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:38:12 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:38:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:38:12 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:38:12 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:38:13 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:38:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:38:13 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:38:13 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:38:32 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:38:32 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:38:32 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:38:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:41:41 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:41:41 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:41:41 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:41:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:41:42 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:41:42 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:41:42 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:41:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 17:52:29 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:06:19 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:08:30 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:09:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:10:25 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:11:28 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:13:02 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:22:37 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:23:29 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:28:45 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:30:01 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:32:58 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:34:00 Warning: Warning (2): Missing argument 2 for MongodbSource::query() in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 953]
+2011-01-15 18:35:05 Warning: Warning (2): Missing argument 2 for MongodbSource::query() in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 953]
+2011-01-15 18:35:05 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:40:24 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]

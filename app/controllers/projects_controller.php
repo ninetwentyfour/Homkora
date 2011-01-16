@@ -21,11 +21,11 @@ class ProjectsController extends AppController {
 		//contain projects for performance
 		$this->Project->recursive = -1;
 		$projects = $this->Project->find('all');
-		foreach($projects as $project){
+		//foreach($projects as $project){
 			//update thr total time before the page loads.
-			$data = array('id'=>$project['Project']['id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
-			$this->addTime2($data);
-		}
+		//	$data = array('id'=>$project['Project']['id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
+		//	$this->addTime2($data);
+		//}
 		//now grab all the updated proejct data for display
 		$projects = $this->Project->find('all', array('fields' => array('title','description','total_time')));
 		$this->set('projects', $this->paginate());
@@ -43,10 +43,16 @@ class ProjectsController extends AppController {
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$project = $this->Project->read(array('id','total_time' ,'title','description','created','modified','user_id'), $id);
+		//$project = $this->Project->read($id);
+		$params = array(
+			'conditions' => array('_id' => $id)
+
+		);
+		
+		$project = $this->Project->find('all',$params);
 		$this->set('project', $project);
 		//check that project belongs to user or is an admin
-		if($project['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($project[0]['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}

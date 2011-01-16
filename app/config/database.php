@@ -73,15 +73,30 @@
  */
 class DATABASE_CONFIG {
 
-	var $default = array(
-		'driver' => 'mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'password',
-		'database' => 'oulomos',
-		'prefix' => '',
-	);
+	// var $default = array(
+	// 		'driver' => 'mysql',
+	// 		'persistent' => false,
+	// 		'host' => 'localhost',
+	// 		'login' => 'root',
+	// 		'password' => 'password',
+	// 		'database' => 'oulomos',
+	// 		'prefix' => '',
+	// 	);
+	public $default = array(
+	        #
+			'datasource' => 'mongodb.mongodbSource',
+			#
+			    'database' => 'my_test',
+			#
+			    'host' => 'localhost',
+			#
+			    'port' => 27017
+	        /* optional auth fields
+	        'login' => 'mongo', 
+	        'password' => 'awesomeness',    
+	        */
+	    );  
+	
 
 	var $test = array(
 		'driver' => 'mysql',

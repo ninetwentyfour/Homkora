@@ -4,17 +4,17 @@
 	%div.project-view
 		%h2 Total Time
 		#totalTime
-			= Sanitize::html($project['Project']['total_time'])
+			= Sanitize::html($project[0]['Project']['total_time'])
 	#project-view-break
 	%div.project-view
 		%h2 Title
-		= Sanitize::html($project['Project']['title'])
+		= Sanitize::html($project[0]['Project']['title'])
 	%div.project-view
 		%h2 Description
-		= Sanitize::html($project['Project']['description'])
+		= Sanitize::html($project[0]['Project']['description'])
 	%div.project-view
 		%h2 Created
-		= Sanitize::html($project['Project']['created'])
+		= Sanitize::html($project[0]['Project']['created'])
 	%div.project-view
 		%h2 Modified
-		= Sanitize::html($project['Project']['modified'])
+		= Sanitize::html($project[0]['Project']['modified'])
