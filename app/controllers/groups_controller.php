@@ -6,6 +6,11 @@ class GroupsController extends AppController {
 	function beforeFilter() {
 	    parent::beforeFilter(); 
 	    //$this->Auth->allow(array('*'));
+	    $user = $this->Auth->user();
+	    if($user['User']['group_id'] != '1'){
+          $this->Session->setFlash('That action is not allowed.');
+          $this->redirect('/projects/index');
+	    }
 	}
 	
 	function index() {

@@ -1,7 +1,7 @@
 <?php
 class Project extends AppModel {
 	var $name = 'Project';
-	//var $actsAs = array('Logable');
+	var $actsAs = array('Logable');
 	var $primaryKey = '_id';
 	
 

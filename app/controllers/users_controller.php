@@ -8,6 +8,13 @@ class UsersController extends AppController {
 	    parent::beforeFilter();
 	    //$this->Auth->autoRedirect = false;
 	    $this->Auth->allow(array('userEdit','profile','build_acl','publicAdd'));
+	    $user = $this->Auth->user();
+	    if($user['User']['group_id'] != '1'){
+          if($this->action != 'userEdit' && $this->action != 'profile' && $this->action != 'publicAdd' && $this->action != 'login' && $this->action != 'logout'){
+            $this->Session->setFlash('That action is not allowed.');
+            $this->redirect('/projects/index');
+          }
+	    }
 	}
 	
 	function login() {

@@ -82,21 +82,34 @@ class DATABASE_CONFIG {
 	// 				'database' => 'oulomos',
 	// 				'prefix' => '',
 	// 			);
-	public $default = array(
-	        #
-			'datasource' => 'mongodb.mongodbSource',
-			#
-			    'database' => 'my_test',
-			#
-			    'host' => 'localhost',
-			#
-			    'port' => 27017
-	        /* optional auth fields
-	        'login' => 'mongo', 
-	        'password' => 'awesomeness',    
-	        */
-	    );  
-	
+	// public $default = array(
+	//         #
+	// 		'datasource' => 'mongodb.mongodbSource',
+	// 		#
+	// 		    'database' => 'my_test',
+	// 		#
+	// 		    'host' => 'localhost',
+	// 		#
+	// 		    'port' => 27017
+	//         /* optional auth fields
+	//         'login' => 'mongo', 
+	//         'password' => 'awesomeness',    
+	//         */
+	//     );  
+		public $default = array(
+		        #
+				'datasource' => 'mongodb.mongodbSource',
+				#
+				    'database' => 'homkora',
+				#
+				    'host' => 'flame.mongohq.com',
+				#
+				    'port' => 27068,
+		        //optional auth fields
+		        'login' => 'ninetwentyfour', 
+		        'password' => 'w35tw00d',    
+		        
+		    );
 
 	var $test = array(
 		'driver' => 'mysql',

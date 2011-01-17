@@ -38,17 +38,17 @@ class ProjectsController extends AppController {
 	* @return $projects array for view
 	*/
 	function view($id = null) {
-		//$this->layout = 'projects';
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		//$project = $this->Project->read($id);
+		//get the project
 		$params = array(
 			'conditions' => array('_id' => $id)
 		);
 		$project = $this->Project->find('all',$params);
 		$this->set('project', $project);
+		//get the timers associated with the project
 		$this->loadModel('Timer');
 		$params = array(
 			'conditions' => array('project_id' => $id)
@@ -68,7 +68,6 @@ class ProjectsController extends AppController {
 	*/
 	function add() {
 		if ($this->RequestHandler->isXml()){
-			//print_r($this->params);
 			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['_id'];
 			$this->data['Project']['title'] = $this->params['url']['title'];
 			$this->data['Project']['description'] = $this->params['url']['description'];
@@ -102,9 +101,7 @@ class ProjectsController extends AppController {
 	* @return sets flash 'The project has been saved'
 	*/
 	function edit($id = null) {
-		//$this->Acl->allow('user', 'edit');
 		if ($this->RequestHandler->isXml()){
-			//print_r($this->params);
 			$this->data['Project']['_id'] = $id;
 			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['_id'];
 			if(isset($this->params['url']['title'])){
@@ -138,8 +135,6 @@ class ProjectsController extends AppController {
 				$this->redirect(array('action' => 'index'));
 			}
 		}
-		//$users = $this->Project->User->find('list');
-		//$this->set(compact('users'));
 	}
 	/**
 	* Delete project
@@ -158,6 +153,7 @@ class ProjectsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Project->delete($id)) {
+    		//get the timers for deletion
 			$this->loadModel('Timer');
 			$params = array(
 				'conditions' => array('project_id' => $id)
@@ -165,6 +161,7 @@ class ProjectsController extends AppController {
 			);
 			$timers = $this->Timer->find('all',$params);
 			foreach($timers as $timer){
+     			//delete the timer
 				$this->Timer->delete($timer['Timer']['_id']);
 			}
 			$this->Session->setFlash(__('Project deleted', true));
