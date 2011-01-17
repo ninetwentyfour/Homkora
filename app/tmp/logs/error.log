@@ -1194,3 +1194,29 @@ Aro: Array
 
 Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
 2011-01-16 16:50:00 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 17:33:54 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 17:33:54 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 17:33:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d3382d9da220a9406000001
+            [active] => 0
+            [email] => contact@travisberry.com
+            [username] => test
+            [group_id] => 3
+            [modified] => 1295221465
+            [created] => 1295221465
+        )
+
+)
+
+Aco: controllers/Timers/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-16 17:33:54 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 17:57:51 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]

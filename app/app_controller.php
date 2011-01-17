@@ -3,7 +3,7 @@ class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security','RequestHandler');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
 	var $persistModel = true;
-	var $cacheAction = array('view' => array('callbacks' => true, 'duration' => '1 hour'),'profile' => array('callbacks' => true, 'duration' => '2 hours'));
+	//var $cacheAction = array('view' => array('callbacks' => true, 'duration' => '1 hour'),'profile' => array('callbacks' => true, 'duration' => '2 hours'));
 	var $view = 'Haml';
 	
     function beforeFilter() {
@@ -12,8 +12,8 @@ class AppController extends Controller {
 		
         //Configure AuthComponent
 		 //$this->Auth->actionPath = 'controllers/';
-		 //		$this->Auth->allowedActions = array('display','activate','logout','publicAdd');
-		   //      $this->Auth->authorize = 'actions';
+		 		//$this->Auth->allowedActions = array('display','activate','logout','publicAdd');
+		         //$this->Auth->authorize = 'actions';
 		         //$this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
 		       //  $this->Auth->logoutRedirect = '/login';
 		     //   $this->Auth->loginRedirect = array('controller' => 'projects', 'action' => 'index');

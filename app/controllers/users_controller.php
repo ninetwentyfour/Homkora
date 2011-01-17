@@ -15,27 +15,26 @@ class UsersController extends AppController {
 		//	$this->Session->setFlash('You are logged in!');
 		//	$this->redirect('/', null, false);
 		//}
-		
 		if ($this->data) {
-               			// Use the AuthComponentÕs login action
-                        if ($this->Auth->login($this->data)) {
-                                // Retrieve user data
-								$params = array('conditions' => array('username' => $this->data['User']['username']));
-                                $results = $this->User->find('first',$params);
-print_r($results);
-                                // Check to see if the UserÕs account isnÕt active
-                                if ($results['User']['active'] == "0") {
+			// Use the AuthComponentÕs login action
+			if ($this->Auth->login($this->data)) {
+				// Retrieve user data
+				$params = array('conditions' => array('username' => $this->data['User']['username']));
+				$results = $this->User->find('first',$params);
+				print_r($results);
+				// Check to see if the UserÕs account isnÕt active
+				if ($results['User']['active'] == "0") {
 					// Uh Oh!
 					$this->Session->setFlash('Your account has not been activated yet!');
 					//$this->Auth->logout();
 					//$this->redirect($this->Auth->logout());
 				}
-                                // Cool, user is active, redirect post login
-                                else {
-                                       $this->redirect('/projects/index');
-                                }
-                        }
-                }
+				// Cool, user is active, redirect post login
+				else {
+					//$this->redirect('/projects/index');
+				}
+			}
+		}
 	}
 
 	function logout() {
@@ -382,7 +381,7 @@ print_r($results);
 			$this->redirect(array('action' => 'profile',$id));
 		}
 		$user = $this->User->read(null, $id);
-		if($user['User']['id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid user', true));
 			$this->redirect(array('action' => 'profile',$id));
 		}
@@ -400,10 +399,16 @@ print_r($results);
 				}
 			}
 			//check user name against db
-			$userExists = $this->User->findByUsername($this->data['User']['username']);
-			$userExistsID = $this->User->findById($id);
+			$params = array(
+				'conditions' => array('username' => $this->data['User']['username'])
+			);
+			$params2 = array(
+				'conditions' => array('_id' => $id)
+			);
+			$userExists = $this->User->find('all',$params);
+			$userExistsID = $this->User->find('all',$params2);
 			//check that username isnt taken and isnt the old one
-			if($userExists['User']['username']==$this->data['User']['username'] && $userExistsID['User']['username']!=$this->data['User']['username']){
+			if($userExists[0]['User']['username']==$this->data['User']['username'] && $userExistsID[0]['User']['username']!=$this->data['User']['username']){
 				//if found and matches - dont save and alert user
 				$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
 			}else{
@@ -418,8 +423,8 @@ print_r($results);
 		if (empty($this->data)) {
 			$this->data = $this->User->read(null, $id);
 		}
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
+		//$groups = $this->User->Group->find('list');
+		//$this->set(compact('groups'));
 	}
 
 	function profile($id = null) {
