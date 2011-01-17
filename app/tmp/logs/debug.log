@@ -1840,3 +1840,4 @@
 2011-01-17 10:21:47 Notice: Notice (8): Undefined variable: user in [/var/www/cake/app/controllers/groups_controller.php, line 9]
 2011-01-17 10:23:42 Notice: Notice (8): Undefined offset: 0 in [/var/www/cake/app/controllers/projects_controller.php, line 59]
 2011-01-17 12:14:36 Notice: Notice (8): Undefined index: _id in [/var/www/cake/app/controllers/users_controller.php, line 449]
+2011-01-17 23:02:14 Notice: Notice (8): Undefined variable: gravatar in [/var/www/Homkora/app/views/elements/navigation_user.ctp, line 2]
