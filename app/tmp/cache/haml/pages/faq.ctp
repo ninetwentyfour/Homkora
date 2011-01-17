@@ -1,5 +1,5 @@
 <?php
-require_once '/var/www/cake/app/vendors/haml/HamlHelpers.php';
+require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
 ?><style type="text/css">
 /*<![CDATA[*/
 h1{
@@ -14,7 +14,7 @@ p{
 }
 /*]]>*/
 </style>
-<?php	require_once "/var/www/cake/app/vendors/markdown/markdown.php";$markdown___=new Markdown_Parser();echo  $markdown___->transform("What is Homkora?
+<?php	require_once "/var/www/Homkora/app/vendors/markdown/markdown.php";$markdown___=new Markdown_Parser();echo  $markdown___->transform("What is Homkora?
 =======
 
 Homkora is a simple web based time tracking app. It was created to be a simpler alternative to existing time tracking apps.

@@ -1,5 +1,5 @@
 <?php
-require_once '/var/www/cake/app/vendors/haml/HamlHelpers.php';
+require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
 ?><!DOCTYPE html>
 <html><head><meta charset="utf-8" /><title>Time Tracking Made Simple | Homkora</title><?php echo $html->css('scss-style');; ?><?php echo $html->css('jquery.stopwatch');; ?></head><body><header><h1> <a href="http://homkora.com">Homkora</a> </h1><nav><?php
 // show different nav bars to different people

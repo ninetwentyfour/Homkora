@@ -1,5 +1,5 @@
 <?php
-require_once '/var/www/cake/app/vendors/haml/HamlHelpers.php';
+require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
 ?><style type="text/css">
 /*<![CDATA[*/
 h1{
@@ -14,7 +14,7 @@ p{
 }
 /*]]>*/
 </style>
-<h1>Homkora API Documentation</h1><p><?php	require_once "/var/www/cake/app/vendors/markdown/markdown.php";$markdown___=new Markdown_Parser();echo  $markdown___->transform("Projects
+<h1>Homkora API Documentation</h1><p><?php	require_once "/var/www/Homkora/app/vendors/markdown/markdown.php";$markdown___=new Markdown_Parser();echo  $markdown___->transform("Projects
 =======
 
 *****

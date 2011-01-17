@@ -1,5 +1,5 @@
 <?php
-require_once '/var/www/cake/app/vendors/haml/HamlHelpers.php';
+require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
 ?><?php
 App::import('Sanitize');
 ?>

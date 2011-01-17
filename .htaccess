@@ -1,11 +1,3 @@
-Header unset ETag
-FileETag None
-<FilesMatch "\.(html|css|js)$">
-	SetOutputFilter DEFLATE
-</FilesMatch>
-<FilesMatch "\.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
-	Header set Expires "Thu, 15 Apr 2012 20:00:00 GMT"
-</FilesMatch>
 <IfModule mod_rewrite.c>
    RewriteEngine on
    RewriteRule    ^$ app/webroot/    [L]
