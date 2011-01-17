@@ -11,7 +11,7 @@
 	
 	<div class="project-view">
 		<h2><?php __('API Key'); ?></h2>
-		<?php echo Sanitize::html($user['ApiKey'][0]['key']); ?>
+		<?php echo Sanitize::html($user['User']['ApiKey'][0]['ApiKey']['key']); ?>
 	</div>
 
 	<div id="project-view-break"></div>
@@ -28,7 +28,7 @@
 	</div>
 	<div class="bottomLinks">
 		<br />
-		<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['id']),array('escape' => false,'class'=>'button addTimerIndex'));?>
+		<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['_id']),array('escape' => false,'class'=>'button addTimerIndex'));?>
 	</div>
 </div>
 

@@ -21,11 +21,11 @@ class ProjectsController extends AppController {
 		//contain projects for performance
 		$this->Project->recursive = -1;
 		$projects = $this->Project->find('all');
-		//foreach($projects as $project){
+		foreach($projects as $project){
 			//update thr total time before the page loads.
-		//	$data = array('id'=>$project['Project']['id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
-		//	$this->addTime2($data);
-		//}
+			$data = array('_id'=>$project['Project']['_id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
+			$this->addTime2($data);
+		}
 		//now grab all the updated proejct data for display
 		$projects = $this->Project->find('all', array('fields' => array('title','description','total_time')));
 		$this->set('projects', $this->paginate());
@@ -46,13 +46,17 @@ class ProjectsController extends AppController {
 		//$project = $this->Project->read($id);
 		$params = array(
 			'conditions' => array('_id' => $id)
-
 		);
-		
 		$project = $this->Project->find('all',$params);
 		$this->set('project', $project);
+		$this->loadModel('Timer');
+		$params = array(
+			'conditions' => array('project_id' => $id)
+		);
+		$timers = $this->Timer->find('all',$params);
+		$this->set('timers', $timers);
 		//check that project belongs to user or is an admin
-		if($project[0]['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($project[0]['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}
@@ -65,7 +69,7 @@ class ProjectsController extends AppController {
 	function add() {
 		if ($this->RequestHandler->isXml()){
 			//print_r($this->params);
-			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['id'];
+			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['_id'];
 			$this->data['Project']['title'] = $this->params['url']['title'];
 			$this->data['Project']['description'] = $this->params['url']['description'];
 			$this->Project->create();
@@ -88,7 +92,8 @@ class ProjectsController extends AppController {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.', true));
 			}
 		}
-		$users = $this->Project->User->find('list');
+		$this->loadModel('User');
+		$users = $this->User->find('list');
 		$this->set(compact('users'));
 	}
 	/**
@@ -97,11 +102,11 @@ class ProjectsController extends AppController {
 	* @return sets flash 'The project has been saved'
 	*/
 	function edit($id = null) {
-		$this->Acl->allow('user', 'edit');
+		//$this->Acl->allow('user', 'edit');
 		if ($this->RequestHandler->isXml()){
 			//print_r($this->params);
-			$this->data['Project']['id'] = $id;
-			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['id'];
+			$this->data['Project']['_id'] = $id;
+			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['_id'];
 			if(isset($this->params['url']['title'])){
 				$this->data['Project']['title'] = $this->params['url']['title'];
 			}
@@ -128,13 +133,13 @@ class ProjectsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Project->read(null, $id);
 			//check project belongs to user or is admin
-			if($this->data['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			if($this->data['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 				$this->Session->setFlash(__('Invalid project', true));
 				$this->redirect(array('action' => 'index'));
 			}
 		}
-		$users = $this->Project->User->find('list');
-		$this->set(compact('users'));
+		//$users = $this->Project->User->find('list');
+		//$this->set(compact('users'));
 	}
 	/**
 	* Delete project
@@ -148,13 +153,19 @@ class ProjectsController extends AppController {
 		}
 		//check if project belongs to user or is admin
 		$userProject = $this->Project->read(null, $id);
-		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid project', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Project->delete($id)) {
-			foreach($userProject['Timer'] as $timer){
-				$this->Project->Timer->delete($timer['id']);
+			$this->loadModel('Timer');
+			$params = array(
+				'conditions' => array('project_id' => $id)
+
+			);
+			$timers = $this->Timer->find('all',$params);
+			foreach($timers as $timer){
+				$this->Timer->delete($timer['Timer']['_id']);
 			}
 			$this->Session->setFlash(__('Project deleted', true));
 			$this->redirect(array('action'=>'index'));
@@ -174,7 +185,10 @@ class ProjectsController extends AppController {
 	* @return sends $finalStrArr to function exportcsv
 	*/
 	function exportcsvProjects(){
-	    $value = $this->Project->find('all', array('fields' => array('title','description','created','modified', 'total_time'), array('contain' => true),'conditions' => array('Project.user_id = '.$_SESSION['Auth']['User']['id'])));
+		$params = array(
+			'conditions' => array('user_id' => (string)$_SESSION['Auth']['User']['_id'])
+		);
+	    $value = $this->Project->find('all', $params);
 	    for ($i = 0; $i < count($value); $i++) {
 			$tempStr = $value[$i]['Project']['title'] . ',' . $value[$i]['Project']['description'] .',' . $value[$i]['Project']['total_time'] . ',' .$value[$i]['Project']['created'] .',' .$value[$i]['Project']['modified'] ;
 			$finalStrArr[$i] = $tempStr;
@@ -194,7 +208,11 @@ class ProjectsController extends AppController {
 	* @return sends $finalStrArr to function exportcsv
 	*/
 	function exportcsvTimers($id = null){
-	    $value = $this->Project->Timer->find('all', array('fields' => array('title','description','created','modified', 'time'), array('contain' => true),'conditions' => array('Timer.project_id = '.$id)));
+		$this->loadModel('Timer');
+		$params = array(
+			'conditions' => array('project_id' => $id)
+		);
+	    $value = $this->Timer->find('all',$params);
 	    for ($i = 0; $i < count($value); $i++) {
 		$tempStr = $value[$i]['Timer']['title'] . ',' . $value[$i]['Timer']['description'] .',' . $value[$i]['Timer']['time'] . ',' .$value[$i]['Timer']['created'] .',' .$value[$i]['Timer']['modified'] ;
 		$finalStrArr[$i] = $tempStr;
@@ -215,7 +233,7 @@ class ProjectsController extends AppController {
 	*/
 	function exportcsv($finalStrArr,$type){
 		$randStrg = $this->Random->randomString();
-	    $file =  WWW_ROOT . '/csv_export/Homkora_'.$type.'_Export_'.$randStrg.'.csv';
+	    $file =  WWW_ROOT . 'csv_export/Homkora_'.$type.'_Export_'.$randStrg.'.csv';
 		$fp = fopen($file, 'w') or die("can't open file");//create the csv file and tell it we are writing to it
 	    foreach ($finalStrArr as $line) {
 			fputcsv($fp, split(',', $line));//foreach array split csv and put in csv file
@@ -251,8 +269,9 @@ class ProjectsController extends AppController {
 	* @return sends $finalStrArr to function exportcsv
 	*/
 	function addTime2($data){
+		$this->loadModel('Timer');
 		//get all the timers for a project
-		$timers = $this->Project->Timer->find('all', array('fields' => array('id', 'time'), 'conditions' => array('Timer.project_id' => $data['id'])));
+		$timers = $this->Timer->find('all', array('fields' => array('_id', 'time'), 'conditions' => array('Timer.project_id' => $data['_id'])));
 		//define the $things array for later user. this prevents an error message
 		$things[0] = '';
 		$things[1] = '';
@@ -314,7 +333,7 @@ class ProjectsController extends AppController {
 		//double check is string
 		$final = (string)$timeString;
 		//orgainze the data of the project for saving
-		$this->data['Project']['id'] = $data['id'];
+		$this->data['Project']['_id'] = $data['_id'];
 		$this->data['Project']['user_id'] = $data['user_id'];
 		$this->data['Project']['title'] = $data['title'];
 		$this->data['Project']['description'] = $data['description'];

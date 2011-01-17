@@ -6,8 +6,8 @@ class UsersController extends AppController {
 	
 	function beforeFilter() {
 	    parent::beforeFilter();
-	    $this->Auth->autoRedirect = false;
-	    $this->Auth->allow(array('userEdit','profile','build_acl'));
+	    //$this->Auth->autoRedirect = false;
+	    $this->Auth->allow(array('userEdit','profile','build_acl','publicAdd'));
 	}
 	
 	function login() {
@@ -17,20 +17,22 @@ class UsersController extends AppController {
 		//}
 		
 		if ($this->data) {
-                        // Use the AuthComponentÕs login action
+               			// Use the AuthComponentÕs login action
                         if ($this->Auth->login($this->data)) {
                                 // Retrieve user data
-                                $results = $this->User->find('first', array('conditions' => array('User.username' => $this->data['User']['username'])));
+								$params = array('conditions' => array('username' => $this->data['User']['username']));
+                                $results = $this->User->find('first',$params);
+print_r($results);
                                 // Check to see if the UserÕs account isnÕt active
-                                if ($results['User']['active'] == 0) {
+                                if ($results['User']['active'] == "0") {
 					// Uh Oh!
 					$this->Session->setFlash('Your account has not been activated yet!');
 					//$this->Auth->logout();
-					$this->redirect($this->Auth->logout());
+					//$this->redirect($this->Auth->logout());
 				}
                                 // Cool, user is active, redirect post login
                                 else {
-                                        $this->redirect('/projects/index');
+                                       $this->redirect('/projects/index');
                                 }
                         }
                 }
@@ -96,7 +98,8 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('Fix Errors Below.', true));
 			}
 		}
-		$groups = $this->User->Group->find('list');
+		$this->loadModel('Group');
+		$groups = $this->Group->find('list');
 		$this->set(compact('groups'));
 	}
 
@@ -332,9 +335,10 @@ class UsersController extends AppController {
          *  @return Boolean indicates success
         */
         function __sendActivationEmail($user_id) {
-                $user = $this->User->find(array('User.id' => $user_id), array('User.email', 'User.username'), null, false);
+				$user = $this->User->read(null, $user_id);
+                //$user = $this->User->find(array('User.id' => $user_id), array('User.email', 'User.username'), null, false);
                 if (empty($user)) {
-			echo 'WOAH';
+						echo 'WOAH';
                         debug(__METHOD__." failed to retrieve User data for user.id: {$user_id}");
                         return false;
                 }
@@ -424,7 +428,12 @@ class UsersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$user = $this->User->read(null, $id);
-		if($user['User']['id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		$this->loadModel('ApiKey');
+		$params = array(
+			'conditions' => array('user_id' => (string)$_SESSION['Auth']['User']['_id'])
+		);
+		$user['User']['ApiKey'] = $this->ApiKey->find('all', $params);
+		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
 			$this->Session->setFlash(__('Invalid user', true));
 			$this->redirect(array('action' => 'index'));
 		}
@@ -437,8 +446,9 @@ class UsersController extends AppController {
 	function __createApiKey($user_id){
 		$random = $this->Random->randomString();
 		$this->data = array('ApiKey'=>array('key'=>$random,'user_id'=>$user_id));
-		$this->User->ApiKey->create();
-		if ($this->User->ApiKey->save($this->data)){
+		$this->loadModel('ApiKey');
+		$this->ApiKey->create();
+		if ($this->ApiKey->save($this->data)){
 			return true;
 		}else{
 			echo 'oh shit';

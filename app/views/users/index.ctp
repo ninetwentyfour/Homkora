@@ -5,7 +5,7 @@
 	<h2><?php __('Users');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('_id');?></th>
 			<th><?php echo $this->Paginator->sort('username');?></th>
 			<th><?php echo $this->Paginator->sort('password');?></th>
 			<th><?php echo $this->Paginator->sort('group_id');?></th>
@@ -22,18 +22,18 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
+		<td><?php echo $user['User']['_id']; ?>&nbsp;</td>
 		<td><?php echo Sanitize::html($user['User']['username']); ?>&nbsp;</td>
 		<td><?php echo Sanitize::html($user['User']['password']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
+			<?php echo $this->Html->link($user['User']['group_id'], array('controller' => 'groups', 'action' => 'view', $user['User']['group_id'])); ?>
 		</td>
 		<td><?php echo $user['User']['created']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['modified']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $user['User']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $user['User']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $user['User']['_id'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $user['User']['_id'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $user['User']['_id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['_id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

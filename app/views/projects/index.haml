@@ -50,7 +50,7 @@
 			%td.actions
 				= $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['_id']),array( 'escape' => false,'class'=>'view-link' ))
 				= $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['_id']),array( 'escape' => false,'class'=>'edit-link' ))
-				= $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['id'] ))
+				= $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['_id'] ))
 		:php
 			endforeach;
 	%p

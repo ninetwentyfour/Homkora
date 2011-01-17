@@ -1,6 +1,18 @@
 <?php
 class Group extends AppModel {
 	var $name = 'Group';
+	var $primaryKey = '_id';
+	
+
+	function schema() {
+		$this->_schema = array(
+			'_id' => array('type' => 'integer', 'primary' => true, 'length' => 40),
+			'name' => array('type' => 'string'),
+			'created' => array('type' => 'string'),
+			'modified' => array('type' => 'string'),
+		);
+		return $this->_schema;
+	}
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(
@@ -13,24 +25,7 @@ class Group extends AppModel {
 			),
 		),
 	);
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-	var $hasMany = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'group_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-	var $actsAs = array('Acl' => array('type' => 'requester'),"Logable");
+	var $actsAs = array('Acl' => array('type' => 'requester'));
 
 	function parentNode() {
 	    return null;

@@ -14,7 +14,7 @@ margin-left:353px;
 		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('title');
 		echo $this->Form->input('time', array('value' => '' , 'type' => 'hidden'));
-		echo $this->Form->input('user_id', array('value' => $_SESSION['Auth']['User']['id'] , 'type' => 'hidden'));
+		echo $this->Form->input('user_id', array('value' => $_SESSION['Auth']['User']['_id'] , 'type' => 'hidden'));
 		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('description',array('type'=>'text'));
 	?>

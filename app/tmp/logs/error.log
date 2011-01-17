@@ -1089,3 +1089,108 @@ Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/component
 2011-01-15 19:57:13 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/tmp/cache/haml/projects/index.ctp, line 18]
 2011-01-15 19:57:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Project._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
 2011-01-15 19:57:15 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/tmp/cache/haml/projects/index.ctp, line 18]
+2011-01-16 11:46:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:46:51 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:46:59 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:08 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:08 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 11:47:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:24 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:29 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:29 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 11:47:34 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:41 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:51 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:00 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:16 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:30 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:38 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:43 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:45 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:53 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:56 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:59 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:11 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:14 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:41 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 12:35:58 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/timers_controller.php, line 27]
+2011-01-16 13:50:12 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:52:16 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:52:16 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:54:01 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:54:41 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:39 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:46 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:46 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 13:57:52 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 13:59:08 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 14:00:23 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 14:00:25 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 14:02:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 157]
+2011-01-16 14:44:52 Warning: Warning (2): fopen(/var/www/cake/app/webroot//csv_export/Homkora_Projects_Export_BzY56EqyH8fXan2t8rF4.csv) [http://php.net/function.fopen]: failed to open stream: No such file or directory in [/var/www/cake/app/controllers/projects_controller.php, line 230]
+2011-01-16 14:50:02 Warning: Warning (2): fopen(/var/www/cake/app/webroot//csv_export/Homkora_Projects_Export_mS5F9O6qJ4vkn0C0Zwfm.csv) [http://php.net/function.fopen]: failed to open stream: No such file or directory in [/var/www/cake/app/controllers/projects_controller.php, line 233]
+2011-01-16 16:15:45 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:15:45 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:15:45 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:23:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:23:40 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:23:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:25:35 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:25:35 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:25:35 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:25:59 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:30:11 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:34:16 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:38:33 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:44:25 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:50:00 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:50:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:50:00 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d3382d9da220a9406000001
+            [active] => 0
+            [email] => contact@travisberry.com
+            [username] => test
+            [group_id] => 3
+            [modified] => 1295221465
+            [created] => 1295221465
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-16 16:50:00 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]

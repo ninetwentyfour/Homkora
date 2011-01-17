@@ -16,7 +16,7 @@ margin-left:353px;
 	<fieldset>
  		<legend><?php __('Edit Timer'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
+		echo $this->Form->input('_id');
 		echo $this->Form->input('project_id');
 		echo '<div class="timerAddFormSpacer"> </div>';
 		echo $this->Form->input('title');
