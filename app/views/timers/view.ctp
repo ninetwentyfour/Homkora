@@ -21,12 +21,12 @@
 
 	<div class="project-view">
 		<h2><?php __('Created'); ?></h2>
-		<?php echo Sanitize::html(date("m-d-Y H:i",strtotime($timer['Timer']['created']))); ?>
+		<?php echo Sanitize::html(date("M-d-Y",$timer['Timer']['created'])); ?>
 	</div>
 
 	<div class="project-view">
 		<h2><?php __('Modified'); ?></h2>
-		<?php echo Sanitize::html(date("m-d-Y H:i",strtotime($timer['Timer']['modified']))); ?>
+		<?php echo Sanitize::html(date("M-d-Y",$timer['Timer']['modified'])); ?>
 	</div>
 </div>
 <br /><br />

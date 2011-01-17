@@ -24,7 +24,7 @@
 
 	<div class="project-view">
 		<h2><?php __('Created'); ?></h2>
-		<?php echo $user['User']['created']; ?>
+		<?php echo date("M-d-Y",$user['User']['created']); ?>
 	</div>
 	<div class="bottomLinks">
 		<br />

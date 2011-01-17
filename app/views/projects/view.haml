@@ -14,10 +14,10 @@
 		= Sanitize::html($project[0]['Project']['description'])
 	%div.project-view
 		%h2 Created
-		= Sanitize::html(date("m-d-Y H:i",strtotime($project[0]['Project']['created'])))
+		= Sanitize::html(date("M-d-Y",$project[0]['Project']['created']))
 	%div.project-view
 		%h2 Modified
-		= Sanitize::html(date("m-d-Y H:i",strtotime($project[0]['Project']['modified'])))
+		= Sanitize::html(date("M-d-Y",$project[0]['Project']['modified']))
 %br
 %div.bottomLinks
 	%h3 Actions

@@ -450,7 +450,6 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('Invalid user', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$user['User']['created'] = date("m-d-Y H:i",strtotime($user['User']['created']));
 		//$user['User']['ApiKey'] = $this->User->ApiKey->read(null, $user['User']['id']);
 		$this->set('user', $user);
 		
