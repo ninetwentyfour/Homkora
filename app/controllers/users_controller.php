@@ -38,6 +38,7 @@ class UsersController extends AppController {
 				}
 				// Cool, user is active, redirect post login
 				else {
+				$this->Session->setFlash('Gets here!');
 					//$this->redirect('/projects/index');
 				}
 			}

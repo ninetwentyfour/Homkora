@@ -1220,3 +1220,4 @@ Aro: Array
 Aco: controllers/Timers/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
 2011-01-16 17:33:54 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
 2011-01-16 17:57:51 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 11:51:02 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]

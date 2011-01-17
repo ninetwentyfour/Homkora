@@ -11,12 +11,34 @@ class AppController extends Controller {
 		$this->__checkAPI();
 		
         //Configure AuthComponent
-		 //$this->Auth->actionPath = 'controllers/';
-		 		$this->Auth->allowedActions = array('display','activate','logout','publicAdd');
-		         //$this->Auth->authorize = 'actions';
-		         //$this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
-		       //  $this->Auth->logoutRedirect = '/login';
-		     //   $this->Auth->loginRedirect = array('controller' => 'projects', 'action' => 'index');
+		//$this->Auth->actionPath = 'controllers/';
+		$this->Auth->allowedActions = array('display','activate','logout','publicAdd','login');
+		//$this->Auth->authorize = 'actions';
+		//$this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
+		//$this->Auth->logoutRedirect = '/login';
+		$this->Auth->loginRedirect = array('controller' => 'projects', 'action' => 'index');
+		if ($this->data) {
+          if ($this->action == 'login') {
+    		    // Retrieve user data
+				$this->loadModel('User'); 
+				$params = array('conditions' => array('username' => $this->data['User']['username']));
+				$results = $this->User->find('first',$params);
+				// Check to see if the UserÕs account isnÕt active
+				if ($results['User']['active'] == "0") {
+					// Uh Oh!
+					$this->Session->setFlash('Your account has not been activated yet!');
+					$this->Auth->logout();
+					$this->redirect($this->Auth->logout());
+				}
+				// Cool, user is active, redirect post login
+				else {
+    				if($this->Auth->login($this->data)){
+     					$this->redirect('/projects/index');
+    				}
+				}
+			
+			}
+    	}
 
 		//logable
 		if(isset($this->Session)){
