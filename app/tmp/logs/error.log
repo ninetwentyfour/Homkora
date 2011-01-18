@@ -1327,3 +1327,7 @@ Aro: Array
 )
 
 Aco: Timers/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]
+2011-01-18 01:01:07 Error: Failed to send email: Failed to authenticate on SMTP server with username "travisberry@homkora.com.com" using 2 possible authenticators
+2011-01-18 01:01:54 Error: Failed to send email: Expected response code 354 but got code "550", with message "550 5.7.0 Mail Sending denied. m50sm2684389wek.32
+"
+2011-01-18 01:10:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]

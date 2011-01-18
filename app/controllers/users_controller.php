@@ -2,15 +2,15 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
-	var $components = array('Random');
+	var $components = array('Random','SwiftMailer');
 	
 	function beforeFilter() {
 	    parent::beforeFilter();
 	    //$this->Auth->autoRedirect = false;
-	    $this->Auth->allow(array('userEdit','profile','build_acl','publicAdd'));
+	    $this->Auth->allow(array('userEdit','profile','build_acl','publicAdd','activate'));
 	    $user = $this->Auth->user();
 	    if($user['User']['group_id'] != '1'){
-          if($this->action != 'userEdit' && $this->action != 'profile' && $this->action != 'publicAdd' && $this->action != 'login' && $this->action != 'logout'){
+          if($this->action != 'userEdit' && $this->action != 'profile' && $this->action != 'publicAdd' && $this->action != 'login' && $this->action != 'logout' && $this->action != 'activate'){
             $this->Session->setFlash('That action is not allowed.');
             $this->redirect('/projects/index');
           }
@@ -84,8 +84,16 @@ class UsersController extends AppController {
 			if ($this->User->validates()) {
 				// it validated logic
 				//check user name against db
-				$userExists = $this->User->findByUsername($this->data['User']['username']);
-				if($userExists['User']['username']==$this->data['User']['username']){
+				$params = array(
+         			'conditions' => array('username' => $this->data['User']['username'])
+        		);
+				$userExists = $this->User->find('all',$params);
+				if(isset($userExists[0]['User']['username'])){
+				
+				}else{
+    				$userExists[0]['User']['username'] = '';
+				}
+				if($userExists[0]['User']['username']==$this->data['User']['username']){
 					//if found and matches - dont save and alert user
 					$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
 				}else{
@@ -354,12 +362,48 @@ class UsersController extends AppController {
                 $this->set('activate_url', 'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash());
                 $this->set('username', $this->data['User']['username']);
                
-                $this->Email->to = $user['User']['email'];
-                $this->Email->subject = env('SERVER_NAME') . ' Ğ Please confirm your email address';
-                $this->Email->from = 'noreply@' . env('SERVER_NAME');
-                $this->Email->template = 'user_confirm';
-                $this->Email->sendAs = 'text';   // you probably want to use both :)   
-                return $this->Email->send();
+                //$this->Email->to = $user['User']['email'];
+                //$this->Email->subject = env('SERVER_NAME') . ' Ğ Please confirm your email address';
+                //$this->Email->from = 'noreply@' . env('SERVER_NAME');
+                $this->SwiftMailer->template = 'user_confirm';
+                //$this->Email->sendAs = 'text';   // you probably want to use both :)   
+                //return $this->Email->send();
+                $this->SwiftMailer->sendAs = 'text';
+                $this->SwiftMailer->smtpType = 'tls';
+         	    $this->SwiftMailer->smtpHost = 'smtp.gmail.com';
+         	    $this->SwiftMailer->smtpPort = 465;
+         	    $this->SwiftMailer->smtpUsername = 'travisberry@travisberry.com';
+         	    $this->SwiftMailer->smtpPassword = '221westwood';
+         	    $this->SwiftMailer->from = 'travisberry@travisberry.com';
+         	    $emailData['to'] = $user['User']['email'];
+         	    $emailData['from'] = 'travisberry@travisberry.com';
+         	    $emailData['subject'] = 'Homkora - Please confirm your email address';
+        		$emailData['body'] = 'To complete your sign up. Please click or copy this link to your browser. '.'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash();
+
+         	    $this->SwiftMailer->fromName = 'Homkora SignUp';
+         	    $this->SwiftMailer->to = $emailData['to'];
+         	    $this->set('message', $emailData['body']);
+         	    try{
+         			if(isset($emailData['subject'])){
+         			    $sendResult = $this->SwiftMailer->send('user_confirm',$emailData['subject']);
+         			}else{
+         			    $sendResult[0] = 'false';
+         			}
+         			if($sendResult[0]=='false') {
+         			    //Add code here to handle the error message
+           			    $this->Session->setFlash('There was an error sending your email.');
+         			    $this->log("Error sending email");
+         			}else{
+         			    $this->Session->setFlash('The Email has been successfully sent');
+           			}
+           			if (isset($this->params['requested'])) {
+         			    return $_SESSION['Message']['flash']['message'];
+         			}
+         			return $sendResult[0];
+         	    }
+         	    catch(Exception $e) {
+         	  		$this->log("Failed to send email: ".$e->getMessage());
+           	    }
         }
 	
 	/**

@@ -1936,3 +1936,7 @@
 2011-01-17 23:59:27 Notice: Notice (8): Use of undefined constant _id - assumed '_id' in [/var/www/Homkora/app/controllers/projects_controller.php, line 35]
 2011-01-17 23:59:27 Notice: Notice (8): Undefined offset: 0 in [/var/www/Homkora/app/controllers/projects_controller.php, line 35]
 2011-01-17 23:59:35 Notice: Notice (8): Use of undefined constant _id - assumed '_id' in [/var/www/Homkora/app/controllers/projects_controller.php, line 35]
+2011-01-18 00:53:42 Notice: Notice (8): Undefined variable: gravatar in [/var/www/Homkora/app/views/elements/navigation_user.ctp, line 2]
+2011-01-18 01:14:56 Notice: Notice (8): Undefined offset: 0 in [/var/www/Homkora/app/controllers/users_controller.php, line 91]
+2011-01-18 01:16:27 Notice: Notice (8): Undefined index: User in [/var/www/Homkora/app/controllers/users_controller.php, line 91]
+2011-01-18 01:16:27 Notice: Notice (1024): E11000 duplicate key error index: homkora.users.$username_1  dup key: { : "test4" } in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 443]

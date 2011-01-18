@@ -32,6 +32,7 @@ class ProjectsController extends AppController {
 		return $projects;
 
 	}
+	
 	/**
 	* Reads Single project for display in view
 	*
