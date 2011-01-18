@@ -1245,3 +1245,85 @@ Aco: controllers/Timers/index in [/var/www/cake/cake/libs/controller/components/
 2011-01-17 23:05:08 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
 2011-01-17 23:05:08 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
 2011-01-17 23:05:23 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:16:10 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-17 23:16:10 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/projects/add.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-17 23:21:58 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 23:21:58 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 23:49:10 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/Homkora/cake/libs/model/db_acl.php, line 191]
+2011-01-17 23:49:10 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:10 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d33940fda220a9606000003
+            [active] => 1
+            [created] => 1295225871
+            [email] => contact@travisberry.com
+            [group_id] => 3
+            [modified] => 1295225871
+            [username] => travisberry
+            [wtf] => 4d33940fda220a9606000003
+        )
+
+)
+
+Aco: Projects/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]
+2011-01-17 23:49:13 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/Homkora/cake/libs/model/db_acl.php, line 191]
+2011-01-17 23:49:13 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:13 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d33940fda220a9606000003
+            [active] => 1
+            [created] => 1295225871
+            [email] => contact@travisberry.com
+            [group_id] => 3
+            [modified] => 1295225871
+            [username] => travisberry
+            [wtf] => 4d33940fda220a9606000003
+        )
+
+)
+
+Aco: Projects/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]
+2011-01-17 23:49:15 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/Homkora/cake/libs/model/db_acl.php, line 191]
+2011-01-17 23:49:15 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:15 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d33940fda220a9606000003
+            [active] => 1
+            [created] => 1295225871
+            [email] => contact@travisberry.com
+            [group_id] => 3
+            [modified] => 1295225871
+            [username] => travisberry
+            [wtf] => 4d33940fda220a9606000003
+        )
+
+)
+
+Aco: Timers/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]

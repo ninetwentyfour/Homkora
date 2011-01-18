@@ -55,7 +55,7 @@ class AppController extends Controller {
 		$this->Security->blackHoleCallback='invalidSecurity';
 		//must ignore the time field in edit and add timers. these are hidden and supposed to change
 		$this->Security->disabledFields = array('time'); 
-		$this->Security->requireAuth('delete', 'add','edit','publicAdd');
+    	$this->Security->requireAuth('delete', 'add','edit','publicAdd');
     }
 
 	function beforeRender(){
@@ -118,18 +118,24 @@ class AppController extends Controller {
 		if(isset($this->params['url']['partner'])){ //if partner param for url is set
 			$this->loadModel('ApiKey'); 
 			$tag = $this->params['url']['partner'];
-			$api = $this->ApiKey->findByKey($tag); // see if that key exists in the db
+			$params = array(
+			'conditions' => array('key' => (string)$tag)
+    		);
+			$api = $this->ApiKey->find('all',$params); // see if that key exists in the db
 			$this->loadModel('User'); 
-			$user = $this->User->findById($api['ApiKey']['user_id']);
-			if($api){
+			$params2 = array(
+			'conditions' => array('_id' => (string)$api[0]['ApiKey']['user_id'])
+    		);
+			$user = $this->User->find('all',$params2);
+			if(!empty($api)){
 	    		//write a user to the session for authentication
-	    		$this->Session->write('Auth.User.id', $user['User']['id']);
-	    		$this->Session->write('Auth.User.email', $user['User']['email']);
-	    		$this->Session->write('Auth.User.username', $user['User']['username']);
-	    		$this->Session->write('Auth.User.group_id', $user['User']['group_id']);
-				$this->Session->write('Auth.User.active', $user['User']['active']);
-	    		$this->Session->write('Auth.User.created', $user['User']['created']);
-	    		$this->Session->write('Auth.User.modified', $user['User']['modified']);
+	    		$this->Session->write('Auth.User._id', $user[0]['User']['_id']);
+	    		$this->Session->write('Auth.User.email', $user[0]['User']['email']);
+	    		$this->Session->write('Auth.User.username', $user[0]['User']['username']);
+	    		$this->Session->write('Auth.User.group_id', $user[0]['User']['group_id']);
+				$this->Session->write('Auth.User.active', $user[0]['User']['active']);
+	    		$this->Session->write('Auth.User.created', $user[0]['User']['created']);
+	    		$this->Session->write('Auth.User.modified', $user[0]['User']['modified']);
 			}
        	}
 	}
