@@ -372,11 +372,11 @@ class UsersController extends AppController {
                 $this->SwiftMailer->smtpType = 'tls';
          	    $this->SwiftMailer->smtpHost = 'smtp.gmail.com';
          	    $this->SwiftMailer->smtpPort = 465;
-         	    $this->SwiftMailer->smtpUsername = 'travisberry@travisberry.com';
+         	    $this->SwiftMailer->smtpUsername = 'noreply@homkora.com';
          	    $this->SwiftMailer->smtpPassword = '221westwood';
-         	    $this->SwiftMailer->from = 'travisberry@travisberry.com';
+         	    $this->SwiftMailer->from = 'noreply@homkora.com';
          	    $emailData['to'] = $user['User']['email'];
-         	    $emailData['from'] = 'travisberry@travisberry.com';
+         	    $emailData['from'] = 'noreply@homkora.com';
          	    $emailData['subject'] = 'Homkora - Please confirm your email address';
         		$emailData['body'] = 'To complete your sign up. Please click or copy this link to your browser. '.'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash();
 
