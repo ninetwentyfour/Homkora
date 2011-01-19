@@ -1331,3 +1331,13 @@ Aco: Timers/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, 
 2011-01-18 01:01:54 Error: Failed to send email: Expected response code 354 but got code "550", with message "550 5.7.0 Mail Sending denied. m50sm2684389wek.32
 "
 2011-01-18 01:10:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-18 20:34:57 Warning: Warning (2): fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1408F10B:SSL routines:func(143):reason(267) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:34:57 Warning: Warning (2): fsockopen(): Failed to enable crypto in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:34:57 Warning: Warning (2): fsockopen(): unable to connect to tls://smtp.sendgrid.net:587 (Unknown error) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:34:57 Error: Failed to send email: Connection could not be established with host smtp.sendgrid.net [ #0]
+2011-01-18 20:35:37 Warning: Warning (2): fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1408F10B:SSL routines:func(143):reason(267) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:35:37 Warning: Warning (2): fsockopen(): Failed to enable crypto in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:35:37 Warning: Warning (2): fsockopen(): unable to connect to tls://smtp.sendgrid.net:587 (Unknown error) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:35:37 Error: Failed to send email: Connection could not be established with host smtp.sendgrid.net [ #0]

@@ -1940,3 +1940,6 @@
 2011-01-18 01:14:56 Notice: Notice (8): Undefined offset: 0 in [/var/www/Homkora/app/controllers/users_controller.php, line 91]
 2011-01-18 01:16:27 Notice: Notice (8): Undefined index: User in [/var/www/Homkora/app/controllers/users_controller.php, line 91]
 2011-01-18 01:16:27 Notice: Notice (1024): E11000 duplicate key error index: homkora.users.$username_1  dup key: { : "test4" } in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 443]
+2011-01-18 03:28:07 Notice: Notice (8): session_start(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/Homkora/cake/libs/cake_session.php, line 587]
+2011-01-18 17:00:26 Notice: Notice (8): Undefined offset: 0 in [/var/www/Homkora/app/views/users/profile.ctp, line 14]
+2011-01-18 17:00:26 Notice: Notice (8): A non well formed numeric value encountered in [/var/www/Homkora/app/views/users/profile.ctp, line 27]

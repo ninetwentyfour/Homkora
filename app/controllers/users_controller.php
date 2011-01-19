@@ -369,14 +369,14 @@ class UsersController extends AppController {
                 //$this->Email->sendAs = 'text';   // you probably want to use both :)   
                 //return $this->Email->send();
                 $this->SwiftMailer->sendAs = 'text';
-                $this->SwiftMailer->smtpType = 'tls';
-         	    $this->SwiftMailer->smtpHost = 'smtp.gmail.com';
-         	    $this->SwiftMailer->smtpPort = 465;
-         	    $this->SwiftMailer->smtpUsername = 'noreply@homkora.com';
+                //$this->SwiftMailer->smtpType = 'tls';
+         	    $this->SwiftMailer->smtpHost = 'smtp.sendgrid.net';
+         	    $this->SwiftMailer->smtpPort = 25;
+         	    $this->SwiftMailer->smtpUsername = 'contact@travisberry.com';
          	    $this->SwiftMailer->smtpPassword = '221westwood';
-         	    $this->SwiftMailer->from = 'noreply@homkora.com';
+         	    $this->SwiftMailer->from = 'signup@homkora.com';
          	    $emailData['to'] = $user['User']['email'];
-         	    $emailData['from'] = 'noreply@homkora.com';
+         	    $emailData['from'] = 'signup@homkora.com';
          	    $emailData['subject'] = 'Homkora - Please confirm your email address';
         		$emailData['body'] = 'To complete your sign up. Please click or copy this link to your browser. '.'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash();
 
