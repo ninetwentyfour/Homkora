@@ -34,7 +34,7 @@
 			= $this->element('footer');
 		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
 		= $this->Html->script('jquery.stopwatch');
-		:javascript
+		%script{:type => "text/javascript", :charset => "utf-8"}
 			//write the timer to the time input in add timer on form submit
 			function checkForm(frm) {
 				frm.submit.disabled=true;
@@ -48,8 +48,8 @@
 					return false;
 				}
 			}
-		:javascript
+		%script{:type => "text/javascript", :charset => "utf-8"}
 			//create the clock
 			$(function() {
-				$('#clock1').stopwatch();
+			$('#clock1').stopwatch();
 			});
