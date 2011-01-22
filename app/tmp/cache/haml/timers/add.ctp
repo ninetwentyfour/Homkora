@@ -1,6 +1,6 @@
 <?php
 require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
-?><div class="clock1"></div><style type="text/css">
+?><div id="clock1"></div><style type="text/css">
 /*<![CDATA[*/
 .submit input {
   margin-left:353px;	
