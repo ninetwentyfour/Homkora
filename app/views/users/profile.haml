@@ -2,20 +2,20 @@
 	App::import('Sanitize');
 %div.users.view
 	%h2 User
-		%div.project-view
-			= $gravatar2
-			%h2 User Name
-			= Sanitize::html($user['User']['username'])
-		%div.project-view
-			%h2 API Key
-			= Sanitize::html($user['User']['ApiKey'][0]['ApiKey']['key'])
-		#project-view-break
-		%div.project-view
-			%h2 Email
-			= Sanitize::html($user['User']['email'])
-		%div.project-view
-			%h2 Created
-			= date("M-d-Y",$user['User']['created'])
-		%div.bottomLinks
-			%br
-			= $html->link($html->image('icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['_id']),array('escape' => false,'class'=>'button addTimerIndex'))
+	%div.project-view
+		= $gravatar2
+		%h2 User Name
+		= Sanitize::html($user['User']['username'])
+	%div.project-view
+		%h2 API Key
+		= Sanitize::html($user['User']['ApiKey'][0]['ApiKey']['key'])
+	#project-view-break
+	%div.project-view
+		%h2 Email
+		= Sanitize::html($user['User']['email'])
+	%div.project-view
+		%h2 Created
+		= date("M-d-Y",$user['User']['created'])
+	%div.bottomLinks
+		%br
+		= $html->link($html->image('icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['_id']),array('escape' => false,'class'=>'button addTimerIndex'))
