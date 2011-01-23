@@ -2,7 +2,7 @@
 class TimersController extends AppController {
 
 	var $name = 'Timers';
-	var $paginate = array('limit' => 10);
+	var $paginate = array('limit' => 6);
 	
 	
 	function beforeFilter() {
@@ -24,9 +24,9 @@ class TimersController extends AppController {
 		if ($this->RequestHandler->isXml()){
 			$timers = $this->Timer->recursive = -1;
 		}else{
-			$timers = $this->Timer->find('all');
+			$timers = $this->paginate('Timer');
 		}
-		$this->set('timers', $this->paginate());
+		$this->set('timers', $timers);
 	}
 	/**
 	* Get single Timer For display in view

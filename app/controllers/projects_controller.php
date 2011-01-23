@@ -3,7 +3,7 @@ class ProjectsController extends AppController {
 
 	var $name = 'Projects';
 	var $components = array('Random');
-	var $paginate = array('limit' => 10, 'order' => array('Project._id' => 'asc'));
+	var $paginate = array('limit' => 6);
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
@@ -20,7 +20,8 @@ class ProjectsController extends AppController {
 	function index() {
 		//contain projects for performance
 		//$this->Project->recursive = -1;
-		$projects = $this->Project->find('all');
+		//$projects = $this->Project->find('all');
+		$projects = $this->paginate('Project');
 		foreach($projects as $project){
 			//update thr total time before the page loads.
 			$data = array('_id'=>$project['Project']['_id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
@@ -29,7 +30,7 @@ class ProjectsController extends AppController {
 		//now grab all the updated proejct data for display
 		$projects = $this->Project->find('all', array('fields' => array('title','description','total_time')));
 		$projects = $this->paginate('Project');
-		$this->set('projects', $project);
+		$this->set('projects', $projects);
 		return $projects;
 
 	}
