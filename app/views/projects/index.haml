@@ -7,7 +7,9 @@
 = $form->create('Project', array('action' => 'search'))
 	%div.searchBox
 		= $this->Form->input('search', array( 'label' => false,'placeholder'=>"Enter Project Title",'class'=>'searchText'))
-		= $this->Form->end(__('Search', true))
+		%div.submit
+			%input{:type="submit",:value="Search"}
+= $form->end();
 %div.projects.index
 	%h2 Projects
 	%table
