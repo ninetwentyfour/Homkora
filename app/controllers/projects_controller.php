@@ -80,6 +80,14 @@ class ProjectsController extends AppController {
 			$this->data['Project']['description'] = $this->params['url']['description'];
 			$this->Project->create();
 			if($this->Project->save($this->data)){
+				//send project to index tank
+				$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+				$client = new ApiClient($API_URL);
+				$index = $client->get_index("HomkoraProjects");
+				$title = $this->data['Project']['title'];
+				$doc_id = $this->Project->id;
+				$desc = $this->data['Project']['description'];
+				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
 				$result = array('success'=>'1');
 			}else{
 				$result = array('success'=>'0');
@@ -126,10 +134,15 @@ class ProjectsController extends AppController {
 			if(isset($this->params['url']['description'])){
 				$this->data['Project']['description'] = $this->params['url']['description'];
 			}
-			$this->Project->save($this->data);
-			$result = array('success'=>'1');
-			$this->set(compact('result'));
-			return $result;
+			if($this->Project->save($this->data)){
+				$result = array('success'=>'1');
+				$this->set(compact('result'));
+				return $result;
+			}else{
+				$result = array('success'=>'0');
+				$this->set(compact('result'));
+				return $result;
+			}
 		}
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));

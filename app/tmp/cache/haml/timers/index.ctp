@@ -3,7 +3,7 @@ require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
 ?><?php
 App::import('Sanitize');
 ?>
-<?php echo $html->link($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer',array('controller'=>'timers', 'action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?><br /><br /><div class="timers index"><h2>Timers</h2><table><tr class="altrow"><th><?php echo $this->Paginator->sort('project_id'); ?></th><th><?php echo $this->Paginator->sort('title'); ?></th><th><?php echo $this->Paginator->sort('time'); ?></th><th><?php echo $this->Paginator->sort('description'); ?></th><th class="actions">View | Edit | Delete</th></tr><?php
+<?php echo $html->link($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer',array('controller'=>'timers', 'action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?><br /><br /><?php echo $form->create('Timer', array('action' => 'search')); ?><div class="searchBox"><?php echo $this->Form->input('search', array( 'label' => false,'placeholder'=>"Enter Timer Title",'class'=>'searchText')); ?><div class="submit"><input type="submit" value="Search" /></div></div><?php echo $form->end();; ?><div class="timers index"><h2>Timers</h2><table><tr class="altrow"><th><?php echo $this->Paginator->sort('project_id'); ?></th><th><?php echo $this->Paginator->sort('title'); ?></th><th><?php echo $this->Paginator->sort('time'); ?></th><th><?php echo $this->Paginator->sort('description'); ?></th><th class="actions">View | Edit | Delete</th></tr><?php
 $i = 0;
 foreach ($timers as $timer):
 //print_r($timer);

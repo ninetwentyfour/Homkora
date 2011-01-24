@@ -25,7 +25,7 @@ Required Params: partner
 
   <?php
 
-    \$url = 'http://homkora.com/projects.xml?partner=APIKEYHERE';
+    \$url = 'http://api-homkora.apigee.com/projects.xml?partner=APIKEYHERE';
 
     \$xml = simplexml_load_file(\$url);
 
@@ -43,7 +43,7 @@ Required Params: partner - title - description
 
   <?php
 
-    \$url = 'http://homkora.com/projects/add.xml?partner=APIKEYHERE&title=test&description=test';
+    \$url = 'http://api-homkora.apigee.com/projects/add.xml?partner=APIKEYHERE&title=test&description=test';
 
     \$xml = simplexml_load_file(\$url);
 
@@ -61,7 +61,7 @@ Required Params: partner - title and/or description
 
   <?php
 
-    \$url = 'http://homkora.com/projects/edit/PROJECTID.xml?partner=APIKEYHERE&title=test&description=test';
+    \$url = 'http://api-homkora.apigee.com/projects/edit/PROJECTID.xml?partner=APIKEYHERE&title=test&description=test';
 
     \$xml = simplexml_load_file(\$url);
 
@@ -79,7 +79,7 @@ Required Params: partner
 
   <?php
 
-    \$url = 'http://homkora.com/projects/view/PROJECTID.xml?partner=APIKEYHERE';
+    \$url = 'http://api-homkora.apigee.com/projects/view/PROJECTID.xml?partner=APIKEYHERE';
 
     \$xml = simplexml_load_file(\$url);
 
@@ -104,7 +104,7 @@ Required Params: partner
 
   <?php
 
-    \$url = 'http://homkora.com/timers.xml?partner=APIKEYHERE';
+    \$url = 'http://api-homkora.apigee.com/timers.xml?partner=APIKEYHERE';
 
     \$xml = simplexml_load_file(\$url);
 
@@ -124,7 +124,7 @@ Required Params: partner - title - description - projectId - projectName - time
 
     \$time = urlencode('00:00:00');
 
-    \$url = 'http://homkora.com/timers/add.xml?partner=APIKEYHERE&title=EXAMPLE&description=EXAMPLE&projectId=EXAMPLE
+    \$url = 'http://api-homkora.apigee.com/timers/add.xml?partner=APIKEYHERE&title=EXAMPLE&description=EXAMPLE&projectId=EXAMPLE
     &projectName=EXAMPLE&time='.\$time;
 
     \$xml = simplexml_load_file(\$url);
@@ -147,7 +147,7 @@ Optional Params: title - description - projectId - projectName - time
 
     \$time = urlencode('00:00:00');
 
-    \$url = 'http://homkora.com/timers/edit/TIMERID.xml?partner=APIKEYHERE&time='.\$time;
+    \$url = 'http://api-homkora.apigee.com/timers/edit/TIMERID.xml?partner=APIKEYHERE&time='.\$time;
 
     \$xml = simplexml_load_file(\$url);
 
@@ -165,7 +165,7 @@ Required Params: partner
 
   <?php
 
-    \$url = 'http://homkora.com/timers/view/TIMERID.xml?partner=APIKEYHERE';
+    \$url = 'http://api-homkora.apigee.com/timers/view/TIMERID.xml?partner=APIKEYHERE';
 
     \$xml = simplexml_load_file(\$url);
 

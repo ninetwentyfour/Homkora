@@ -1,6 +1,5 @@
 :php
 	App::import('Sanitize');
-%br
 = $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'))
 %br
 %br
@@ -11,7 +10,7 @@
 			%input{:type="submit",:value="Search"}
 = $form->end();
 %div.projects.index
-	%h2 Projects
+	%h2 Search results for Projects
 	%table
 		%tr.altrow
 			:php

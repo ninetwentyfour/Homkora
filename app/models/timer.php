@@ -1,7 +1,7 @@
 <?php
 class Timer extends AppModel {
 	var $name = 'Timer';
-	var $actsAs = array("Logable");
+	//var $actsAs = array("Logable");
 	var $primaryKey = '_id';
 	
 

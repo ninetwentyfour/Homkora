@@ -2082,3 +2082,8 @@
 2011-01-24 01:20:07 Notice: Notice (8): Undefined variable: xml in [/var/www/Homkora/app/tmp/cache/haml/pages/api.ctp, line 116]
 2011-01-24 01:56:45 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/Homkora/cake/libs/cake_session.php, line 587]
 2011-01-24 02:42:00 Notice: Notice (8): Undefined index: _id in [/var/www/Homkora/app/controllers/users_controller.php, line 493]
+2011-01-24 04:15:51 Notice: Notice (8): Undefined index: project_name in [/var/www/Homkora/app/controllers/timers_controller.php, line 152]
+2011-01-24 04:20:20 Notice: Notice (8): Undefined index: project_name in [/var/www/Homkora/app/controllers/timers_controller.php, line 152]
+2011-01-24 04:37:41 Notice: Notice (8): Undefined property: TimersController::$Project in [/var/www/Homkora/app/controllers/timers_controller.php, line 147]
+2011-01-24 04:45:20 Notice: Notice (8): Undefined variable: timers in [/var/www/Homkora/app/controllers/timers_controller.php, line 217]
+2011-01-24 04:47:48 Notice: Notice (8): Undefined variable: timers in [/var/www/Homkora/app/controllers/timers_controller.php, line 217]

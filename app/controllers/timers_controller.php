@@ -1,4 +1,5 @@
 <?php
+App::import('Vendor', 'indextank_client');
 class TimersController extends AppController {
 
 	var $name = 'Timers';
@@ -83,6 +84,14 @@ class TimersController extends AppController {
 			$this->data['Timer']['project_name'] = $project[0]['Project']['title'];
 			$this->Timer->create();
 			if ($this->Timer->save($this->data)) {
+				//send timer to index tank
+				$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+				$client = new ApiClient($API_URL);
+				$index = $client->get_index("HomkoraTimers");
+				$title = $this->data['Timer']['title'];
+				$doc_id = $this->Timer->id;
+				$desc = $this->data['Timer']['description'];
+				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'projectName'=>$this->data['Timer']['project_name'],'user_id'=>$_SESSION['Auth']['User']['_id']));
 				$this->Session->setFlash('The timer has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -132,7 +141,21 @@ class TimersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
+			$this->loadModel('Project');
+			$params = array(
+				'conditions' => array('_id' => (string)$this->data['Timer']['project_id'])
+			);
+			$project = $this->Project->find('all', $params);
+			$this->data['Timer']['project_name'] = $project[0]['Project']['title'];
 			if ($this->Timer->save($this->data)) {
+				//send timer to index tank
+				$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+				$client = new ApiClient($API_URL);
+				$index = $client->get_index("HomkoraTimers");
+				$title = $this->data['Timer']['title'];
+				$doc_id = $id;
+				$desc = $this->data['Timer']['description'];
+				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'projectName'=>$this->data['Timer']['project_name'],'user_id'=>$_SESSION['Auth']['User']['_id']));
 				$this->Session->setFlash('The timer has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -176,6 +199,22 @@ class TimersController extends AppController {
 		}
 		$this->Session->setFlash('Timer was not deleted', 'default', array('class' => 'flash_bad'));
 		$this->redirect(array('action' => 'index'));
+	}
+	function search(){
+		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+		$client = new ApiClient($API_URL);
+		$index = $client->get_index("HomkoraTimers");
+		$index->add_function(2, "relevance");
+		$query = $this->data['Timer']['search'];
+		$res = $index->search($query);
+		$i = 0;
+		foreach($res->results as $doc_id){
+			$params = array(
+				'conditions' => array('_id' => $doc_id->docid,'user_id'=>$_SESSION['Auth']['User']['_id'])
+			);
+			$timers[$i++] = $this->Timer->find('first',$params);
+		}
+		$this->set('timers', $timers);
 	}
 }
 ?>
