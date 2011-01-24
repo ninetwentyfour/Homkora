@@ -529,3 +529,17 @@ tr:nth-of-type(odd){
 	background-color: #111;
 	background-image:url('../img/dark-bg.png'); 
 }
+#ProjectSearchForm{
+	width:100%;
+}
+.searchBox{
+	float:right;
+	margin-top:-110px;
+}
+.searchBox input{
+	width:100px;
+	float:right;
+}
+.searchText{
+	width:250px !important;
+}

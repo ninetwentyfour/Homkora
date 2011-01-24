@@ -5,9 +5,8 @@
 %br
 %br
 = $form->create('Project', array('action' => 'search'))
-	%div.searchBox
-		= $this->Form->input('search', array( 'label' => false,'placeholder'=>"Enter Project Title",'class'=>'searchText'))
-		= $this->Form->end(__('Search', true))
+	= $this->Form->input('search')
+= $this->Form->end(__('Submit', true))
 %div.projects.index
 	%h2 Projects
 	%table
@@ -21,12 +20,9 @@
 						//do nothing
 					}
 				}
-			%th
-				= $this->Paginator->sort('title')
-			%th
-				= $this->Paginator->sort('description')
-			%th
-				= $this->Paginator->sort('total_time')
+			%th Title
+			%th Description
+			%th Total Time
 			%th.actions View | Edit | Delete
 		:php
 			$i = 0;
@@ -57,14 +53,6 @@
 				= $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['_id'] ))
 		:php
 			endforeach;
-	%p
-		:php
-			echo '<span class="counter-text">'.$this->Paginator->counter(array(
-				'format' => __('Page %page% of %pages%, showing %current% projects out of %count% total.', true)
-			)).'</span>';
-	%div.paging
-		= $this->Paginator->prev($html->image('icon_arrow_left.png', array('alt' => 'Previous','title'=>'Previous')) . __('', true), array('escape' => false), null, array('escape' => false,'class'=>'disabled'))
-		= $this->Paginator->next(__('', true) . $html->image('icon_arrow_right.png', array('alt' => 'Next','title'=>'Next')), array('escape' => false), null, array('escape' => false,'class' => 'disabled'))
 %div.bottomLinks
 	%h3 Actions
 	%br

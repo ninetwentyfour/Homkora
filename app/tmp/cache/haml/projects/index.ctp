@@ -3,7 +3,7 @@ require_once '/var/www/Homkora/app/vendors/haml/HamlHelpers.php';
 ?><?php
 App::import('Sanitize');
 ?>
-<br /><?php echo $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?><br /><br /><div class="projects index"><h2>Projects</h2><table><tr class="altrow"><?php
+<br /><?php echo $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex')); ?><br /><br /><?php echo $form->create('Project', array('action' => 'search')); ?><div class="searchBox"><?php echo $this->Form->input('search', array( 'label' => false,'placeholder'=>"Enter Project Title",'class'=>'searchText')); ?><?php echo $this->Form->end(__('Search', true)); ?></div><div class="projects index"><h2>Projects</h2><table><tr class="altrow"><?php
 //only show user ids to admin
 if(isset($_SESSION['Auth']['User'])){
   if($_SESSION['Auth']['User']['group_id']=='1'){

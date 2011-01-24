@@ -1,4 +1,5 @@
 <?php
+App::import('Vendor', 'indextank_client');
 class ProjectsController extends AppController {
 
 	var $name = 'Projects';
@@ -18,9 +19,11 @@ class ProjectsController extends AppController {
 	* @return $projects array
 	*/
 	function index() {
-		//contain projects for performance
-		//$this->Project->recursive = -1;
-		//$projects = $this->Project->find('all');
+		if ($this->RequestHandler->isXml()){
+			
+		}else{
+			$this->layout = 'projects';
+		}
 		$projects = $this->paginate('Project');
 		foreach($projects as $project){
 			//update thr total time before the page loads.
@@ -86,8 +89,17 @@ class ProjectsController extends AppController {
 		if (!empty($this->data)) {
 			$this->Project->create();
 			if ($this->Project->save($this->data)) {
+				//send project to index tank
+				$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+				$client = new ApiClient($API_URL);
+				$index = $client->get_index("HomkoraProjects");
+				$title = $this->data['Project']['title'];
+				$doc_id = $this->Project->id;
+				$desc = $this->data['Project']['description'];
+				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
 				$this->Session->setFlash(__('The project has been saved', true));
 				$this->redirect(array('action' => 'index'));
+				//return for testing
 				$saved = 'true';
 				return $saved;
 			} else {
@@ -124,6 +136,15 @@ class ProjectsController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->Project->save($this->data)) {
+				//send project to index tank
+				$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+				$client = new ApiClient($API_URL);
+				$index = $client->get_index("HomkoraProjects");
+				$title = $this->data['Project']['title'];
+				$doc_id = $id;
+				$desc = $this->data['Project']['description'];
+				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
+				
 				$this->Session->setFlash(__('The project has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -167,6 +188,11 @@ class ProjectsController extends AppController {
      			//delete the timer
 				$this->Timer->delete($timer['Timer']['_id']);
 			}
+			//delete index tank document
+			$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+			$client = new ApiClient($API_URL);
+			$index = $client->get_index("HomkoraProjects");
+			$index->delete_document($id);
 			$this->Session->setFlash(__('Project deleted', true));
 			$this->redirect(array('action'=>'index'));
 		}
@@ -271,7 +297,11 @@ class ProjectsController extends AppController {
 	function addTime2($data){
 		$this->loadModel('Timer');
 		//get all the timers for a project
-		$timers = $this->Timer->find('all', array('fields' => array('_id', 'time'), 'conditions' => array('Timer.project_id' => $data['_id'])));
+		$params = array(
+			'fields' => array('_id', 'time'),
+			'conditions' => array('project_id' => $data['_id'])
+		);
+		$timers = $this->Timer->find('all', $params);
 		//define the $things array for later user. this prevents an error message
 		$things[0] = '';
 		$things[1] = '';
@@ -334,9 +364,9 @@ class ProjectsController extends AppController {
 		$final = (string)$timeString;
 		//orgainze the data of the project for saving
 		$this->data['Project']['_id'] = $data['_id'];
-		$this->data['Project']['user_id'] = $data['user_id'];
-		$this->data['Project']['title'] = $data['title'];
-		$this->data['Project']['description'] = $data['description'];
+		//$this->data['Project']['user_id'] = $data['user_id'];
+		//$this->data['Project']['title'] = $data['title'];
+		//$this->data['Project']['description'] = $data['description'];
 		$this->data['Project']['total_time'] = utf8_encode($final);
 
 		if ($this->Project->save($this->data)) {
@@ -344,6 +374,23 @@ class ProjectsController extends AppController {
 		}else{
 			//there is an error
 		}
+	}
+	
+	function search(){
+		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+		$client = new ApiClient($API_URL);
+		$index = $client->get_index("HomkoraProjects");
+		$index->add_function(2, "relevance");
+		$query = $this->data['Project']['search'];
+		$res = $index->search($query);
+		$i = 0;
+		foreach($res->results as $doc_id){
+			$params = array(
+				'conditions' => array('_id' => $doc_id->docid,'user_id'=>$_SESSION['Auth']['User']['_id'])
+			);
+			$projects[$i++] = $this->Project->find('first',$params);
+		}
+		$this->set('projects', $projects);
 	}
 }
 ?>
