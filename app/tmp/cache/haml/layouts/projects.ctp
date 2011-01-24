@@ -41,4 +41,4 @@ $(function() {
 });
   //]]>
 </script>
-</body></html>
+<?php echo $this->Html->script('common');; ?></body></html>

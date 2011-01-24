@@ -11,7 +11,7 @@ class UsersController extends AppController {
 	    $user = $this->Auth->user();
 	    if($user['User']['group_id'] != '1'){
           if($this->action != 'userEdit' && $this->action != 'profile' && $this->action != 'publicAdd' && $this->action != 'login' && $this->action != 'logout' && $this->action != 'activate'){
-            $this->Session->setFlash('That action is not allowed.');
+            $this->Session->setFlash('That action is not allowed.', 'default', array('class' => 'flash_bad'));
             $this->redirect('/projects/index');
           }
 	    }
@@ -32,7 +32,7 @@ class UsersController extends AppController {
 				// Check to see if the UserÕs account isnÕt active
 				if ($results['User']['active'] == "0") {
 					// Uh Oh!
-					$this->Session->setFlash('Your account has not been activated yet!');
+					$this->Session->setFlash('Your account has not been activated yet!', 'default', array('class' => 'flash_bad'));
 					//$this->Auth->logout();
 					//$this->redirect($this->Auth->logout());
 				}
@@ -47,7 +47,7 @@ class UsersController extends AppController {
 
 	function logout() {
 	    //Leave empty for now.
-		$this->Session->setFlash('Good-Bye');
+		$this->Session->setFlash('Good-Bye', 'default', array('class' => 'flash_good'));
 		$this->redirect($this->Auth->logout());
 	}
 	
@@ -59,7 +59,7 @@ class UsersController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'flash_bad', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('user', $this->User->read(null, $id));
@@ -69,10 +69,10 @@ class UsersController extends AppController {
 		if (!empty($this->data)) {
 			$this->User->create();
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The user has been saved', true));
+				$this->Session->setFlash('The user has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+				$this->Session->setFlash('The user could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		$groups = $this->User->Group->find('list');
@@ -95,22 +95,22 @@ class UsersController extends AppController {
 				}
 				if($userExists[0]['User']['username']==$this->data['User']['username']){
 					//if found and matches - dont save and alert user
-					$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
+					$this->Session->setFlash('User Name Taken. Please, try again.', 'default', array('class' => 'flash_bad'));
 				}else{
 					//no user found - save it
 					$this->User->create();
 					if ($this->User->save($this->data)) {
 						$this->__sendActivationEmail($this->User->id);
 						$this->__createApiKey($this->User->id);
-						$this->Session->setFlash(__('Check your email for account verification.', true));
+						$this->Session->setFlash('Check your email for account verification.', 'default', array('class' => 'flash_good'));
 						$this->redirect('/login');
 					} else {
 						//general problem saving to db
-						$this->Session->setFlash(__('There was a problem saving the user. Please, try again.', true));
+						$this->Session->setFlash('There was a problem saving the user. Please, try again.', 'default', array('class' => 'flash_bad'));
 					}
 				}
 			} else {
-				$this->Session->setFlash(__('Fix Errors Below.', true));
+				$this->Session->setFlash('Fix Errors Below.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		$this->loadModel('Group');
@@ -120,15 +120,15 @@ class UsersController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The user has been saved', true));
+				$this->Session->setFlash('The user has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+				$this->Session->setFlash('The user could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		if (empty($this->data)) {
@@ -140,14 +140,14 @@ class UsersController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for user', true));
+			$this->Session->setFlash('Invalid id for user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->User->delete($id)) {
-			$this->Session->setFlash(__('User deleted', true));
+			$this->Session->setFlash('User deleted', 'default', array('class' => 'flash_good'));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('User was not deleted', true));
+		$this->Session->setFlash('User was not deleted', 'default', array('class' => 'flash_bad'));
 		$this->redirect(array('action' => 'index'));
 	}
 	
@@ -391,10 +391,10 @@ class UsersController extends AppController {
          			}
          			if($sendResult[0]=='false') {
          			    //Add code here to handle the error message
-           			    $this->Session->setFlash('There was an error sending your email.');
+           			    $this->Session->setFlash('There was an error sending your email.', 'default', array('class' => 'flash_bad'));
          			    $this->log("Error sending email");
          			}else{
-         			    $this->Session->setFlash('The Email has been successfully sent');
+         			    $this->Session->setFlash('The Email has been successfully sent', 'default', array('class' => 'flash_good'));
            			}
            			if (isset($this->params['requested'])) {
          			    return $_SESSION['Message']['flash']['message'];
@@ -420,7 +420,7 @@ class UsersController extends AppController {
 	                $this->User->saveField('active', 1);
                
 	                // Let the user know they can now log in!
-	                $this->Session->setFlash('Your account has been activated, please log in below');
+	                $this->Session->setFlash('Your account has been activated, please log in below', 'default', array('class' => 'flash_good'));
 	                $this->redirect('/login');
 	        }
        
@@ -429,12 +429,12 @@ class UsersController extends AppController {
 	
 	function userEdit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'profile',$id));
 		}
 		$user = $this->User->read(null, $id);
 		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'profile',$id));
 		}
 		if (!empty($this->data)) {
@@ -447,7 +447,7 @@ class UsersController extends AppController {
 					//save the password field
 					$this->User->saveField('password', $password);
 				}else{
-					$this->Session->setFlash(__('Passwords Didn\'t Match. Try Again.', true));
+					$this->Session->setFlash('Passwords Didn\'t Match. Try Again.', 'default', array('class' => 'flash_bad'));
 				}
 			}
 			//check user name against db
@@ -462,13 +462,13 @@ class UsersController extends AppController {
 			//check that username isnt taken and isnt the old one
 			if($userExists[0]['User']['username']==$this->data['User']['username'] && $userExistsID[0]['User']['username']!=$this->data['User']['username']){
 				//if found and matches - dont save and alert user
-				$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
+				$this->Session->setFlash('User Name Taken. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}else{
 				if ($this->User->save($this->data)) {
-					$this->Session->setFlash(__('The user has been saved', true));
+					$this->Session->setFlash('The user has been saved', 'default', array('class' => 'flash_good'));
 					$this->redirect(array('action' => 'profile',$id));
 				} else {
-					$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+					$this->Session->setFlash('The user could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 				}
 			}
 		}
@@ -481,7 +481,7 @@ class UsersController extends AppController {
 
 	function profile($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		$user = $this->User->read(null, $id);
@@ -491,7 +491,7 @@ class UsersController extends AppController {
 		);
 		$user['User']['ApiKey'] = $this->ApiKey->find('all', $params);
 		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		//$user['User']['ApiKey'] = $this->User->ApiKey->read(null, $user['User']['id']);

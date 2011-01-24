@@ -35,14 +35,14 @@ class TimersController extends AppController {
 	*/
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid timer', true));
+			$this->Session->setFlash('Invalid timer', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		$timer = $this->Timer->read(array('_id','time' ,'title','description','created','modified','user_id'), $id);
 		$this->set('timer', $timer);
 		//check timer belongs to user or admin
 		if($timer['Timer']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid timer', true));
+			$this->Session->setFlash('Invalid timer', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 	}
@@ -83,10 +83,10 @@ class TimersController extends AppController {
 			$this->data['Timer']['project_name'] = $project[0]['Project']['title'];
 			$this->Timer->create();
 			if ($this->Timer->save($this->data)) {
-				$this->Session->setFlash(__('The timer has been saved', true));
+				$this->Session->setFlash('The timer has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The timer could not be saved.', true));
+				$this->Session->setFlash('The timer could not be saved.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		$this->loadModel('Project');
@@ -128,22 +128,22 @@ class TimersController extends AppController {
 			return $result;
 		}
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid timer', true));
+			$this->Session->setFlash('Invalid timer', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Timer->save($this->data)) {
-				$this->Session->setFlash(__('The timer has been saved', true));
+				$this->Session->setFlash('The timer has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The timer could not be saved.', true));
+				$this->Session->setFlash('The timer could not be saved.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Timer->read(null, $id);
 			//check timer belongs to user or admin
 			if($this->data['Timer']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-				$this->Session->setFlash(__('Invalid timer', true));
+				$this->Session->setFlash('Invalid timer', 'default', array('class' => 'flash_bad'));
 				$this->redirect(array('action' => 'index'));
 			}
 		}
@@ -161,20 +161,20 @@ class TimersController extends AppController {
 	*/
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for timer', true));
+			$this->Session->setFlash('Invalid id for timer', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action'=>'index'));
 		}
 		//check timer belongs to user or admin
 		$userTimer = $this->Timer->read(null, $id);
 		if($userTimer['Timer']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid timer', true));
+			$this->Session->setFlash('Invalid timer', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Timer->delete($id)) {
-			$this->Session->setFlash(__('Timer deleted', true));
+			$this->Session->setFlash('Timer deleted', 'default', array('class' => 'flash_good'));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Timer was not deleted', true));
+		$this->Session->setFlash('Timer was not deleted', 'default', array('class' => 'flash_bad'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

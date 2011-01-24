@@ -46,7 +46,7 @@ class ProjectsController extends AppController {
 	*/
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid project', true));
+			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		//get the project
@@ -64,7 +64,7 @@ class ProjectsController extends AppController {
 		$this->set('timers', $timers);
 		//check that project belongs to user or is an admin
 		if($project[0]['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid project', true));
+			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 	}
@@ -98,13 +98,13 @@ class ProjectsController extends AppController {
 				$doc_id = $this->Project->id;
 				$desc = $this->data['Project']['description'];
 				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
-				$this->Session->setFlash(__('The project has been saved', true));
+				$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 				//return for testing
 				$saved = 'true';
 				return $saved;
 			} else {
-				$this->Session->setFlash(__('The project could not be saved. Please, try again.', true));
+				$this->Session->setFlash('The project could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		$this->loadModel('User');
@@ -132,7 +132,7 @@ class ProjectsController extends AppController {
 			return $result;
 		}
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid project', true));
+			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
@@ -146,17 +146,17 @@ class ProjectsController extends AppController {
 				$desc = $this->data['Project']['description'];
 				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
 				
-				$this->Session->setFlash(__('The project has been saved', true));
+				$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The project could not be saved. Please, try again.', true));
+				$this->Session->setFlash('The project could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Project->read(null, $id);
 			//check project belongs to user or is admin
 			if($this->data['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-				$this->Session->setFlash(__('Invalid project', true));
+				$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 				$this->redirect(array('action' => 'index'));
 			}
 		}
@@ -168,13 +168,13 @@ class ProjectsController extends AppController {
 	*/
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for project', true));
+			$this->Session->setFlash('Invalid id for project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action'=>'index'));
 		}
 		//check if project belongs to user or is admin
 		$userProject = $this->Project->read(null, $id);
 		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid project', true));
+			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if ($this->Project->delete($id)) {
@@ -194,10 +194,10 @@ class ProjectsController extends AppController {
 			$client = new ApiClient($API_URL);
 			$index = $client->get_index("HomkoraProjects");
 			$index->delete_document($id);
-			$this->Session->setFlash(__('Project deleted', true));
+			$this->Session->setFlash('Project deleted', 'default', array('class' => 'flash_good'));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Project was not deleted', true));
+		$this->Session->setFlash('Project was not deleted', 'default', array('class' => 'flash_bad'));
 		$this->redirect(array('action' => 'index'));
 	}
 	/**

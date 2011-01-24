@@ -2080,3 +2080,5 @@
 2011-01-24 01:20:07 Notice: Notice (8): Undefined variable: time in [/var/www/Homkora/app/tmp/cache/haml/pages/api.ctp, line 109]
 2011-01-24 01:20:07 Notice: Notice (8): Undefined variable: url in [/var/www/Homkora/app/tmp/cache/haml/pages/api.ctp, line 111]
 2011-01-24 01:20:07 Notice: Notice (8): Undefined variable: xml in [/var/www/Homkora/app/tmp/cache/haml/pages/api.ctp, line 116]
+2011-01-24 01:56:45 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/Homkora/cake/libs/cake_session.php, line 587]
+2011-01-24 02:42:00 Notice: Notice (8): Undefined index: _id in [/var/www/Homkora/app/controllers/users_controller.php, line 493]

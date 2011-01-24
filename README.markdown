@@ -56,6 +56,10 @@ Documentation for API
 
 Add users - Edit Users - Add Timers - Edit Timers - APIs
 
+Flash Message colors
+
+Hide Flash Message after period of time
+
 <del>Delete timers associated with projects on project delete</del>
 
 <del>Form validation - custom error messages</del>

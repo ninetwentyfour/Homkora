@@ -13,4 +13,4 @@ if(isset($_SESSION['Auth']['User'])){
   echo $this->element('navigation_no_user');
 }
 ?>
-</nav></header><div id="container"><noscript>Homkora must have javascript enabled.</noscript><div id="content"><?php echo $this->Session->flash();; ?><?php echo $this->Session->flash("auth");; ?><?php echo $content_for_layout;; ?><div style="clear:both;"></div></div><div style="clear:both;"></div></div><footer class="transparent_class"><?php echo $this->element('footer');; ?></footer><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script></body></html>
+</nav></header><div id="container"><noscript>Homkora must have javascript enabled.</noscript><div id="content"><?php echo $this->Session->flash();; ?><?php echo $this->Session->flash("auth");; ?><?php echo $content_for_layout;; ?><div style="clear:both;"></div></div><div style="clear:both;"></div></div><footer class="transparent_class"><?php echo $this->element('footer');; ?></footer><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script><?php echo $this->Html->script('common');; ?></body></html>

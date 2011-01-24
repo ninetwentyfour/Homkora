@@ -130,10 +130,13 @@ footer {
 	font-size: 12px;
 	border-top: 1px solid #444;
 	background-color: #000;
-	padding-left: 10px;
+	padding-left: 15px;
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
+}
+footer a{
+	margin-right:15px;
 }
 h1 a {
 	color: #E54964 !important;
@@ -542,4 +545,25 @@ tr:nth-of-type(odd){
 }
 .searchText{
 	width:250px !important;
+	color:#666;
+	font-style: italic;
+}
+.searchText:focus;{
+	width:250px !important;
+	color:#eee;
+	font-style: normal;
+}
+.flash_bad {
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+	font-size:20px;
+	color:red;
+}
+.flash_good{
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+	font-size:20px;
+	color:#92f083 !important;
 }
