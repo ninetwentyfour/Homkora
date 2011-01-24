@@ -26,7 +26,7 @@ class AppController extends Controller {
 				// Check to see if the UserÕs account isnÕt active
 				if ($results['User']['active'] == "0") {
 					// Uh Oh!
-					$this->Session->setFlash('Your account has not been activated yet!');
+					$this->Session->setFlash('Your account has not been activated yet!', 'default', array('class' => 'flash_bad'));
 					$this->Auth->logout();
 					$this->redirect($this->Auth->logout());
 				}
@@ -83,7 +83,7 @@ class AppController extends Controller {
 	
 	//if security is invalid do this 
 	function invalidSecurity(){
-		$this->Session->setFlash(__('There was a security problem with your request. Please try again.', true));
+		$this->Session->setFlash('There was a security problem with your request. Please try again.', 'default', array('class' => 'flash_bad'));
 		$this->redirect('/');
 	}
 	
