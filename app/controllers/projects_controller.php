@@ -4,6 +4,7 @@ class ProjectsController extends AppController {
 
 	var $name = 'Projects';
 	var $components = array('Random');
+	var $helpers = array('Text');
 	var $paginate = array('limit' => 6);
 	
 	function beforeFilter() {

@@ -47,9 +47,13 @@
 					}
 				}
 			%td
-				= Sanitize::html($project['Project']['title'])
+				:php
+					$string = Sanitize::html($project['Project']['title']);
+					echo $this->Text->truncate($string,80,array('ending' => '...','exact' => false));
 			%td
-				= Sanitize::html($project['Project']['description'])
+				:php
+					$string = Sanitize::html($project['Project']['description']);
+					echo $this->Text->truncate($string,100,array('ending' => '...','exact' => false));
 			%td
 				= Sanitize::html($project['Project']['total_time'])
 			%td.actions
