@@ -9,7 +9,7 @@ class TimersController extends AppController {
 	    parent::beforeFilter(); 
 	    //$this->Auth->allowedActions = array('*');
 		if ($this->RequestHandler->isXml()){
-			
+			$this->layout = '';
 		}else{
 			$this->layout = 'timers';
 		}
@@ -20,9 +20,9 @@ class TimersController extends AppController {
 	* @return $timers array for view
 	*/
 	function index() {
-		$this->loadModel('Project');
+		//$this->loadModel('Project');
 		if ($this->RequestHandler->isXml()){
-			$timers = $this->Timer->recursive = -1;
+			$timers = $this->Timer->find('all');
 		}else{
 			$timers = $this->paginate('Timer');
 		}
@@ -52,6 +52,28 @@ class TimersController extends AppController {
 	* @return set flash The timer has been saved
 	*/
 	function add() {
+		if ($this->RequestHandler->isXml()){
+			$this->layout = '';
+			if(isset($this->params['url']['title'],$this->params['url']['description'],$this->params['url']['projectId'],$this->params['url']['projectName'],$this->params['url']['time'])){
+				$this->data['Timer']['user_id'] = $_SESSION['Auth']['User']['_id'];
+				$this->data['Timer']['title'] = $this->params['url']['title'];
+				$this->data['Timer']['description'] = $this->params['url']['description'];
+				$this->data['Timer']['project_id'] = $this->params['url']['projectId'];
+				$this->data['Timer']['project_name'] = $this->params['url']['projectName'];
+				$this->data['Timer']['time'] = $this->params['url']['time'];
+				$this->Timer->create();
+				if($this->Timer->save($this->data)){
+					$result = array('success'=>'1');
+				}else{
+					$result = array('success'=>'0');
+				}
+				$this->set(compact('result'));
+				return $result;
+			}else{
+				$result = array('success'=>'0');
+				$this->set(compact('result'));
+			}
+		}
 		if (!empty($this->data)) {
 			$this->loadModel('Project');
 			$params = array(
@@ -80,6 +102,31 @@ class TimersController extends AppController {
 	* @return set flash The timer has been saved
 	*/
 	function edit($id = null) {
+		if ($this->RequestHandler->isXml()){
+			$this->layout = '';
+			$this->data['Timer']['_id'] = $id;
+			$this->data['Timer']['user_id'] = $_SESSION['Auth']['User']['_id'];
+			if(isset($this->params['url']['title'])){
+				$this->data['Timer']['title'] = $this->params['url']['title'];
+			}
+			if(isset($this->params['url']['description'])){
+				$this->data['Timer']['description'] = $this->params['url']['description'];
+			}
+			if(isset($this->params['url']['projectId'],$this->params['url']['projectName'])){
+				$this->data['Timer']['project_id'] = $this->params['url']['projectId'];
+				$this->data['Timer']['project_name'] = $this->params['url']['projectName'];
+			}
+			if(isset($this->params['url']['time'])){
+				$this->data['Timer']['time'] = $this->params['url']['time'];
+			}
+			if($this->Timer->save($this->data)){
+				$result = array('success'=>'1');
+			}else{
+				$result = array('success'=>'0');
+			}
+			$this->set(compact('result'));
+			return $result;
+		}
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid timer', true));
 			$this->redirect(array('action' => 'index'));

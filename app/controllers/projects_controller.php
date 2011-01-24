@@ -20,21 +20,22 @@ class ProjectsController extends AppController {
 	*/
 	function index() {
 		if ($this->RequestHandler->isXml()){
-			
+			$projects = $this->Project->find('all');
+			$this->set('projects', $projects);
 		}else{
 			$this->layout = 'projects';
+			$projects = $this->paginate('Project');
+			foreach($projects as $project){
+				//update thr total time before the page loads.
+				$data = array('_id'=>$project['Project']['_id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
+				$this->addTime2($data);
+			}
+			//now grab all the updated proejct data for display
+			$projects = $this->Project->find('all', array('fields' => array('title','description','total_time')));
+			$projects = $this->paginate('Project');
+			$this->set('projects', $projects);
+			return $projects;
 		}
-		$projects = $this->paginate('Project');
-		foreach($projects as $project){
-			//update thr total time before the page loads.
-			$data = array('_id'=>$project['Project']['_id'],'title'=>$project['Project']['title'],'user_id'=>$project['Project']['user_id'],'description'=>$project['Project']['description']);
-			$this->addTime2($data);
-		}
-		//now grab all the updated proejct data for display
-		$projects = $this->Project->find('all', array('fields' => array('title','description','total_time')));
-		$projects = $this->paginate('Project');
-		$this->set('projects', $projects);
-		return $projects;
 
 	}
 	

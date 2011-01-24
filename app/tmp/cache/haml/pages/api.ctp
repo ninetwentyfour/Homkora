@@ -73,6 +73,24 @@ Expected Result:
 
 *****
 
+**View Project:**
+
+Required Params: partner
+
+  <?php
+
+    \$url = 'http://homkora.com/projects/view/PROJECTID.xml?partner=APIKEYHERE';
+
+    \$xml = simplexml_load_file(\$url);
+
+    print_r(\$xml);
+
+  ?>
+
+Expected Result:
+
+*****
+
 *****
 
 Timers
@@ -80,7 +98,7 @@ Timers
 
 *****
 
-**Retrieve Timer:**
+**Retrieve Timers:**
 
 Required Params: partner
 
@@ -97,4 +115,63 @@ Required Params: partner
 Expected Result:
 
 *****
+
+**Add Timer:**
+
+Required Params: partner - title - description - projectId - projectName - time
+
+  <?php
+
+    \$time = urlencode('00:00:00');
+
+    \$url = 'http://homkora.com/timers/add.xml?partner=APIKEYHERE&title=EXAMPLE&description=EXAMPLE&projectId=EXAMPLE
+    &projectName=EXAMPLE&time='.\$time;
+
+    \$xml = simplexml_load_file(\$url);
+
+    print_r(\$xml);
+
+  ?>
+
+Expected Result:
+
+*****
+
+**Edit Timer:**
+
+Required Params: partner
+
+Optional Params: title - description - projectId - projectName - time
+
+  <?php
+
+    \$time = urlencode('00:00:00');
+
+    \$url = 'http://homkora.com/timers/edit/TIMERID.xml?partner=APIKEYHERE&time='.\$time;
+
+    \$xml = simplexml_load_file(\$url);
+
+    print_r(\$xml);
+
+  ?>
+
+Expected Result:
+
+*****
+
+**View Timer:**
+
+Required Params: partner
+
+  <?php
+
+    \$url = 'http://homkora.com/timers/view/TIMERID.xml?partner=APIKEYHERE';
+
+    \$xml = simplexml_load_file(\$url);
+
+    print_r(\$xml);
+
+  ?>
+
+Expected Result:
 ");?></p>
