@@ -1396,3 +1396,6 @@ error:1408F10B:SSL routines:func(143):reason(267) in [/var/www/Homkora/app/vendo
 2011-01-24 05:21:03 Warning: Warning (2): extract() expects parameter 1 to be array, null given in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 187]
 2011-01-24 05:21:17 Warning: Warning (2): array_merge() [http://php.net/function.array-merge]: Argument #2 is not an array in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 186]
 2011-01-24 05:21:17 Warning: Warning (2): extract() expects parameter 1 to be array, null given in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 187]
+2011-01-26 23:03:44 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-01-26 23:04:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-01-26 23:04:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]

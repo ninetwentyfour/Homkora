@@ -2112,3 +2112,8 @@
 2011-01-24 05:21:17 Notice: Notice (8): Undefined variable: html in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 246]
 2011-01-24 05:21:17 Notice: Notice (8): Undefined variable: ending in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 260]
 2011-01-24 05:21:17 Notice: Notice (8): Undefined variable: html in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 262]
+2011-01-26 23:03:44 Notice: Notice (8): Undefined variable: timers in [/var/www/Homkora/app/controllers/timers_controller.php, line 217]
+2011-01-26 23:04:02 Notice: Notice (8): Undefined variable: timers in [/var/www/Homkora/app/controllers/timers_controller.php, line 217]
+2011-01-26 23:04:05 Notice: Notice (8): Undefined variable: timers in [/var/www/Homkora/app/controllers/timers_controller.php, line 217]
+2011-02-02 11:24:41 Notice: Notice (8): session_start(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/Homkora/cake/libs/cake_session.php, line 587]
+2011-02-03 01:42:19 Notice: Notice (8): session_start(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/Homkora/cake/libs/cake_session.php, line 587]

@@ -23,17 +23,25 @@ p{
 
 Required Params: partner
 
-  <?php
+  Example Code:
 
-    \$url = 'http://api-homkora.apigee.com/projects.xml?partner=APIKEYHERE';
+    <?php
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/projects.xml?partner=APIKEYHERE';
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <?xml version='1.0' encoding='UTF-8' ?>
+      <projects> 
+        <project _id='PROJECTID' total_time='00:24:23' user_id='USERID' title='EXAMPLE' description='EXAMPLE' 
+        modified='1296142728' created='1295841164' />
+      </projects>
 
 *****
 
@@ -41,17 +49,23 @@ Expected Result:
 
 Required Params: partner - title - description
 
-  <?php
+  Example Code:
 
-    \$url = 'http://api-homkora.apigee.com/projects/add.xml?partner=APIKEYHERE&title=test&description=test';
+    <?php
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/projects/add.xml?partner=APIKEYHERE&title=test&description=test';
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <result>
+      <std_class success='1'/>
+    </result>
 
 *****
 
@@ -59,17 +73,23 @@ Expected Result:
 
 Required Params: partner - title and/or description
 
-  <?php
+  Example Code:
 
-    \$url = 'http://api-homkora.apigee.com/projects/edit/PROJECTID.xml?partner=APIKEYHERE&title=test&description=test';
+    <?php
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/projects/edit/PROJECTID.xml?partner=APIKEYHERE&title=test&description=test';
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <result>
+      <std_class success='1'/>
+    </result>
 
 *****
 
@@ -77,17 +97,22 @@ Expected Result:
 
 Required Params: partner
 
-  <?php
+  Example Code:
 
-    \$url = 'http://api-homkora.apigee.com/projects/view/PROJECTID.xml?partner=APIKEYHERE';
+    <?php
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/projects/view/PROJECTID.xml?partner=APIKEYHERE';
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <project _id='PROJECTID' total_time='00:00:00' user_id='USERID' title='EXAMPLE' description='EXAMPLE' 
+    modified='1296165562' created='1296165206' />
 
 *****
 
@@ -102,17 +127,24 @@ Timers
 
 Required Params: partner
 
-  <?php
+  Example Code:
 
-    \$url = 'http://api-homkora.apigee.com/timers.xml?partner=APIKEYHERE';
+    <?php
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/timers.xml?partner=APIKEYHERE';
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <timers>
+      <timer _id='TIMERID' created='1295842003' description='EXAMPLE' modified='1295843904' project_id='PROJECTID' 
+      project_name='EXAMPLE' time='00:24:06' title='EXAMPLE' user_id='USERID'/>
+    </timers>
 
 *****
 
@@ -120,20 +152,26 @@ Expected Result:
 
 Required Params: partner - title - description - projectId - projectName - time
 
-  <?php
+  Example Code:
 
-    \$time = urlencode('00:00:00');
+    <?php
 
-    \$url = 'http://api-homkora.apigee.com/timers/add.xml?partner=APIKEYHERE&title=EXAMPLE&description=EXAMPLE&projectId=EXAMPLE
-    &projectName=EXAMPLE&time='.\$time;
+      \$time = urlencode('00:00:00');
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/timers/add.xml?partner=APIKEYHERE&title=EXAMPLE&description=EXAMPLE
+      &projectId=EXAMPLE&projectName=EXAMPLE&time='.\$time;
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <result>
+      <std_class success='1'/>
+    </result>
 
 *****
 
@@ -143,19 +181,25 @@ Required Params: partner
 
 Optional Params: title - description - projectId - projectName - time
 
-  <?php
+  Example Code:
 
-    \$time = urlencode('00:00:00');
+    <?php
 
-    \$url = 'http://api-homkora.apigee.com/timers/edit/TIMERID.xml?partner=APIKEYHERE&time='.\$time;
+      \$time = urlencode('00:00:00');
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/timers/edit/TIMERID.xml?partner=APIKEYHERE&time='.\$time;
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <result>
+      <std_class success='1'/>
+    </result>
 
 *****
 
@@ -163,15 +207,20 @@ Expected Result:
 
 Required Params: partner
 
-  <?php
+  Example Code:
 
-    \$url = 'http://api-homkora.apigee.com/timers/view/TIMERID.xml?partner=APIKEYHERE';
+    <?php
 
-    \$xml = simplexml_load_file(\$url);
+      \$url = 'http://api-homkora.apigee.com/timers/view/TIMERID.xml?partner=APIKEYHERE';
 
-    print_r(\$xml);
+      \$xml = simplexml_load_file(\$url);
 
-  ?>
+      print_r(\$xml);
 
-Expected Result:
+    ?>
+
+  Expected Result:
+
+    <timer _id='TIMERID' created='1295842003' description='Example Description' 
+    modified='1295843904' time='00:00:00' title='Example Title' user_id='USERID' />
 ");?></p>

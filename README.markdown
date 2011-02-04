@@ -54,11 +54,11 @@ Redirect with warning if new user creates timer with no projects first
 
 Documentation for API
 
-Add users - Edit Users - Add Timers - Edit Timers - APIs
+Add users - Edit Users - APIs
 
-Flash Message colors
+<del>Flash Message colors</del>
 
-Hide Flash Message after period of time
+<del>Hide Flash Message after period of time</del>
 
 <del>Delete timers associated with projects on project delete</del>
 
