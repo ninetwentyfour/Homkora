@@ -82,7 +82,7 @@ input, select {
 }
 /* end reset */
 html {
-	background: url("../img/bg.png") repeat scroll 0 0 #222222;
+	background: url("https://s3.amazonaws.com/homkora-static/img/bg.png") repeat scroll 0 0 #222222;
 	color: #eee;
 	text-rendering: optimizelegibility;
 	font-family: 'Helvetica', sans-serif;
@@ -331,7 +331,7 @@ tr {
 	/*border:1px solid #444;*/
 }
 .altrow {
-	background: url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
 }
 thead {
 	background-color: #fafafa;
@@ -421,7 +421,7 @@ header h1 {
 	color:#f94646;
 }
 #home-page-blurb {
-	background: url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
 	border: 1px solid #444;
 	padding: 15px;
 	width: 900px;
@@ -493,7 +493,7 @@ header h1 {
 	margin-bottom: 15px;
 }
 .project-view {
-	background: url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
 	border: 1px solid #444;
 	padding: 15px;
 	width: 300px;
@@ -530,7 +530,7 @@ noscript {
 }
 tr:nth-of-type(odd){ 
 	background-color: #111;
-	background-image:url('../img/dark-bg.png'); 
+	background-image:url('https://s3.amazonaws.com/homkora-static/img/dark-bg.png'); 
 }
 #ProjectSearchForm{
 	width:100%;

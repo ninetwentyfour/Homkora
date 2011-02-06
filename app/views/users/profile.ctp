@@ -28,7 +28,7 @@
 	</div>
 	<div class="bottomLinks">
 		<br />
-		<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['_id']),array('escape' => false,'class'=>'button addTimerIndex'));?>
+		<?php echo $html->link($html->image('https://s3.amazonaws.com/homkora-static/img/icon_pencil.png', array('alt' => 'Add','title'=>'Add')).'Edit Account',array('controller'=>'users', 'action'=>'userEdit',$user['User']['_id']),array('escape' => false,'class'=>'button addTimerIndex'));?>
 	</div>
 </div>
 

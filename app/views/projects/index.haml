@@ -1,6 +1,6 @@
 :php
 	App::import('Sanitize');
-= $html->link($html->image('icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'))
+= $html->link($html->image('https://s3.amazonaws.com/homkora-static/img/icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'))
 %br
 %br
 = $form->create('Project', array('action' => 'search'))
@@ -57,9 +57,9 @@
 			%td
 				= Sanitize::html($project['Project']['total_time'])
 			%td.actions
-				= $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['_id']),array( 'escape' => false,'class'=>'view-link' ))
-				= $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['_id']),array( 'escape' => false,'class'=>'edit-link' ))
-				= $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['_id'] ))
+				= $html->link($html->image('https://s3.amazonaws.com/homkora-static/img/icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['_id']),array( 'escape' => false,'class'=>'view-link' ))
+				= $html->link($html->image('https://s3.amazonaws.com/homkora-static/img/icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['_id']),array( 'escape' => false,'class'=>'edit-link' ))
+				= $html->link($html->image('https://s3.amazonaws.com/homkora-static/img/icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['_id'] ))
 		:php
 			endforeach;
 	%p
@@ -68,11 +68,11 @@
 				'format' => __('Page %page% of %pages%, showing %current% projects out of %count% total.', true)
 			)).'</span>';
 	%div.paging
-		= $this->Paginator->prev($html->image('icon_arrow_left.png', array('alt' => 'Previous','title'=>'Previous')) . __('', true), array('escape' => false), null, array('escape' => false,'class'=>'disabled'))
-		= $this->Paginator->next(__('', true) . $html->image('icon_arrow_right.png', array('alt' => 'Next','title'=>'Next')), array('escape' => false), null, array('escape' => false,'class' => 'disabled'))
+		= $this->Paginator->prev($html->image('https://s3.amazonaws.com/homkora-static/img/icon_arrow_left.png', array('alt' => 'Previous','title'=>'Previous')) . __('', true), array('escape' => false), null, array('escape' => false,'class'=>'disabled'))
+		= $this->Paginator->next(__('', true) . $html->image('https://s3.amazonaws.com/homkora-static/img/icon_arrow_right.png', array('alt' => 'Next','title'=>'Next')), array('escape' => false), null, array('escape' => false,'class' => 'disabled'))
 %div.bottomLinks
 	%h3 Actions
 	%br
-	= $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'List','title'=>'List')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
-	= $this->Html->link(__($html->image('icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex'))
-	= $html->link($html->image('icon_download.png').'Export Projects to CSV', array('controller'=>'projects','action'=>'exportcsvProjects'),array( 'escape' => false,'class'=>'button addTimerIndex' ))
+	= $this->Html->link(__($html->image('https://s3.amazonaws.com/homkora-static/img/icon_list_bullets.png', array('alt' => 'List','title'=>'List')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('https://s3.amazonaws.com/homkora-static/img/icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $html->link($html->image('https://s3.amazonaws.com/homkora-static/img/icon_download.png').'Export Projects to CSV', array('controller'=>'projects','action'=>'exportcsvProjects'),array( 'escape' => false,'class'=>'button addTimerIndex' ))

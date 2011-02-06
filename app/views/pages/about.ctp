@@ -24,12 +24,12 @@ I promise the app is better than this about page.
 
 <p>
 Awesome tech used.<br />
-<a href="http://cakephp.org/"><img src="img/logos/cake-logo.png" style="margin:10px;" /></a>
-<a href="http://haml-lang.com/"><img src="img/logos/hamlsass.png" style="margin:10px;" /></a>
+<a href="http://cakephp.org/"><img src="https://s3.amazonaws.com/homkora-static/img/logos/cake-logo.png" style="margin:10px;" /></a>
+<a href="http://haml-lang.com/"><img src="https://s3.amazonaws.com/homkora-static/img/logos/hamlsass.png" style="margin:10px;" /></a>
 <br />
-<a href="http://mongohq.com/"><img src="img/logos/mhq_header_logo.png" style="margin:10px;" /></a>
-<a href="http://aws.amazon.com/ec2/"><img src="img/logos/logo_aws.gif" style="margin:10px;" /><a/>
+<a href="http://mongohq.com/"><img src="https://s3.amazonaws.com/homkora-static/img/logos/mhq_header_logo.png" style="margin:10px;" /></a>
+<a href="http://aws.amazon.com/ec2/"><img src="https://s3.amazonaws.com/homkora-static/img/logos/logo_aws.gif" style="margin:10px;" /><a/>
 <br />
-<a href="http://apigee.com"><img src="img/logos/apigee_logo.png" style="margin:10px;" /></a>
-<a href="http://sendgrid.com/"><img src="img/logos/sendgird.png" style="margin:10px;" /></a>
+<a href="http://apigee.com"><img src="https://s3.amazonaws.com/homkora-static/img/logos/apigee_logo.png" style="margin:10px;" /></a>
+<a href="http://sendgrid.com/"><img src="https://s3.amazonaws.com/homkora-static/img/logos/sendgird.png" style="margin:10px;" /></a>
 </p>

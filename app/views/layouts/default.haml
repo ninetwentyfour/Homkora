@@ -3,7 +3,12 @@
 	%head
 		%meta{:charset => "utf-8"}
 		%title Time Tracking Made Simple | Homkora
-		= $html->css('scss-style');
+		:php
+			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
+				echo '<link href="https://s3.amazonaws.com/homkora-static/css/homkora-static.gz.css" type="text/css" rel="stylesheet">';
+			}else{
+				echo '<link href="https://s3.amazonaws.com/homkora-static/css/homkora-static.css" type="text/css" rel="stylesheet">';
+			}
 	%body
 		%header
 			%h1
@@ -32,4 +37,9 @@
 		%footer.transparent_class
 			= $this->element('footer');
 		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
-		= $this->Html->script('common');
+		:php
+			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
+				echo '<script type="text/javascript" src="https://s3.amazonaws.com/homkora-static/js/common.gz.js"></script>';
+			}else{
+				echo '<script type="text/javascript" src="https://s3.amazonaws.com/homkora-static/js/common.js"></script>';
+			}
