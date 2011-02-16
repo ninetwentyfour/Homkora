@@ -1,5 +1,4 @@
 <?php
-App::import('Vendor', 'indextank_client');
 class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security','RequestHandler');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
@@ -143,6 +142,7 @@ class AppController extends Controller {
 	
 	function addIndextank($indexType,$data){
 		//send project to index tank
+		App::import('Vendor', 'indextank_client');
 		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
 		$client = new ApiClient($API_URL);
 		$index = $client->get_index($indexType);
@@ -154,6 +154,7 @@ class AppController extends Controller {
 	
 	function deleteIndextank($indexType,$id){
 		//delete index tank document
+		App::import('Vendor', 'indextank_client');
 		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
 		$client = new ApiClient($API_URL);
 		$index = $client->get_index($indexType);
@@ -161,6 +162,7 @@ class AppController extends Controller {
 	}
 	
 	function searchIndextank($indexType,$query){
+		App::import('Vendor', 'indextank_client');
 		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
 		$client = new ApiClient($API_URL);
 		$index = $client->get_index($indexType);
