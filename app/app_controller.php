@@ -1,4 +1,5 @@
 <?php
+App::import('Vendor', 'indextank_client');
 class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security','RequestHandler');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
@@ -138,6 +139,25 @@ class AppController extends Controller {
 	    		$this->Session->write('Auth.User.modified', $user[0]['User']['modified']);
 			}
        	}
+	}
+	
+	function addIndextank($indexType,$data){
+		//send project to index tank
+		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+		$client = new ApiClient($API_URL);
+		$index = $client->get_index($indexType);
+		$title = $data['title'];
+		$doc_id = $data['id'];
+		$desc = $data['description'];
+		$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
+	}
+	
+	function deleteIndextank($indexType,$id){
+		//delete index tank document
+		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+		$client = new ApiClient($API_URL);
+		$index = $client->get_index($indexType);
+		$index->delete_document($id);
 	}
 	
 }
