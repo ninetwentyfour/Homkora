@@ -1402,3 +1402,5 @@ error:1408F10B:SSL routines:func(143):reason(267) in [/var/www/Homkora/app/vendo
 2011-02-05 04:09:12 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
 2011-02-05 20:26:00 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
 2011-02-16 22:28:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-02-16 22:56:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-02-16 22:57:42 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
