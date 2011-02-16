@@ -140,16 +140,16 @@ class AppController extends Controller {
        	}
 	}
 	
-	function addIndextank($indexType,$data){
+	function addIndextank($indexType,$id,$data){
 		//send project to index tank
 		App::import('Vendor', 'indextank_client');
 		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
 		$client = new ApiClient($API_URL);
 		$index = $client->get_index($indexType);
-		$title = $data['title'];
-		$doc_id = $data['id'];
-		$desc = $data['description'];
-		$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
+		//$title = $data['title'];
+		$doc_id = $id;
+		//$desc = $data['description'];
+		$index->add_document($doc_id, $data);
 	}
 	
 	function deleteIndextank($indexType,$id){
