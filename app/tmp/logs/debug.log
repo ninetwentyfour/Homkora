@@ -2529,3 +2529,4 @@
 2011-02-16 21:59:54 Notice: Notice (8): Undefined index: HTTP_ACCEPT_ENCODING in [/var/www/Homkora/app/tmp/cache/haml/layouts/default.ctp, line 24]
 2011-02-16 22:00:00 Notice: Notice (8): Undefined index: HTTP_ACCEPT_ENCODING in [/var/www/Homkora/app/tmp/cache/haml/layouts/default.ctp, line 5]
 2011-02-16 22:00:00 Notice: Notice (8): Undefined index: HTTP_ACCEPT_ENCODING in [/var/www/Homkora/app/tmp/cache/haml/layouts/default.ctp, line 24]
+2011-02-16 22:28:07 Notice: Notice (8): Undefined variable: projects in [/var/www/Homkora/app/controllers/projects_controller.php, line 397]
