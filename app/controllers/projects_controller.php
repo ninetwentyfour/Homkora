@@ -82,8 +82,10 @@ class ProjectsController extends AppController {
 			$this->Project->create();
 			if($this->Project->save($this->data)){
 				//send project to index tank
-				$indexData = array('id'=>$this->Project->id,'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description']);
-				$this->addIndextank("HomkoraProjects",$indexData);
+				//$indexData = array('id'=>$this->Project->id,'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description']);
+				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+				$id = $this->Project->id;
+				$this->addIndextank("HomkoraProjects",$id,$indexData);
 				$result = array('success'=>'1');
 			}else{
 				$result = array('success'=>'0');
@@ -95,8 +97,10 @@ class ProjectsController extends AppController {
 			$this->Project->create();
 			if ($this->Project->save($this->data)) {
 				//send project to index tank
-				$indexData = array('id'=>$this->Project->id,'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description']);
-				$this->addIndextank("HomkoraProjects",$indexData);
+				//$indexData = array('id'=>$this->Project->id,'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description']);
+				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+				$id = $this->Project->id;
+				$this->addIndextank("HomkoraProjects",$id,$indexData);
 				$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 				//return for testing
@@ -142,14 +146,9 @@ class ProjectsController extends AppController {
 		if (!empty($this->data)) {
 			if ($this->Project->save($this->data)) {
 				//send project to index tank
-				$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-				$client = new ApiClient($API_URL);
-				$index = $client->get_index("HomkoraProjects");
-				$title = $this->data['Project']['title'];
-				$doc_id = $id;
-				$desc = $this->data['Project']['description'];
-				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'user_id'=>$_SESSION['Auth']['User']['_id']));
-				
+				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+				$id = $id;
+				$this->addIndextank("HomkoraProjects",$id,$indexData);
 				$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -380,12 +379,7 @@ class ProjectsController extends AppController {
 	}
 	
 	function search(){
-		//$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-		//$client = new ApiClient($API_URL);
-		//$index = $client->get_index("HomkoraProjects");
-		//$index->add_function(2, "relevance");
 		$query = $this->data['Project']['search'];
-		//$res = $index->search($query);
 		$res = $this->searchIndextank("HomkoraProjects",$query);
 		$i = 0;
 		foreach($res->results as $doc_id){
