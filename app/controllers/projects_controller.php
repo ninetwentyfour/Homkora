@@ -386,9 +386,7 @@ class ProjectsController extends AppController {
 		//$index->add_function(2, "relevance");
 		$query = $this->data['Project']['search'];
 		//$res = $index->search($query);
-		$res = $this->searchIndextank("HomkoraProjects",$query){
-			
-		}
+		$res = $this->searchIndextank("HomkoraProjects",$query);
 		$i = 0;
 		foreach($res->results as $doc_id){
 			$params = array(
