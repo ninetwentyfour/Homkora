@@ -191,6 +191,7 @@ class ProjectsController extends AppController {
 			foreach($timers as $timer){
      			//delete the timer
 				$this->Timer->delete($timer['Timer']['_id']);
+				$this->deleteIndextank("HomkoraTimers",$timer['Timer']['_id']);
 			}
 			//delete index tank document
 			$this->deleteIndextank("HomkoraProjects",$id);
