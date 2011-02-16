@@ -88,13 +88,6 @@ class TimersController extends AppController {
 			$this->Timer->create();
 			if ($this->Timer->save($this->data)) {
 				//send timer to index tank
-				// $API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-				// 				$client = new ApiClient($API_URL);
-				// 				$index = $client->get_index("HomkoraTimers");
-				// 				$title = $this->data['Timer']['title'];
-				// 				$doc_id = $this->Timer->id;
-				// 				$desc = $this->data['Timer']['description'];
-				// 				$index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'projectName'=>$this->data['Timer']['project_name'],'user_id'=>$_SESSION['Auth']['User']['_id']));
 				$indexData = array('text'=>$this->data['Timer']['title'],'title'=>$this->data['Timer']['title'],'description'=>$this->data['Timer']['description'],'projectName'=>$this->data['Timer']['project_name'],'user_id'=>$_SESSION['Auth']['User']['_id']);
 				$id = $this->Timer->id;
 				$this->addIndextank("HomkoraTimers",$id,$indexData);
@@ -155,13 +148,6 @@ class TimersController extends AppController {
 			$this->data['Timer']['project_name'] = $project[0]['Project']['title'];
 			if ($this->Timer->save($this->data)) {
 				//send timer to index tank
-				// $API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-				// $client = new ApiClient($API_URL);
-				// $index = $client->get_index("HomkoraTimers");
-				// $title = $this->data['Timer']['title'];
-				// $doc_id = $id;
-				// $desc = $this->data['Timer']['description'];
-				// $index->add_document($doc_id, array('text'=>$title,'title'=>$title,'description'=>$desc,'projectName'=>$this->data['Timer']['project_name'],'user_id'=>$_SESSION['Auth']['User']['_id']));
 				$indexData = array('text'=>$this->data['Timer']['title'],'title'=>$this->data['Timer']['title'],'description'=>$this->data['Timer']['description'],'projectName'=>$this->data['Timer']['project_name'],'user_id'=>$_SESSION['Auth']['User']['_id']);
 				$id = $this->Timer->id;
 				$this->addIndextank("HomkoraTimers",$id,$indexData);
@@ -211,12 +197,7 @@ class TimersController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	function search(){
-		//$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-		//$client = new ApiClient($API_URL);
-		//$index = $client->get_index("HomkoraTimers");
-		//$index->add_function(2, "relevance");
 		$query = $this->data['Timer']['search'];
-		//$res = $index->search($query);
 		$res = $this->searchIndextank("HomkoraTimers",$query);
 		$i = 0;
 		foreach($res->results as $doc_id){

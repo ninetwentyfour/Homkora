@@ -146,9 +146,7 @@ class AppController extends Controller {
 		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
 		$client = new ApiClient($API_URL);
 		$index = $client->get_index($indexType);
-		//$title = $data['title'];
 		$doc_id = $id;
-		//$desc = $data['description'];
 		$index->add_document($doc_id, $data);
 	}
 	
