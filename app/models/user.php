@@ -1,6 +1,22 @@
 <?php
 class User extends AppModel {
 	var $name = 'User';
+	var $primaryKey = '_id';
+	
+
+	function schema() {
+		$this->_schema = array(
+			'_id' => array('type' => 'integer', 'primary' => true, 'length' => 40),
+			'username' => array('type' => 'string'),
+			'password' => array('type' => 'string'),
+			'group_id' => array('type' => 'string'),
+			'email' => array('type' => 'string'),
+			'active' => array('type' => 'string','default'=>'0'),
+			'created' => array('type' => 'string'),
+			'modified' => array('type' => 'string'),
+		);
+		return $this->_schema;
+	}
 	var $validate = array(
 		'username' => array(
 			'notempty' => array(
@@ -34,74 +50,9 @@ class User extends AppModel {
 			),
 		),
 	);
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-	var $belongsTo = array(
-		'Group' => array(
-			'className' => 'Group',
-			'foreignKey' => 'group_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-	var $hasMany = array(
-		'Post' => array(
-			'className' => 'Post',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Project' => array(
-			'className' => 'Project',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'ApiKey' => array(
-			'className' => 'ApiKey',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Timer' => array(
-			'className' => 'Timer',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
 	
-	var $actsAs = array('Acl' => array('type' => 'requester'));
+	
+	//var $actsAs = array('Acl' => array('type' => 'requester'));
 	
 	function parentNode() {
 	    if (!$this->id && empty($this->data)) {

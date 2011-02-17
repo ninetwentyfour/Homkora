@@ -6,10 +6,10 @@ Homkora is a time tracking web app that aims to be simple. (Plus it's dark!)
 Create Projects. Create Timers. Enjoy.
 <br /><br />
 Join The Beta<br />
-<?php echo $html->link('Sign Up','/sign-up',array('class'=>'button'));?>
+<?php echo $html->link('Sign Up','/sign-up',array('class'=>'cupid-green'));?>
 </div>
 <div id="home-pic" style="float:right;width:500px;">
-	<img src="img/homecap.jpg" />
+	<img src="https://s3.amazonaws.com/homkora-static/img/homecap.jpg" />
 </div>
 <div style="clear:both;"></div>
 </div>

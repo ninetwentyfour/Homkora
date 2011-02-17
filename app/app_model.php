@@ -7,7 +7,7 @@ class AppModel extends Model {
     function beforeFind($queryData) { 
         if(isset($_SESSION['Auth']['User'])){
             $group = $_SESSION['Auth']['User']['group_id'];//read the entity id from the session
-            $user = $_SESSION['Auth']['User']['id'];
+            $user = $_SESSION['Auth']['User']['_id'];
             if($group!='1'){// only limit data if it's not a admin user. needs to be based on name in future
                 if(isset($this->_schema['user_id'])) {
 					//use a condition to limit data

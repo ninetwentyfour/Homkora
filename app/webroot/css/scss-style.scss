@@ -82,7 +82,7 @@ input, select {
 }
 /* end reset */
 html {
-	background: url("../img/bg.png") repeat scroll 0 0 #222222;
+	background: url("https://s3.amazonaws.com/homkora-static/img/bg.png") repeat scroll 0 0 #222222;
 	color: #eee;
 	text-rendering: optimizelegibility;
 	font-family: 'Helvetica', sans-serif;
@@ -130,10 +130,13 @@ footer {
 	font-size: 12px;
 	border-top: 1px solid #444;
 	background-color: #000;
-	padding-left: 10px;
+	padding-left: 15px;
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
+}
+footer a{
+	margin-right:15px;
 }
 h1 a {
 	color: #E54964 !important;
@@ -328,7 +331,7 @@ tr {
 	/*border:1px solid #444;*/
 }
 .altrow {
-	background: url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
 }
 thead {
 	background-color: #fafafa;
@@ -407,9 +410,18 @@ header h1 {
 	float: left;
 	width: 100%;
 	margin-bottom: 15px;
+	font-size:20px;
+	color:#f94646;
+}
+#authMessage{
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+	font-size:20px;
+	color:#f94646;
 }
 #home-page-blurb {
-	background: url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
 	border: 1px solid #444;
 	padding: 15px;
 	width: 900px;
@@ -481,7 +493,7 @@ header h1 {
 	margin-bottom: 15px;
 }
 .project-view {
-	background: url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
 	border: 1px solid #444;
 	padding: 15px;
 	width: 300px;
@@ -504,13 +516,13 @@ header h1 {
 	float: left;
 }
 .error-message {
-	color: red;
-	border: 1px solid red;
+	color: #f94646;
+	border: 1px solid #f94646;
 	padding: 5px;
 	float: none !important;
 }
 noscript {
-	border: 1px solid red;
+	border: 1px solid #f94646;
 	padding: 10px;
 	font-size: 30px;
 	margin-bottom: 10px;
@@ -518,5 +530,85 @@ noscript {
 }
 tr:nth-of-type(odd){ 
 	background-color: #111;
-	background-image:url('../img/dark-bg.png'); 
+	background-image:url('https://s3.amazonaws.com/homkora-static/img/dark-bg.png'); 
+}
+#ProjectSearchForm{
+	width:100%;
+}
+.searchBox{
+	float:right;
+	margin-top:-110px;
+}
+.searchBox input{
+	width:100px;
+	float:right;
+}
+.searchText{
+	width:250px !important;
+	color:#666;
+	font-style: italic;
+}
+.searchText:focus;{
+	width:250px !important;
+	color:#eee;
+	font-style: normal;
+}
+.flash_bad {
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+	font-size:20px;
+	color:#f94646;
+}
+.flash_good{
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+	font-size:20px;
+	color:#92f083 !important;
+}
+#TimerSearchForm{
+	width:100%;
+}
+.cupid-green {
+  background: #7fbf4d;
+  background: -moz-linear-gradient(0% 100% 90deg,#63a62f, #7fbf4d);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7fbf4d), to(#63a62f));
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: inset 0 1px 0 0 #96ca6d;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px;
+  margin-top:10px;
+  display:block;
+}
+
+.cupid-green:hover {
+  background: #76b347;
+  background: -moz-linear-gradient(0% 100% 90deg,#5e9e2e, #76b347);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#76b347), to(#5e9e2e));
+  -moz-box-shadow: inset 0 1px 0 0 #8dbf67;
+  -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+  box-shadow: inset 0 1px 0 0 #8dbf67;
+  cursor: pointer;
+  color: #fff;
+}
+
+.cupid-green:active {
+  border: 1px solid #5b992b;
+  border-bottom: 1px solid #538c27;
+  -moz-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eee;
+  -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eee;
+  box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eee;
 }

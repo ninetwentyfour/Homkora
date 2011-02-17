@@ -1,18 +1,35 @@
 <?php
 class Timer extends AppModel {
 	var $name = 'Timer';
-	var $actsAs = array("Logable");
+	//var $actsAs = array("Logable");
+	var $primaryKey = '_id';
+	
+
+	function schema() {
+		$this->_schema = array(
+			'_id' => array('type' => 'integer', 'primary' => true, 'length' => 40),
+			'project_id' => array('type' => 'string'),
+			'project_name' => array('type' => 'string'),
+			'title' => array('type' => 'string'),
+			'description' => array('type' => 'text'),
+			'user_id' => array('type' => 'string'),
+			'time' => array('type' => 'string','default'=>'00:00:00'),
+			'created' => array('type' => 'string'),
+			'modified' => array('type' => 'string'),
+		);
+		return $this->_schema;
+	}
 	var $validate = array(
-		'project_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Something is wrong with the Project selection',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		// 'project_id' => array(
+		// 			'numeric' => array(
+		// 				'rule' => array('numeric'),
+		// 				'message' => 'Something is wrong with the Project selection',
+		// 				//'allowEmpty' => false,
+		// 				//'required' => false,
+		// 				//'last' => false, // Stop validation after this rule
+		// 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+		// 			),
+		// 		),
 		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -33,24 +50,6 @@ class Timer extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-	var $belongsTo = array(
-		'Project' => array(
-			'className' => 'Project',
-			'foreignKey' => 'project_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
 	);
 	
 }

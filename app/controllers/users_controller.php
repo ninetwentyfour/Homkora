@@ -2,12 +2,19 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
-	var $components = array('Random');
+	var $components = array('Random','SwiftMailer');
 	
 	function beforeFilter() {
 	    parent::beforeFilter();
-	    $this->Auth->autoRedirect = false;
-	    $this->Auth->allow(array('userEdit','profile','build_acl'));
+	    //$this->Auth->autoRedirect = false;
+	    $this->Auth->allow(array('userEdit','profile','build_acl','publicAdd','activate'));
+	    $user = $this->Auth->user();
+	    if($user['User']['group_id'] != '1'){
+          if($this->action != 'userEdit' && $this->action != 'profile' && $this->action != 'publicAdd' && $this->action != 'login' && $this->action != 'logout' && $this->action != 'activate'){
+            $this->Session->setFlash('That action is not allowed.', 'default', array('class' => 'flash_bad'));
+            $this->redirect('/projects/index');
+          }
+	    }
 	}
 	
 	function login() {
@@ -15,30 +22,32 @@ class UsersController extends AppController {
 		//	$this->Session->setFlash('You are logged in!');
 		//	$this->redirect('/', null, false);
 		//}
-		
 		if ($this->data) {
-                        // Use the AuthComponentÕs login action
-                        if ($this->Auth->login($this->data)) {
-                                // Retrieve user data
-                                $results = $this->User->find('first', array('conditions' => array('User.username' => $this->data['User']['username'])));
-                                // Check to see if the UserÕs account isnÕt active
-                                if ($results['User']['active'] == 0) {
+			// Use the AuthComponentÕs login action
+			if ($this->Auth->login($this->data)) {
+				// Retrieve user data
+				$params = array('conditions' => array('username' => $this->data['User']['username']));
+				$results = $this->User->find('first',$params);
+				print_r($results);
+				// Check to see if the UserÕs account isnÕt active
+				if ($results['User']['active'] == "0") {
 					// Uh Oh!
-					$this->Session->setFlash('Your account has not been activated yet!');
+					$this->Session->setFlash('Your account has not been activated yet!', 'default', array('class' => 'flash_bad'));
 					//$this->Auth->logout();
-					$this->redirect($this->Auth->logout());
+					//$this->redirect($this->Auth->logout());
 				}
-                                // Cool, user is active, redirect post login
-                                else {
-                                        $this->redirect('/projects/index');
-                                }
-                        }
-                }
+				// Cool, user is active, redirect post login
+				else {
+				$this->Session->setFlash('Gets here!');
+					//$this->redirect('/projects/index');
+				}
+			}
+		}
 	}
 
 	function logout() {
 	    //Leave empty for now.
-		$this->Session->setFlash('Good-Bye');
+		$this->Session->setFlash('Good-Bye', 'default', array('class' => 'flash_good'));
 		$this->redirect($this->Auth->logout());
 	}
 	
@@ -50,7 +59,7 @@ class UsersController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'flash_bad', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('user', $this->User->read(null, $id));
@@ -60,10 +69,10 @@ class UsersController extends AppController {
 		if (!empty($this->data)) {
 			$this->User->create();
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The user has been saved', true));
+				$this->Session->setFlash('The user has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+				$this->Session->setFlash('The user could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		$groups = $this->User->Group->find('list');
@@ -75,42 +84,51 @@ class UsersController extends AppController {
 			if ($this->User->validates()) {
 				// it validated logic
 				//check user name against db
-				$userExists = $this->User->findByUsername($this->data['User']['username']);
-				if($userExists['User']['username']==$this->data['User']['username']){
+				$params = array(
+         			'conditions' => array('username' => $this->data['User']['username'])
+        		);
+				$userExists = $this->User->find('all',$params);
+				if(isset($userExists[0]['User']['username'])){
+				
+				}else{
+    				$userExists[0]['User']['username'] = '';
+				}
+				if($userExists[0]['User']['username']==$this->data['User']['username']){
 					//if found and matches - dont save and alert user
-					$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
+					$this->Session->setFlash('User Name Taken. Please, try again.', 'default', array('class' => 'flash_bad'));
 				}else{
 					//no user found - save it
 					$this->User->create();
 					if ($this->User->save($this->data)) {
 						$this->__sendActivationEmail($this->User->id);
 						$this->__createApiKey($this->User->id);
-						$this->Session->setFlash(__('Check your email for account verification.', true));
+						$this->Session->setFlash('Check your email for account verification.', 'default', array('class' => 'flash_good'));
 						$this->redirect('/login');
 					} else {
 						//general problem saving to db
-						$this->Session->setFlash(__('There was a problem saving the user. Please, try again.', true));
+						$this->Session->setFlash('There was a problem saving the user. Please, try again.', 'default', array('class' => 'flash_bad'));
 					}
 				}
 			} else {
-				$this->Session->setFlash(__('Fix Errors Below.', true));
+				$this->Session->setFlash('Fix Errors Below.', 'default', array('class' => 'flash_bad'));
 			}
 		}
-		$groups = $this->User->Group->find('list');
+		$this->loadModel('Group');
+		$groups = $this->Group->find('list');
 		$this->set(compact('groups'));
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The user has been saved', true));
+				$this->Session->setFlash('The user has been saved', 'default', array('class' => 'flash_good'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+				$this->Session->setFlash('The user could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}
 		}
 		if (empty($this->data)) {
@@ -122,14 +140,14 @@ class UsersController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for user', true));
+			$this->Session->setFlash('Invalid id for user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->User->delete($id)) {
-			$this->Session->setFlash(__('User deleted', true));
+			$this->Session->setFlash('User deleted', 'default', array('class' => 'flash_good'));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('User was not deleted', true));
+		$this->Session->setFlash('User was not deleted', 'default', array('class' => 'flash_bad'));
 		$this->redirect(array('action' => 'index'));
 	}
 	
@@ -332,9 +350,10 @@ class UsersController extends AppController {
          *  @return Boolean indicates success
         */
         function __sendActivationEmail($user_id) {
-                $user = $this->User->find(array('User.id' => $user_id), array('User.email', 'User.username'), null, false);
+				$user = $this->User->read(null, $user_id);
+                //$user = $this->User->find(array('User.id' => $user_id), array('User.email', 'User.username'), null, false);
                 if (empty($user)) {
-			echo 'WOAH';
+						echo 'WOAH';
                         debug(__METHOD__." failed to retrieve User data for user.id: {$user_id}");
                         return false;
                 }
@@ -343,12 +362,48 @@ class UsersController extends AppController {
                 $this->set('activate_url', 'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash());
                 $this->set('username', $this->data['User']['username']);
                
-                $this->Email->to = $user['User']['email'];
-                $this->Email->subject = env('SERVER_NAME') . ' Ð Please confirm your email address';
-                $this->Email->from = 'noreply@' . env('SERVER_NAME');
-                $this->Email->template = 'user_confirm';
-                $this->Email->sendAs = 'text';   // you probably want to use both :)   
-                return $this->Email->send();
+                //$this->Email->to = $user['User']['email'];
+                //$this->Email->subject = env('SERVER_NAME') . ' Ð Please confirm your email address';
+                //$this->Email->from = 'noreply@' . env('SERVER_NAME');
+                $this->SwiftMailer->template = 'user_confirm';
+                //$this->Email->sendAs = 'text';   // you probably want to use both :)   
+                //return $this->Email->send();
+                $this->SwiftMailer->sendAs = 'text';
+                //$this->SwiftMailer->smtpType = 'tls';
+         	    $this->SwiftMailer->smtpHost = 'smtp.sendgrid.net';
+         	    $this->SwiftMailer->smtpPort = 25;
+         	    $this->SwiftMailer->smtpUsername = 'contact@travisberry.com';
+         	    $this->SwiftMailer->smtpPassword = '221westwood';
+         	    $this->SwiftMailer->from = 'signup@homkora.com';
+         	    $emailData['to'] = $user['User']['email'];
+         	    $emailData['from'] = 'signup@homkora.com';
+         	    $emailData['subject'] = 'Homkora - Please confirm your email address';
+        		$emailData['body'] = 'To complete your sign up. Please click or copy this link to your browser. '.'http://' . env('SERVER_NAME') . '/users/activate/' . $user_id . '/' . $this->User->getActivationHash();
+
+         	    $this->SwiftMailer->fromName = 'Homkora SignUp';
+         	    $this->SwiftMailer->to = $emailData['to'];
+         	    $this->set('message', $emailData['body']);
+         	    try{
+         			if(isset($emailData['subject'])){
+         			    $sendResult = $this->SwiftMailer->send('user_confirm',$emailData['subject']);
+         			}else{
+         			    $sendResult[0] = 'false';
+         			}
+         			if($sendResult[0]=='false') {
+         			    //Add code here to handle the error message
+           			    $this->Session->setFlash('There was an error sending your email.', 'default', array('class' => 'flash_bad'));
+         			    $this->log("Error sending email");
+         			}else{
+         			    $this->Session->setFlash('The Email has been successfully sent', 'default', array('class' => 'flash_good'));
+           			}
+           			if (isset($this->params['requested'])) {
+         			    return $_SESSION['Message']['flash']['message'];
+         			}
+         			return $sendResult[0];
+         	    }
+         	    catch(Exception $e) {
+         	  		$this->log("Failed to send email: ".$e->getMessage());
+           	    }
         }
 	
 	/**
@@ -365,7 +420,7 @@ class UsersController extends AppController {
 	                $this->User->saveField('active', 1);
                
 	                // Let the user know they can now log in!
-	                $this->Session->setFlash('Your account has been activated, please log in below');
+	                $this->Session->setFlash('Your account has been activated, please log in below', 'default', array('class' => 'flash_good'));
 	                $this->redirect('/login');
 	        }
        
@@ -374,12 +429,12 @@ class UsersController extends AppController {
 	
 	function userEdit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'profile',$id));
 		}
 		$user = $this->User->read(null, $id);
-		if($user['User']['id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid user', true));
+		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'profile',$id));
 		}
 		if (!empty($this->data)) {
@@ -392,40 +447,51 @@ class UsersController extends AppController {
 					//save the password field
 					$this->User->saveField('password', $password);
 				}else{
-					$this->Session->setFlash(__('Passwords Didn\'t Match. Try Again.', true));
+					$this->Session->setFlash('Passwords Didn\'t Match. Try Again.', 'default', array('class' => 'flash_bad'));
 				}
 			}
 			//check user name against db
-			$userExists = $this->User->findByUsername($this->data['User']['username']);
-			$userExistsID = $this->User->findById($id);
+			$params = array(
+				'conditions' => array('username' => $this->data['User']['username'])
+			);
+			$params2 = array(
+				'conditions' => array('_id' => $id)
+			);
+			$userExists = $this->User->find('all',$params);
+			$userExistsID = $this->User->find('all',$params2);
 			//check that username isnt taken and isnt the old one
-			if($userExists['User']['username']==$this->data['User']['username'] && $userExistsID['User']['username']!=$this->data['User']['username']){
+			if($userExists[0]['User']['username']==$this->data['User']['username'] && $userExistsID[0]['User']['username']!=$this->data['User']['username']){
 				//if found and matches - dont save and alert user
-				$this->Session->setFlash(__('User Name Taken. Please, try again.', true));
+				$this->Session->setFlash('User Name Taken. Please, try again.', 'default', array('class' => 'flash_bad'));
 			}else{
 				if ($this->User->save($this->data)) {
-					$this->Session->setFlash(__('The user has been saved', true));
+					$this->Session->setFlash('The user has been saved', 'default', array('class' => 'flash_good'));
 					$this->redirect(array('action' => 'profile',$id));
 				} else {
-					$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
+					$this->Session->setFlash('The user could not be saved. Please, try again.', 'default', array('class' => 'flash_bad'));
 				}
 			}
 		}
 		if (empty($this->data)) {
 			$this->data = $this->User->read(null, $id);
 		}
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
+		//$groups = $this->User->Group->find('list');
+		//$this->set(compact('groups'));
 	}
 
 	function profile($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid user', true));
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		$user = $this->User->read(null, $id);
-		if($user['User']['id']!=$_SESSION['Auth']['User']['id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
-			$this->Session->setFlash(__('Invalid user', true));
+		$this->loadModel('ApiKey');
+		$params = array(
+			'conditions' => array('user_id' => (string)$_SESSION['Auth']['User']['_id'])
+		);
+		$user['User']['ApiKey'] = $this->ApiKey->find('all', $params);
+		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
 		//$user['User']['ApiKey'] = $this->User->ApiKey->read(null, $user['User']['id']);
@@ -437,8 +503,9 @@ class UsersController extends AppController {
 	function __createApiKey($user_id){
 		$random = $this->Random->randomString();
 		$this->data = array('ApiKey'=>array('key'=>$random,'user_id'=>$user_id));
-		$this->User->ApiKey->create();
-		if ($this->User->ApiKey->save($this->data)){
+		$this->loadModel('ApiKey');
+		$this->ApiKey->create();
+		if ($this->ApiKey->save($this->data)){
 			return true;
 		}else{
 			echo 'oh shit';

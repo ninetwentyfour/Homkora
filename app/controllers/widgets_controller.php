@@ -5,7 +5,12 @@ class WidgetsController extends AppController {
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('index', 'view');
+	    //$this->Auth->allowedActions = array('index', 'view');
+	    $user = $this->Auth->user();
+	    if($user['User']['group_id'] != '1'){
+          $this->Session->setFlash('That action is not allowed.');
+          $this->redirect('/projects/index');
+	    }
 	}
 	
 	function index() {

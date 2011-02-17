@@ -17,6 +17,7 @@
 	<?php
 	$i = 0;
 	foreach ($timers as $timer):
+	//print_r($timer);
 		$class = null;
 		if ($i++ % 2 == 0) {
 			$class = ' class="altrow"';
@@ -25,15 +26,15 @@
 	<tr<?php echo $cycle->cycle('', ' class="altrow"');?>>
 		
 		<td>
-			<?php echo $this->Html->link(Sanitize::html($timer['Project']['title']), array('controller' => 'projects', 'action' => 'view', $timer['Project']['id'])); ?>
+			<?php echo $this->Html->link(Sanitize::html($timer['Timer']['project_name']), array('controller' => 'projects', 'action' => 'view', $timer['Timer']['project_id'])); ?>
 		</td>
 		<td><?php echo Sanitize::html($timer['Timer']['title']); ?>&nbsp;</td>
 		<td><?php echo Sanitize::html($timer['Timer']['time']); ?>&nbsp;</td>
 		<td><?php echo Sanitize::html($timer['Timer']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $timer['Timer']['id']),array( 'escape' => false,'class'=>'view-link' )); ?>
-			<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $timer['Timer']['id']),array( 'escape' => false,'class'=>'edit-link' )); ?>
-			<?php echo $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $timer['Timer']['id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('Are you sure you want to delete # %s?', true), $timer['Timer']['id'] )); ?>
+			<?php echo $html->link($html->image('icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $timer['Timer']['_id']),array( 'escape' => false,'class'=>'view-link' )); ?>
+			<?php echo $html->link($html->image('icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $timer['Timer']['_id']),array( 'escape' => false,'class'=>'edit-link' )); ?>
+			<?php echo $html->link($html->image('icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $timer['Timer']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('Are you sure you want to delete # %s?', true), $timer['Timer']['_id'] )); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

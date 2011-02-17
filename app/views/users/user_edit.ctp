@@ -3,7 +3,7 @@
 	<fieldset>
  		<legend><?php __('Edit User'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
+		echo $this->Form->input('_id');
 		echo $this->Form->input('email');
 		echo $this->Form->input('username');
 		echo '<br /><br />To change your password, enter a new one into the two fields below.';

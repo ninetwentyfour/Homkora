@@ -2,7 +2,7 @@
 	= $this->Form->create('Project')
 		%fieldset
 			%legend Edit Project
-			= $this->Form->input('id')
+			= $this->Form->input('_id')
 			= $this->Form->input('user_id', array('type' => 'hidden'))
 			= $this->Form->input('title')
 			= $this->Form->input('description')
@@ -10,4 +10,4 @@
 %div.bottomLinks
 	%h3 Actions
 	%br
-	= $this->Html->link(__($html->image('icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'Back', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('https://s3.amazonaws.com/homkora-static/img/icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'Back', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))

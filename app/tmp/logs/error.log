@@ -857,3 +857,552 @@ Aco: controllers/Acl/Acl/admin_index in [/home/ninetwentyfour/homkora.com/cake/l
 2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
 2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
 2010-12-29 20:01:24 Warning: Warning (512): DbAcl::allow() - Invalid node in [/home/ninetwentyfour/homkora.com/cake/libs/controller/components/acl.php, line 361]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 15:40:22 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 15:40:22 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 15:40:22 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 15:41:30 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:08 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:10 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:11 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:51:11 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:52:13 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 15:52:14 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:54 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:55 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:56 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:01:56 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:02 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:03 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:04 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:05 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:07:05 Error: Fatal Error (256): ConnectionManager::getDataSource - Non-existent data source default in [/var/www/cake/cake/libs/model/connection_manager.php, line 102]
+2011-01-15 16:29:37 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:29:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:29:37 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:29:37 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:38:12 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:38:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:38:12 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:38:12 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:38:13 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:38:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:38:13 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:38:13 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:38:32 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:38:32 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:38:32 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:38:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:41:41 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:41:41 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:41:41 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:41:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 16:41:42 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-15 16:41:42 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-15 16:41:42 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d322dcf74d77ed07f370ef2
+            [id] => 1
+            [username] => Travis Berry
+            [group_id] => 1
+            [created] => 2010-12-26 17:29:53
+            [modified] => 2010-12-26 17:29:53
+            [email] => contact@travisberry.com
+            [active] => 1
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-15 16:41:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 17:52:29 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:06:19 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:08:30 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:09:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:10:25 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:11:28 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:13:02 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:22:37 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:23:29 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:28:45 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:30:01 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:32:58 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:34:00 Warning: Warning (2): Missing argument 2 for MongodbSource::query() in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 953]
+2011-01-15 18:35:05 Warning: Warning (2): Missing argument 2 for MongodbSource::query() in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 953]
+2011-01-15 18:35:05 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 18:40:24 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-15 19:52:42 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 19:52:42 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 19:52:42 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 19:52:42 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 19:52:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 19:53:05 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 19:53:05 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 19:53:05 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 19:53:05 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 19:53:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 19:53:07 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 19:53:07 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 19:53:07 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 19:53:07 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 19:53:07 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 19:54:30 Warning: Warning (2): mysql_connect() [http://php.net/function.mysql-connect]: Access denied for user 'root'@'localhost' (using password: YES) in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 552]
+2011-01-15 19:54:30 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 558]
+2011-01-15 19:54:30 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 566]
+2011-01-15 19:54:30 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/var/www/cake/cake/libs/model/datasources/dbo/dbo_mysql.php, line 600]
+2011-01-15 19:54:30 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-15 19:54:47 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Project._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:54:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/tmp/cache/haml/projects/index.ctp, line 18]
+2011-01-15 19:55:23 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Project._id' in 'on clause'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:55:23 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Timer._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:55:23 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/views/timers/index.ctp, line 19]
+2011-01-15 19:55:27 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Group._id' in 'on clause'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:55:27 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'User._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:55:27 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/views/users/index.ctp, line 18]
+2011-01-15 19:55:33 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Project._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:55:33 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/tmp/cache/haml/projects/index.ctp, line 18]
+2011-01-15 19:57:13 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Project._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:57:13 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/tmp/cache/haml/projects/index.ctp, line 18]
+2011-01-15 19:57:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Project._id' in 'field list'</span> in [/var/www/cake/cake/libs/model/datasources/dbo_source.php, line 684]
+2011-01-15 19:57:15 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/tmp/cache/haml/projects/index.ctp, line 18]
+2011-01-16 11:46:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:46:51 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:46:59 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:08 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:08 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 11:47:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:24 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:29 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:29 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 11:47:34 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:41 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:47:51 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:00 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:16 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:30 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:38 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:43 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:45 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:53 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:56 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:48:59 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:11 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:14 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 11:49:41 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 156]
+2011-01-16 12:35:58 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/timers_controller.php, line 27]
+2011-01-16 13:50:12 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:52:16 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:52:16 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:54:01 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:54:41 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:39 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:46 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:46 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 13:57:52 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 13:57:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 13:59:08 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 14:00:23 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 14:00:25 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 14:02:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/cake/app/controllers/projects_controller.php, line 157]
+2011-01-16 14:44:52 Warning: Warning (2): fopen(/var/www/cake/app/webroot//csv_export/Homkora_Projects_Export_BzY56EqyH8fXan2t8rF4.csv) [http://php.net/function.fopen]: failed to open stream: No such file or directory in [/var/www/cake/app/controllers/projects_controller.php, line 230]
+2011-01-16 14:50:02 Warning: Warning (2): fopen(/var/www/cake/app/webroot//csv_export/Homkora_Projects_Export_mS5F9O6qJ4vkn0C0Zwfm.csv) [http://php.net/function.fopen]: failed to open stream: No such file or directory in [/var/www/cake/app/controllers/projects_controller.php, line 233]
+2011-01-16 16:15:45 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:15:45 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:15:45 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:23:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:23:40 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:23:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:25:35 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:25:35 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:25:35 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:25:59 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:30:11 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:34:16 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:38:33 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:44:25 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-16 16:50:00 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 16:50:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 16:50:00 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d3382d9da220a9406000001
+            [active] => 0
+            [email] => contact@travisberry.com
+            [username] => test
+            [group_id] => 3
+            [modified] => 1295221465
+            [created] => 1295221465
+        )
+
+)
+
+Aco: controllers/Projects/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-16 16:50:00 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 17:33:54 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-16 17:33:54 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/cake/cake/libs/model/db_acl.php, line 191]
+2011-01-16 17:33:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d3382d9da220a9406000001
+            [active] => 0
+            [email] => contact@travisberry.com
+            [username] => test
+            [group_id] => 3
+            [modified] => 1295221465
+            [created] => 1295221465
+        )
+
+)
+
+Aco: controllers/Timers/index in [/var/www/cake/cake/libs/controller/components/acl.php, line 273]
+2011-01-16 17:33:54 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /var/www/cake/cake/libs/debugger.php:673) in [/var/www/cake/cake/libs/controller/controller.php, line 746]
+2011-01-16 17:57:51 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 11:51:02 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/cake/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 23:02:14 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:14 Warning: Warning (512): /persistent/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:14 Warning: Warning (512): /models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:14 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:02:14 Error: Fatal Error (256): ConnectionManager::getDataSource - Could not load class MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 110]
+2011-01-17 23:02:14 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:02:14 Error: Fatal Error (256): ConnectionManager::getDataSource - Could not load class MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 110]
+2011-01-17 23:02:14 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/layouts/default.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-17 23:02:14 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/elements/footer.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-17 23:02:14 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/persistent/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:14 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:57 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/persistent/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:57 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:02:57 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:04:31 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/persistent/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:04:31 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:04:31 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:04:33 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/persistent/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:04:33 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:04:33 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:05:08 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/persistent/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:05:08 Warning: Warning (512): /var/www/Homkora/app/tmp/cache/models/ is not writable in [/var/www/Homkora/cake/libs/cache/file.php, line 267]
+2011-01-17 23:05:08 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:05:23 Error: Fatal Error (256): ConnectionManager::loadDataSource - Unable to import DataSource class mongodb.MongodbSource in [/var/www/Homkora/cake/libs/model/connection_manager.php, line 185]
+2011-01-17 23:16:10 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-17 23:16:10 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/projects/add.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-17 23:21:58 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 23:21:58 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-17 23:49:10 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/Homkora/cake/libs/model/db_acl.php, line 191]
+2011-01-17 23:49:10 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:10 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d33940fda220a9606000003
+            [active] => 1
+            [created] => 1295225871
+            [email] => contact@travisberry.com
+            [group_id] => 3
+            [modified] => 1295225871
+            [username] => travisberry
+            [wtf] => 4d33940fda220a9606000003
+        )
+
+)
+
+Aco: Projects/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]
+2011-01-17 23:49:13 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/Homkora/cake/libs/model/db_acl.php, line 191]
+2011-01-17 23:49:13 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:13 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d33940fda220a9606000003
+            [active] => 1
+            [created] => 1295225871
+            [email] => contact@travisberry.com
+            [group_id] => 3
+            [modified] => 1295225871
+            [username] => travisberry
+            [wtf] => 4d33940fda220a9606000003
+        )
+
+)
+
+Aco: Projects/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]
+2011-01-17 23:49:15 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [/var/www/Homkora/cake/libs/model/db_acl.php, line 191]
+2011-01-17 23:49:15 Warning: Warning (2): array_shift() expects parameter 1 to be array, string given in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 803]
+2011-01-17 23:49:15 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [_id] => 4d33940fda220a9606000003
+            [active] => 1
+            [created] => 1295225871
+            [email] => contact@travisberry.com
+            [group_id] => 3
+            [modified] => 1295225871
+            [username] => travisberry
+            [wtf] => 4d33940fda220a9606000003
+        )
+
+)
+
+Aco: Timers/index in [/var/www/Homkora/cake/libs/controller/components/acl.php, line 273]
+2011-01-18 01:01:07 Error: Failed to send email: Failed to authenticate on SMTP server with username "travisberry@homkora.com.com" using 2 possible authenticators
+2011-01-18 01:01:54 Error: Failed to send email: Expected response code 354 but got code "550", with message "550 5.7.0 Mail Sending denied. m50sm2684389wek.32
+"
+2011-01-18 01:10:40 Warning: Warning (2): MongoDB::command() expects parameter 1 to be an array or object in [/var/www/Homkora/app/plugins/mongodb/models/datasources/mongodb_source.php, line 964]
+2011-01-18 20:34:57 Warning: Warning (2): fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1408F10B:SSL routines:func(143):reason(267) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:34:57 Warning: Warning (2): fsockopen(): Failed to enable crypto in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:34:57 Warning: Warning (2): fsockopen(): unable to connect to tls://smtp.sendgrid.net:587 (Unknown error) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:34:57 Error: Failed to send email: Connection could not be established with host smtp.sendgrid.net [ #0]
+2011-01-18 20:35:37 Warning: Warning (2): fsockopen(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1408F10B:SSL routines:func(143):reason(267) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:35:37 Warning: Warning (2): fsockopen(): Failed to enable crypto in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:35:37 Warning: Warning (2): fsockopen(): unable to connect to tls://smtp.sendgrid.net:587 (Unknown error) in [/var/www/Homkora/app/vendors/swift_mailer/classes/Swift/Transport/StreamBuffer.php, line 233]
+2011-01-18 20:35:37 Error: Failed to send email: Connection could not be established with host smtp.sendgrid.net [ #0]
+2011-01-22 02:48:03 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/timers/index.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-22 02:48:12 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-22 02:48:12 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/timers/view.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-22 02:48:15 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-22 02:48:15 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/timers/add.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-22 02:49:32 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-22 02:49:32 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/timers/edit.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-22 04:23:22 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 04:25:59 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 06:32:15 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 13:38:24 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:06:44 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:36:01 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/users/profile.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-22 23:37:38 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:37:57 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:38:02 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-22 23:38:02 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/users/user_edit.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-22 23:44:02 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:45:54 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:47:21 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:48:28 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:51:09 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:51:52 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-22 23:52:34 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-23 00:54:57 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-23 20:43:44 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-23 20:43:47 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc): failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-23 21:29:40 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc) [http://php.net/function.file-put-contents]: failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-23 21:31:55 Warning: Warning (2): file_put_contents(/var/www/Homkora/app/vendors/sass/sass-cache/0e39083007ea315d005c69c85358ffb8.sassc) [http://php.net/function.file-put-contents]: failed to open stream: Permission denied in [/var/www/Homkora/app/vendors/sass/SassFile.php, line 162]
+2011-01-23 22:36:34 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 22:57:59 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 22:58:33 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 22:58:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 22:58:58 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 22:59:00 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 22:59:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 23:05:38 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 23:05:43 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 23:06:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 23:13:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 23:13:21 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-23 23:16:12 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-01-24 04:45:20 Warning: Warning (2): mkdir(): File exists in [/var/www/Homkora/app/views/haml.php, line 283]
+2011-01-24 04:45:20 Warning: Warning (2): filemtime(): stat failed for /var/www/Homkora/app/tmp/cache/haml/timers/search.ctp in [/var/www/Homkora/app/views/haml.php, line 260]
+2011-01-24 04:45:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-01-24 04:47:48 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-01-24 05:17:13 Warning: Warning (2): array_merge() [http://php.net/function.array-merge]: Argument #2 is not an array in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 186]
+2011-01-24 05:17:13 Warning: Warning (2): extract() expects parameter 1 to be array, null given in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 187]
+2011-01-24 05:18:54 Warning: Warning (512): Method HtmlHelper::truncate does not exist in [/var/www/Homkora/cake/libs/view/helper.php, line 154]
+2011-01-24 05:19:25 Warning: Warning (2): array_merge() [http://php.net/function.array-merge]: Argument #2 is not an array in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 186]
+2011-01-24 05:19:25 Warning: Warning (2): extract() expects parameter 1 to be array, null given in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 187]
+2011-01-24 05:21:03 Warning: Warning (2): array_merge() [http://php.net/function.array-merge]: Argument #2 is not an array in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 186]
+2011-01-24 05:21:03 Warning: Warning (2): extract() expects parameter 1 to be array, null given in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 187]
+2011-01-24 05:21:17 Warning: Warning (2): array_merge() [http://php.net/function.array-merge]: Argument #2 is not an array in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 186]
+2011-01-24 05:21:17 Warning: Warning (2): extract() expects parameter 1 to be array, null given in [/var/www/Homkora/cake/libs/view/helpers/text.php, line 187]
+2011-01-26 23:03:44 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-01-26 23:04:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-01-26 23:04:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-02-05 04:09:12 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-02-05 20:26:00 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-02-16 22:28:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]
+2011-02-16 22:56:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-02-16 22:57:42 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-02-16 23:02:56 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/timers/search.ctp, line 8]
+2011-02-16 23:03:01 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/Homkora/app/tmp/cache/haml/projects/search.ctp, line 18]

@@ -1,0 +1,26 @@
+#clock1
+:css
+	.submit input {
+		margin-left:353px;	
+	}
+:php
+	$pieces = explode(":", $this->Form->value('Timer.time'));
+	echo '<div class="hour-edit">'.$pieces[0].'</div>';
+	echo '<div class="min-edit">'.$pieces[1].'</div>';
+	echo '<div class="sec-edit">'.$pieces[2].'</div>';
+%div.timers.form.timer-form
+	= $this->Form->create('Timer',array('onsubmit'=>'return(checkForm(this));'))
+		%fieldset
+			%legend Edit Timer
+			= $this->Form->input('_id')
+			= $this->Form->input('project_id')
+			%div.timerAddFormSpacer
+			= $this->Form->input('title')
+			= $this->Form->input('time', array('type' => 'hidden'))
+			%div.timerAddFormSpacer
+			= $this->Form->input('description',array('type'=>'text'))
+	= $this->Form->end(__('Submit', true))
+%div.bottomLinks
+	%h3 Actions
+	%br
+	= $this->Html->link(__($html->image('https://s3.amazonaws.com/homkora-static/img/icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Timers', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
