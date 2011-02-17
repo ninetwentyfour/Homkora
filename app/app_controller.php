@@ -140,29 +140,31 @@ class AppController extends Controller {
        	}
 	}
 	
-	function addIndextank($indexType,$id,$data){
-		//send project to index tank
+	function createIndextankClient(){
 		App::import('Vendor', 'indextank_client');
 		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
 		$client = new ApiClient($API_URL);
+		return $client;
+	}
+	
+	function addIndextank($indexType,$id,$data){
+		//send project to indextank
+		$client = $this->createIndextankClient();
 		$index = $client->get_index($indexType);
 		$doc_id = $id;
 		$index->add_document($doc_id, $data);
 	}
 	
 	function deleteIndextank($indexType,$id){
-		//delete index tank document
-		App::import('Vendor', 'indextank_client');
-		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-		$client = new ApiClient($API_URL);
+		//delete indextank document
+		$client = $this->createIndextankClient();
 		$index = $client->get_index($indexType);
 		$index->delete_document($id);
 	}
 	
 	function searchIndextank($indexType,$query){
-		App::import('Vendor', 'indextank_client');
-		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
-		$client = new ApiClient($API_URL);
+		//search indextank
+		$client = $this->createIndextankClient();
 		$index = $client->get_index($indexType);
 		$index->add_function(2, "relevance");
 		$res = $index->search($query);
