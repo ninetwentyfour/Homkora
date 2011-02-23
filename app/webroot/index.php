@@ -79,6 +79,8 @@
 	if (isset($_GET['url']) && $_GET['url'] === 'favicon.ico') {
 		return;
 	} else {
+
+
 		$Dispatcher = new Dispatcher();
 		$Dispatcher->dispatch();
 	}

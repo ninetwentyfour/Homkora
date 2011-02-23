@@ -5,9 +5,9 @@
 		%title Time Tracking Made Simple | Homkora
 		:php
 			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
-				echo '<link href="https://s3.amazonaws.com/homkora-static/css/homkora-static.gz.css" type="text/css" rel="stylesheet">';
+				echo '<link href="http://static.homkora.com/css/homkora-static.gz.css" type="text/css" rel="stylesheet">';
 			}else{
-				echo '<link href="https://s3.amazonaws.com/homkora-static/css/homkora-static.css" type="text/css" rel="stylesheet">';
+				echo '<link href="http://static.homkora.com/css/homkora-static.css" type="text/css" rel="stylesheet">';
 			}
 	%body
 		%header
@@ -39,7 +39,7 @@
 		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
 		:php
 			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
-				echo '<script type="text/javascript" src="https://s3.amazonaws.com/homkora-static/js/common.gz.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/common.gz.js"></script>';
 			}else{
-				echo '<script type="text/javascript" src="https://s3.amazonaws.com/homkora-static/js/common.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/common.js"></script>';
 			}
