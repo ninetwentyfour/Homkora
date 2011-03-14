@@ -3,7 +3,7 @@ class AppController extends Controller {
     var $components = array('Acl', 'Auth', 'Session','Email','Security','RequestHandler');
     var $helpers = array('Html', 'Form', 'Session', 'Cycle','Cache');
 	var $persistModel = true;
-	var $cacheAction = array('view' => array('callbacks' => true, 'duration' => '1 hour'),'profile' => array('callbacks' => true, 'duration' => '2 hours'));
+	var $cacheAction = array('view' => '1 hour','profile' => '2 days');
 	var $view = 'Haml';
 	
     function beforeFilter() {
