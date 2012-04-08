@@ -392,4 +392,5 @@ class ProjectsController extends AppController {
 		$this->set('projects', $projects);
 	}
 }
+
 ?>
