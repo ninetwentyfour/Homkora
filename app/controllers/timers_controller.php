@@ -210,6 +210,4 @@ class TimersController extends AppController {
 		$this->set('timers', $timers);
 	}
 }
-
 ?>
-
