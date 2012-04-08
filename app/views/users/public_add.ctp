@@ -1,7 +1,7 @@
 <div class="users form">
+	<h2>Sign Up</h2>
 <?php echo $this->Form->create('User');?>
 	<fieldset>
- 		<legend><?php __('Sign Up'); ?></legend>
 	<?php
 		echo $this->Form->input('email');
 		echo $this->Form->input('username');
@@ -12,4 +12,3 @@
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
 <br />
-This app is currently in beta. You may see errors and you may lose data. You have been warned.
