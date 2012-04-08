@@ -1,0 +1,51 @@
+.stopwatch {
+	background:url("../img/dark-bg.png") repeat scroll 0 0 #111;
+	border: 1px solid #444;
+	padding: 15px;
+	width: 420px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:15px;
+	-moz-box-shadow:0 1px 7px #111111;
+	-webkit-box-shadow:0 1px 7px #111111;
+	margin:auto;
+}
+
+.stopwatch .display {
+	width:378px;
+	padding:20px;
+	margin-bottom:10px;
+	border:1px solid #444;
+	color:#5bf3f9;
+	font-size:38pt;
+	font-weight:bold;
+	text-align:center;
+	font-family:verdana;
+	background:#000;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+
+.stopwatch .start, .stopwatch .stop, .stopwatch .reset {
+	background:#444;
+	font-family:verdana;
+	font-size:12pt;
+	padding:5px 10px;
+	color:#fff;
+	border:1px solid #444;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	text-align:center;
+	width:205px;
+	margin-right:0px;
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+	box-shadow:none !important;
+	background:url("../img/bg.png") repeat scroll 0 0 #222222;
+}
+
+.stopwatch .start, .stopwatch .stop {
+	margin-right:10px;
+}

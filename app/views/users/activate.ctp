@@ -1,0 +1,1 @@
+We're sorry. Something went wrong and your account could not be activated.

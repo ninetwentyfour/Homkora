@@ -1,0 +1,28 @@
+:php
+	App::import('Sanitize');
+%div.timers.view
+	%div.project-view
+		%h2 Time
+		= Sanitize::html($timer['Timer']['time'])
+	#project-view-break
+	%div.project-view
+		%h2 Title
+		= Sanitize::html($timer['Timer']['title'])
+	%div.project-view
+		%h2 Description
+		= Sanitize::html($timer['Timer']['description'])
+	%div.project-view
+		%h2 Created
+		= Sanitize::html(date("M-d-Y",$timer['Timer']['created']))
+	%div.project-view
+		%h2 Created
+		= Sanitize::html(date("M-d-Y",$timer['Timer']['modified']))
+%br
+%br
+%div.bottomLinks
+	%h3 Actions
+	%br
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')).'Edit Timer', true), array('action' => 'edit', $timer['Timer']['_id']),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_delete.png', array('alt' => 'Delete','title'=>'Delete')).'Delete Timer', true), array('action' => 'delete', $timer['Timer']['_id']),array('escape' => false,'class'=>'button addTimerIndex'), sprintf(__('Are you sure you want to delete # %s?', true), $timer['Timer']['_id']))
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_list_bullets.png', array('alt' => 'List','title'=>'List')).'List Timers', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $html->link($html->image('http://static.homkora.com/img/icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer',array('controller'=>'timers', 'action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'))

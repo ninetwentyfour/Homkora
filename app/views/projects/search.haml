@@ -1,0 +1,63 @@
+:php
+	App::import('Sanitize');
+= $html->link($html->image('http://static.homkora.com/img/icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'))
+%br
+%br
+= $form->create('Project', array('action' => 'search'))
+	%div.searchBox
+		= $this->Form->input('search', array( 'label' => false,'placeholder'=>"Enter Project Title",'class'=>'searchText'))
+		%div.submit
+			%input{:type="submit",:value="Search"}
+= $form->end();
+%div.projects.index
+	%h2 Search results for Projects
+	%table
+		%tr.altrow
+			:php
+				//only show user ids to admin
+				if(isset($_SESSION['Auth']['User'])){
+					if($_SESSION['Auth']['User']['group_id']=='1'){
+						echo '<th>'.$this->Paginator->sort('user_id').'</th>';	
+					}else{
+						//do nothing
+					}
+				}
+			%th Title
+			%th Description
+			%th Total Time
+			%th.actions View | Edit | Delete
+		:php
+			$i = 0;
+			foreach ($projects as $project):
+				$class = null;
+				if ($i++ % 2 == 0) {
+					$class = ' class="altrow"';
+				}
+		%tr
+			:php
+				//only show user ids to admin
+				if(isset($_SESSION['Auth']['User'])){
+					if($_SESSION['Auth']['User']['group_id']=='1'){
+						echo '<td>'.$this->Html->link($project['Project']['user_id'], array('controller' => 'users', 'action' => 'view', $project['Project']['user_id'])).'</td>';	
+					}else{
+						//do nothing
+					}
+				}
+			%td
+				= Sanitize::html($project['Project']['title'])
+			%td
+				= Sanitize::html($project['Project']['description'])
+			%td
+				= Sanitize::html($project['Project']['total_time'])
+			%td.actions
+				= $html->link($html->image('http://static.homkora.com/img/icon_magnify_glass.png', array('alt' => 'View','title'=>'View')),array('action' => 'view', $project['Project']['_id']),array( 'escape' => false,'class'=>'view-link' ))
+				= $html->link($html->image('http://static.homkora.com/img/icon_pencil.png', array('alt' => 'Edit','title'=>'Edit')),array('action' => 'edit', $project['Project']['_id']),array( 'escape' => false,'class'=>'edit-link' ))
+				= $html->link($html->image('http://static.homkora.com/img/icon_delete.png', array('alt' => 'Delete','title'=>'Delete')),array('action' => 'delete', $project['Project']['_id']),array( 'escape' => false,'class'=>'delete-link'), sprintf(__('This will delete all timers part of this project too. Are you sure?', true), $project['Project']['_id'] ))
+		:php
+			endforeach;
+%div.bottomLinks
+	%h3 Actions
+	%br
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_list_bullets.png', array('alt' => 'List','title'=>'List')).'List Timers', true), array('controller' => 'timers', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_timer.png', array('alt' => 'Add','title'=>'Add')).'New Timer', true), array('controller' => 'timers', 'action' => 'add'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $html->link($html->image('http://static.homkora.com/img/icon_download.png').'Export Projects to CSV', array('controller'=>'projects','action'=>'exportcsvProjects'),array( 'escape' => false,'class'=>'button addTimerIndex' ))

@@ -1,0 +1,13 @@
+%div.projects.form
+	= $this->Form->create('Project')
+		%fieldset
+			%legend Edit Project
+			= $this->Form->input('_id')
+			= $this->Form->input('user_id', array('type' => 'hidden'))
+			= $this->Form->input('title')
+			= $this->Form->input('description')
+	= $this->Form->end(__('Submit', true))
+%div.bottomLinks
+	%h3 Actions
+	%br
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'Back', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))

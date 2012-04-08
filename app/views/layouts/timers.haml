@@ -1,0 +1,62 @@
+!!!
+%html
+	%head
+		%meta{:charset => "utf-8"}
+		%title Time Tracking Made Simple | Homkora
+		:php
+			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
+				echo '<link href="http://static.homkora.com/css/homkora-static.gz.css" type="text/css" rel="stylesheet">';
+				echo '<link href="http://static.homkora.com/css/jquery.stopwatch.gz.css" type="text/css" rel="stylesheet">';
+			}else{
+				echo '<link href="http://static.homkora.com/css/homkora-static.css" type="text/css" rel="stylesheet">';
+				echo '<link href="http://static.homkora.com/css/jquery.stopwatch.css" type="text/css" rel="stylesheet">';
+			}
+	%body
+		%header
+			%h1
+				%a{:href => "http://homkora.com"} Homkora
+			%nav
+				:php
+					// show different nav bars to different people
+					if(isset($_SESSION['Auth']['User'])){
+						if($_SESSION['Auth']['User']['group_id']=='1'){
+							echo $this->element('navigation');	
+						}else{
+							echo $this->element('navigation_user');	
+						}
+					}else{
+						echo $this->element('navigation_no_user');
+					}
+		#container
+			%noscript
+				Homkora must have javascript enabled.
+			#content
+				= $this->Session->flash();
+				= $this->Session->flash("auth");
+				= $content_for_layout;
+				%div{:style => "clear:both;"}
+			%div{:style => "clear:both;"}
+		%footer.transparent_class
+			= $this->element('footer');
+		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
+		:php
+			if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/jquery.stopwatch.gz.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/checkform.gz.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/createTimer.gz.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/common.gz.js"></script>';
+			}else{
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/jquery.stopwatch.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/checkform.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/createTimer.js"></script>';
+				echo '<script type="text/javascript" src="http://static.homkora.com/js/common.js"></script>';
+			}
+		:javascript
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-30690065-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();

@@ -1,0 +1,22 @@
+#clock1
+:css
+	.submit input {
+		margin-left:353px;	
+	}
+%div.timers.form.timer-form
+	= $this->Form->create('Timer',array('onsubmit'=>'return(checkForm(this));'))
+		%fieldset
+			= $this->Form->input('project_id')
+			%div.timerAddFormSpacer
+			= $this->Form->input('title')
+			= $this->Form->input('time', array('value' => '' , 'type' => 'hidden'))
+			= $this->Form->input('user_id', array('value' => $_SESSION['Auth']['User']['_id'] , 'type' => 'hidden'))
+			%div.timerAddFormSpacer
+			= $this->Form->input('description',array('type'=>'text'))
+	= $this->Form->end(__('Save Timer', true))
+%div.bottomLinks
+	%h3 Actions
+	%br
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Timers', true), array('action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $this->Html->link(__($html->image('http://static.homkora.com/img/icon_list_bullets.png', array('alt' => 'View','title'=>'View')).'List Projects', true), array('controller' => 'projects', 'action' => 'index'),array('escape' => false,'class'=>'button addTimerIndex'))
+	= $html->link($html->image('http://static.homkora.com/img/icon_storage.png', array('alt' => 'Add','title'=>'Add')).'New Project',array('controller'=>'projects','action'=>'add'),array('escape' => false,'class'=>'button addTimerIndex'))
