@@ -142,7 +142,7 @@ class AppController extends Controller {
 	
 	function createIndextankClient(){
 		App::import('Vendor', 'indextank_client');
-		$API_URL = 'http://:SJERrm8lyjguSe@1o5v.api.indextank.com';
+		$API_URL = 'http://:gebynytuzeda@hyzuvu.api.indexden.com';
 		$client = new ApiClient($API_URL);
 		return $client;
 	}

@@ -15,6 +15,7 @@ class TimersController extends AppController {
 			$this->layout = 'timers';
 		}
 	}
+
 	/**
 	* Get Timers For display in index
 	*
