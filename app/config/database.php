@@ -106,8 +106,8 @@ class DATABASE_CONFIG {
 				#
 				    'port' => 27068,
 		        //optional auth fields
-		        'login' => $_ENV["DB_USER"], 
-		        'password' => $_ENV["DB_PASSWORD"],    
+		        'login' => getenv("DB_USER"), 
+		        'password' => getenv("DB_PASSWORD"),    
 		        
 		    );
 
