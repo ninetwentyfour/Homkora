@@ -108,8 +108,8 @@ class DATABASE_CONFIG {
 				#
 				    'port' => 27068,
 		        //optional auth fields
-		        'login' => $user, 
-		        'password' => $pass,    
+		        'login' => "$user", 
+		        'password' => "$pass",    
 		        
 		    );
 
