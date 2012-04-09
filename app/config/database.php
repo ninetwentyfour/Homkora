@@ -107,8 +107,8 @@ class DATABASE_CONFIG {
 				#
 				    'port' => 27068,
 		        //optional auth fields
-		        'login' => "ninetwentyfour", 
-		        'password' => "w35tw00d",    
+		        'login' => env("DB_USERZ"), 
+		        'password' => env("DB_PASSWORDZ"),    
 		        
 		    );
 
