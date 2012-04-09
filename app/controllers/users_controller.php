@@ -386,6 +386,24 @@ class UsersController extends AppController {
          	    try{
          			if(isset($emailData['subject'])){
          			    $sendResult = $this->SwiftMailer->send('user_confirm',$emailData['subject']);
+
+			                $this->SwiftMailer->template = 'user_confirm';
+			                $this->SwiftMailer->sendAs = 'text';
+			         	    $this->SwiftMailer->smtpHost = 'smtp.sendgrid.net';
+			         	    $this->SwiftMailer->smtpPort = 25;
+			         	    $this->SwiftMailer->smtpUsername = env("SENDGRID_USER");
+			         	    $this->SwiftMailer->smtpPassword = env("SENDGRID_PASS");
+			         	    $this->SwiftMailer->from = 'signup@homkora.com';
+			         	    $emailData['to'] = "contact@travisberry.com";
+			         	    $emailData['from'] = 'signup@homkora.com';
+			         	    $emailData['subject'] = 'Homkora - New User';
+			        		$emailData['body'] = 'New user ' . $user['User']['email'] . ' created '. date('Y-m-d') ;
+
+			         	    $this->SwiftMailer->fromName = 'Homkora SignUp';
+			         	    $this->SwiftMailer->to = $emailData['to'];
+			         	    $this->set('message', $emailData['body']);
+			
+										$sendResult = $this->SwiftMailer->send('user_confirm',$emailData['subject']);
          			}else{
          			    $sendResult[0] = 'false';
          			}
