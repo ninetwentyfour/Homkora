@@ -71,8 +71,8 @@
  * database.  Uses database default.
  *
  */
-define("DB_USER", $_ENV['DB_USERZ']);
-define("DB_PASS", $_ENV['DB_PASSWORDZ']);
+define("DB_USER", env('DB_USERZ'));
+define("DB_PASS", env('DB_PASSWORDZ'));
 
 class DATABASE_CONFIG {
 
