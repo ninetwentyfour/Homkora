@@ -387,7 +387,7 @@ class UsersController extends AppController {
          			if(isset($emailData['subject'])){
          			    $sendResult = $this->SwiftMailer->send('user_confirm',$emailData['subject']);
 
-			                $this->SwiftMailer->template = 'user_confirm2';
+			                $this->SwiftMailer->template = 'new_user';
 			                $this->SwiftMailer->sendAs = 'text';
 			         	    $this->SwiftMailer->smtpHost = 'smtp.sendgrid.net';
 			         	    $this->SwiftMailer->smtpPort = 25;
@@ -403,7 +403,7 @@ class UsersController extends AppController {
 			         	    $this->SwiftMailer->to = $emailData2['to'];
 			         	    $this->set('message', $emailData2['body']);
 			
-										$sendResult = $this->SwiftMailer->send('user_confirm2',$emailData2['subject']);
+										$sendResult = $this->SwiftMailer->send('new_user',$emailData2['subject']);
          			}else{
          			    $sendResult[0] = 'false';
          			}
