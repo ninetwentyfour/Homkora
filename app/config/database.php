@@ -71,6 +71,9 @@
  * database.  Uses database default.
  *
  */
+define("DB_USER", $_ENV['DB_USERZ']);
+define("DB_PASS", $_ENV['DB_PASSWORDZ']);
+
 class DATABASE_CONFIG {
 
 	// var $default = array(
@@ -107,8 +110,8 @@ class DATABASE_CONFIG {
 				#
 				    'port' => 27068,
 		        //optional auth fields
-		        'login' => env("DB_USERZ"), 
-		        'password' => env("DB_PASSWORDZ"),    
+		        'login' => DB_USER, 
+		        'password' => DB_PASS,    
 		        
 		    );
 
