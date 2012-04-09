@@ -71,8 +71,8 @@
  * database.  Uses database default.
  *
  */
-define("DB_USER", env('DB_USERZ'));
-define("DB_PASS", env('DB_PASSWORDZ'));
+define("DB_USER", env('DB_USER'));
+define("DB_PASS", env('DB_PASSWORD'));
 
 class DATABASE_CONFIG {
 
