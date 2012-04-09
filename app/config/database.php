@@ -96,8 +96,8 @@ class DATABASE_CONFIG {
 	//         'password' => 'awesomeness',    
 	//         */
 	//     );  
-		$user = getenv("DB_USER");
-		$pass = getenv("DB_PASSWORD");
+		$user = getenv("DB_USERZ");
+		$pass = getenv("DB_PASSWORDZ");
 		public $default = array(
 		        #
 				'datasource' => 'mongodb.mongodbSource',
