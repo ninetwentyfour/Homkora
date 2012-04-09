@@ -372,8 +372,8 @@ class UsersController extends AppController {
                 //$this->SwiftMailer->smtpType = 'tls';
          	    $this->SwiftMailer->smtpHost = 'smtp.sendgrid.net';
          	    $this->SwiftMailer->smtpPort = 25;
-         	    $this->SwiftMailer->smtpUsername = 'contact@travisberry.com';
-         	    $this->SwiftMailer->smtpPassword = '221westwood';
+         	    $this->SwiftMailer->smtpUsername = env("SENDGRID_USER");
+         	    $this->SwiftMailer->smtpPassword = env("SENDGRID_PASS");
          	    $this->SwiftMailer->from = 'signup@homkora.com';
          	    $emailData['to'] = $user['User']['email'];
          	    $emailData['from'] = 'signup@homkora.com';
