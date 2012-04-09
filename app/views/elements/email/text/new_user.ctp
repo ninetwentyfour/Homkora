@@ -3,4 +3,4 @@
 ?>
 <?= $username ?> has just signed up:
 
-<?= $activate_url ?>
+<?= $message ?>
