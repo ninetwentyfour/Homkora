@@ -380,7 +380,6 @@ class ProjectsController extends AppController {
 	}
 	
 	function search(){
-		print_r($_SESSION['Auth']['User']['_id']);
 		$query = $this->data['Project']['search'];
 		$res = $this->searchIndextank("HomkoraProjects",$query);
 		$i = 0;
