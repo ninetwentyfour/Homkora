@@ -436,6 +436,24 @@ class UsersController extends AppController {
 	        {
 	                // Update the active flag in the database
 	                $this->User->saveField('active', 1);
+	
+			                $this->SwiftMailer->template = 'new_user';
+			                $this->SwiftMailer->sendAs = 'text';
+			         	    $this->SwiftMailer->smtpHost = 'smtp.sendgrid.net';
+			         	    $this->SwiftMailer->smtpPort = 25;
+			         	    $this->SwiftMailer->smtpUsername = env("SENDGRID_USER");
+			         	    $this->SwiftMailer->smtpPassword = env("SENDGRID_PASS");
+			         	    $this->SwiftMailer->from = 'signup@homkora.com';
+			         	    $emailData2['to'] = "contact@travisberry.com";
+			         	    $emailData2['from'] = 'signup@homkora.com';
+			         	    $emailData2['subject'] = 'Homkora - User Confirmed';
+			        		$emailData2['body'] = 'User ' . $user['User']['email'] . ' confirmed account '. date('Y-m-d') ;
+
+			         	    $this->SwiftMailer->fromName = 'Homkora SignUp';
+			         	    $this->SwiftMailer->to = $emailData2['to'];
+			         	    $this->set('message', $emailData2['body']);
+			
+										$sendResult = $this->SwiftMailer->send('new_user',$emailData2['subject']);
                
 	                // Let the user know they can now log in!
 	                $this->Session->setFlash('Your account has been activated, please log in below', 'default', array('class' => 'flash_good'));
