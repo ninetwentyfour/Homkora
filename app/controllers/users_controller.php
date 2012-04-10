@@ -447,7 +447,7 @@ class UsersController extends AppController {
 			         	    $emailData2['to'] = "contact@travisberry.com";
 			         	    $emailData2['from'] = 'signup@homkora.com';
 			         	    $emailData2['subject'] = 'Homkora - User Confirmed';
-			        		$emailData2['body'] = 'User ' . $user['User']['email'] . ' confirmed account '. date('Y-m-d') ;
+			        		$emailData2['body'] = 'User ' . $this->User->email . ' confirmed account '. date('Y-m-d') ;
 
 			         	    $this->SwiftMailer->fromName = 'Homkora SignUp';
 			         	    $this->SwiftMailer->to = $emailData2['to'];
