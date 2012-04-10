@@ -167,7 +167,7 @@ class AppController extends Controller {
 		$client = $this->createIndextankClient();
 		$index = $client->get_index($indexType);
 		//$index->add_function(2, "relevance");
-		$res = $index->search($query, NULL, NULL, 2);
+		$res = $index->search($query. " user_id:".$_SESSION['Auth']['User']['_id'], NULL, NULL, 2);
 		return $res;
 	}
 	
