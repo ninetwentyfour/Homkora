@@ -319,7 +319,7 @@
 		'engine' => $engine,
 		'prefix' => 'cake_core_',
 		'path' => CACHE . 'persistent' . DS,
-		'serialize' => ($engine === 'File'),
+		//'serialize' => ($engine === 'File'),
 		'duration' => $duration
 	));
 
@@ -331,7 +331,7 @@
 		'engine' => $engine,
 		'prefix' => 'cake_model_',
 		'path' => CACHE . 'models' . DS,
-		'serialize' => ($engine === 'File'),
+		//'serialize' => ($engine === 'File'),
 		'duration' => $duration
 	));
 	
