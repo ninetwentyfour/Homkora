@@ -10,7 +10,7 @@
 			%div.timerAddFormSpacer
 			= $this->Form->input('title')
 			= $this->Form->input('time', array('value' => '' , 'type' => 'hidden'))
-			= $this->Form->input('user_id', array('value' => $_SESSION['Auth']['User']['_id'] , 'type' => 'hidden'))
+			= $this->Form->input('user_id', array('value' => $this->Session->read('Auth.User._id'), 'type' => 'hidden'))
 			%div.timerAddFormSpacer
 			= $this->Form->input('description',array('type'=>'text'))
 	= $this->Form->end(__('Save Timer', true))

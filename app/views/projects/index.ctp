@@ -9,8 +9,8 @@
 		<tr class="altrow">
 			<?php
 				//only show user ids to admin
-				if(isset($_SESSION['Auth']['User'])){
-					if($_SESSION['Auth']['User']['group_id']=='1'){
+				if($this->Session->check('Auth.User')){
+					if($this->Session->read('Auth.User.group_id')=='1'){
 						echo '<th>'.$this->Paginator->sort('user_id').'</th>';	
 					}else{
 						//do nothing
@@ -33,8 +33,8 @@
 		<tr<?php echo $cycle->cycle('', ' class="altrow"');?>>
 			<?php
 				//only show user ids to admin
-				if(isset($_SESSION['Auth']['User'])){
-					if($_SESSION['Auth']['User']['group_id']=='1'){
+				if($this->Session->check('Auth.User')){
+					if($this->Session->read('Auth.User.group_id')=='1'){
 						echo '<td>'.$this->Html->link($project['User']['id'], array('controller' => 'users', 'action' => 'view', $project['User']['id'])).'</td>';	
 					}else{
 						//do nothing

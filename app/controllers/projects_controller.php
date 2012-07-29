@@ -64,7 +64,7 @@ class ProjectsController extends AppController {
 		$timers = $this->Timer->find('all',$params);
 		$this->set('timers', $timers);
 		//check that project belongs to user or is an admin
-		if($project[0]['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($project[0]['Project']['user_id']!=$this->Session->read('Auth.User._id') && $this->Session->read('Auth.User.group_id') != '1'){
 			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
@@ -76,14 +76,14 @@ class ProjectsController extends AppController {
 	*/
 	function add() {
 		if ($this->RequestHandler->isXml()){
-			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['_id'];
+			$this->data['Project']['user_id'] = $this->Session->read('Auth.User._id');
 			$this->data['Project']['title'] = $this->params['url']['title'];
 			$this->data['Project']['description'] = $this->params['url']['description'];
 			$this->Project->create();
 			if($this->Project->save($this->data)){
 				//send project to index tank
 				//$indexData = array('id'=>$this->Project->id,'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description']);
-				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$this->Session->read('Auth.User._id'));
 				$id = $this->Project->id;
 				$this->addIndextank("HomkoraProjects",$id,$indexData);
 				$result = array('success'=>'1');
@@ -98,7 +98,7 @@ class ProjectsController extends AppController {
 			if ($this->Project->save($this->data)) {
 				//send project to index tank
 				//$indexData = array('id'=>$this->Project->id,'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description']);
-				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$this->Session->read('Auth.User._id'));
 				$id = $this->Project->id;
 				$this->addIndextank("HomkoraProjects",$id,$indexData);
 				$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
@@ -122,7 +122,7 @@ class ProjectsController extends AppController {
 	function edit($id = null) {
 		if ($this->RequestHandler->isXml()){
 			$this->data['Project']['_id'] = $id;
-			$this->data['Project']['user_id'] = $_SESSION['Auth']['User']['_id'];
+			$this->data['Project']['user_id'] = $this->Session->read('Auth.User._id');
 			if(isset($this->params['url']['title'])){
 				$this->data['Project']['title'] = $this->params['url']['title'];
 			}
@@ -146,7 +146,7 @@ class ProjectsController extends AppController {
 		if (!empty($this->data)) {
 			if ($this->Project->save($this->data)) {
 				//send project to index tank
-				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+				$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$this->Session->read('Auth.User._id'));
 				$id = $id;
 				$this->addIndextank("HomkoraProjects",$id,$indexData);
 				$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
@@ -158,7 +158,7 @@ class ProjectsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Project->read(null, $id);
 			//check project belongs to user or is admin
-			if($this->data['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+			if($this->data['Project']['user_id']!=$this->Session->read('Auth.User._id') && $this->Session->read('Auth.User.group_id') != '1'){
 				$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 				$this->redirect(array('action' => 'index'));
 			}
@@ -176,7 +176,7 @@ class ProjectsController extends AppController {
 		}
 		//check if project belongs to user or is admin
 		$userProject = $this->Project->read(null, $id);
-		if($userProject['Project']['user_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($userProject['Project']['user_id']!=$this->Session->read('Auth.User._id') && $this->Session->read('Auth.User.group_id') != '1'){
 			$this->Session->setFlash('Invalid project', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}
@@ -215,7 +215,7 @@ class ProjectsController extends AppController {
 	*/
 	function exportcsvProjects(){
 		$params = array(
-			'conditions' => array('user_id' => (string)$_SESSION['Auth']['User']['_id'])
+			'conditions' => array('user_id' => (string)$this->Session->read('Auth.User._id'))
 		);
 	    $value = $this->Project->find('all', $params);
 	    for ($i = 0; $i < count($value); $i++) {
@@ -385,7 +385,7 @@ class ProjectsController extends AppController {
 		$i = 0;
 		foreach($res->results as $doc_id){
 			$params = array(
-				'conditions' => array('_id' => $doc_id->docid,'user_id'=>$_SESSION['Auth']['User']['_id'])
+				'conditions' => array('_id' => $doc_id->docid,'user_id'=>$this->Session->read('Auth.User._id'))
 			);
 			$projects[$i++] = $this->Project->find('first',$params);
 		}

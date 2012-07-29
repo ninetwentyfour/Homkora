@@ -3,7 +3,7 @@
 		<fieldset>
  			<legend><?php __('Add Project'); ?></legend>
 			<?php
-				echo $this->Form->input('user_id', array('value' => $_SESSION['Auth']['User']['id'] , 'type' => 'hidden'));
+				echo $this->Form->input('user_id', array('value' => $this->Session->read('Auth.User._id'), 'type' => 'hidden'));
 				echo $this->Form->input('title');
 				echo $this->Form->input('description');
 			?>

@@ -38,8 +38,8 @@ class UsersController extends AppController {
 				}
 				// Cool, user is active, redirect post login
 				else {
-				$this->Session->setFlash('Gets here!');
-					//$this->redirect('/projects/index');
+				//$this->Session->setFlash('Gets here!');
+					$this->redirect('/projects/index');
 				}
 			}
 		}
@@ -415,7 +415,8 @@ class UsersController extends AppController {
          			    $this->Session->setFlash('The Email has been successfully sent', 'default', array('class' => 'flash_good'));
            			}
            			if (isset($this->params['requested'])) {
-         			    return $_SESSION['Message']['flash']['message'];
+         			    //return $_SESSION['Message']['flash']['message'];
+									return $this->Session->read('Message.flash.message');
          			}
          			return $sendResult[0];
          	    }
@@ -469,7 +470,7 @@ class UsersController extends AppController {
 			$this->redirect(array('action' => 'profile',$id));
 		}
 		$user = $this->User->read(null, $id);
-		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($user['User']['_id']!=$this->Session->read('Auth.User._id') && $this->Session->read('Auth.User.group_id') != '1'){
 			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'profile',$id));
 		}
@@ -523,10 +524,10 @@ class UsersController extends AppController {
 		$user = $this->User->read(null, $id);
 		$this->loadModel('ApiKey');
 		$params = array(
-			'conditions' => array('user_id' => (string)$_SESSION['Auth']['User']['_id'])
+			'conditions' => array('user_id' => (string)$this->Session->read('Auth.User._id'))
 		);
 		$user['User']['ApiKey'] = $this->ApiKey->find('all', $params);
-		if($user['User']['_id']!=$_SESSION['Auth']['User']['_id'] && $_SESSION['Auth']['User']['group_id'] != '1'){
+		if($user['User']['_id']!=$this->Session->read('Auth.User._id') && $this->Session->read('Auth.User.group_id') != '1'){
 			$this->Session->setFlash('Invalid user', 'default', array('class' => 'flash_bad'));
 			$this->redirect(array('action' => 'index'));
 		}

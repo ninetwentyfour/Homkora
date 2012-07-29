@@ -60,11 +60,11 @@ class AppController extends Controller {
 
 	function beforeRender(){
 		if ($this->action == 'profile') {
-			$gravatar2 = $this->get_gravatar($_SESSION['Auth']['User']['email'],'80');
+			$gravatar2 = $this->get_gravatar($this->Session->read('Auth.User.email'),'80');
 			$this->set('gravatar2', $gravatar2);
 		}
-		if(isset($_SESSION['Auth']['User'])){
-			$gravatar = $this->get_gravatar($_SESSION['Auth']['User']['email'],'20');
+		if($this->Session->check('Auth.User')){
+			$gravatar = $this->get_gravatar($this->Session->read('Auth.User.email'),'20');
 			$this->set('gravatar', $gravatar);
 		}
 	}

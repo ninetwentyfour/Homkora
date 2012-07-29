@@ -18,8 +18,8 @@
 			%nav
 				:php
 					// show different nav bars to different people
-					if(isset($_SESSION['Auth']['User'])){
-						if($_SESSION['Auth']['User']['group_id']=='1'){
+					if($this->Session->check('Auth.User')){
+						if($this->Session->read('Auth.User.group_id')=='1'){
 							echo $this->element('navigation');	
 						}else{
 							echo $this->element('navigation_user');	

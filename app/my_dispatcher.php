@@ -6,7 +6,7 @@ class MyDispatcher extends Dispatcher{
 			if ($this->here == '/') {
 				$path = 'home';
 			}
-			if(isset($_SESSION['Auth']['User']['_id'])){
+			if($this->Session->check('Auth.User._id')){
 				//$path = $_SESSION['Auth']['User']['_id'].'_'.strtolower(Inflector::slug($path));
 				$path = '4d33940fda220a9606000003_'.strtolower(Inflector::slug($path));
 			}else{
